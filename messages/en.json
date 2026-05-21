@@ -1,0 +1,1973 @@
+{
+  "auth": {
+    "login": {
+      "title": "Login",
+      "subtitle": "Sign in with your username and password",
+      "username": "Username",
+      "usernamePlaceholder": "my_username",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "action": "Sign in",
+      "loading": "Signing in...",
+      "forgotPassword": "Forgot password?",
+      "dontHaveAccount": "Don't have an account?",
+      "register": "Register",
+      "errorInvalidCredentials": "Invalid username or password.",
+      "errorUnexpected": "Something went wrong. Please try again.",
+      "sessionExpired": {
+        "title": "Session Expired",
+        "message": "Your session has expired for security reasons. Please log in again to continue."
+      },
+      "sessionError": {
+        "title": "Session Error",
+        "message": "An error occurred with your session. Please log in again."
+      }
+    },
+    "register": {
+      "title": "Create account",
+      "subtitle": "Fill in the data to create your account",
+      "username": "Username",
+      "usernamePlaceholder": "my_username",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "passwordConfirm": "Confirm password",
+      "subtitleBusiness": "Create your business account",
+      "accountTypeLabel": "How do you want to register?",
+      "accountTypeIndividual": "Individual",
+      "accountTypeBusiness": "Business",
+      "subtitleName2": "Your full name",
+      "name": "My full name",
+      "subtitleEmail2": "My email",
+      "action": "Create account",
+      "alreadyHaveAccount": "Already have an account?",
+      "login": "Login",
+      "welcomeAlert": {
+        "title": "Link Sent!",
+        "message": "Check your email and click the link to access your account."
+      },
+      "errors": {
+        "nameRequired": "Name is required",
+        "nameMinLength": "Please enter your full name (minimum 15 characters)",
+        "usernameMinLength": "Username must be at least 3 characters",
+        "usernameMaxLength": "Username must be at most 50 characters",
+        "passwordMinLength": "Password must be at least 8 characters",
+        "passwordStrength": "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character",
+        "passwordMismatch": "Passwords do not match"
+      }
+    },
+    "forgotPassword": {
+      "title": "Forgot password?",
+      "subtitle": "Enter your email to receive recovery instructions",
+      "email": "your@email.com",
+      "subtitle2": "Your email",
+      "action": "Send instructions",
+      "loading": "Sending instructions...",
+      "backToLogin": "Back to login",
+      "codeSent": {
+        "title": "Instructions sent!",
+        "message": "Password recovery instructions have been sent to your email. Check your inbox and follow the instructions to reset your password."
+      }
+    },
+    "resetPassword": {
+      "title": "Set new password",
+      "subtitle": "Enter your new password below",
+      "newPassword": "New password",
+      "newPasswordPlaceholder": "Your new password",
+      "confirmPassword": "Confirm password",
+      "confirmPasswordPlaceholder": "Repeat new password",
+      "action": "Reset password",
+      "loading": "Resetting...",
+      "backToLogin": "Back to login",
+      "success": {
+        "title": "Password updated!",
+        "message": "Your password has been reset. You can now log in with your new password."
+      },
+      "errors": {
+        "invalidToken": "This reset link is invalid or has already been used.",
+        "expiredToken": "This reset link has expired. Please request a new one.",
+        "missingToken": "Reset token is missing. Please use the link sent to your email.",
+        "passwordMismatch": "Passwords do not match",
+        "passwordStrength": "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character",
+        "passwordMinLength": "Password must be at least 8 characters",
+        "general": "An error occurred. Please try again."
+      }
+    }
+  },
+  "metadata": {
+    "title": "Tech Cuisine — AI-powered kitchen cost management for chefs and restaurateurs",
+    "description": "Turn your recipes into profitable dishes. Tech Cuisine calculates cost per serving, tracks ingredient prices, engineers your menu for maximum margin, and flags waste before it hits your bottom line."
+  },
+  "ErrorPage": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. You can try again.",
+    "tryAgain": "Try again"
+  },
+  "LoadingPage": {
+    "title": "Loading..."
+  },
+  "HomePage": {
+    "navigation": {
+      "home": "Home",
+      "contact": "Contact",
+      "language": "Language",
+      "login": "Login",
+      "startNow": "Register Here"
+    },
+    "hero": {
+      "badge": "Most restaurants close because of food costs, not bad food. Here is where that changes.",
+      "headline": "Know your real cost before the dish leaves the kitchen.",
+      "highlightWord": "cost",
+      "subheadline": "Your numbers must also be calculated with precision. Tech Cuisine builds smart recipe sheets that calculate your true cost per serving, scale for any batch size and show exactly where margin is being lost. Stop guessing, start controlling.",
+      "freeTierLine": "Start with 7 days of free trial",
+      "ctaPrimary": "Build my first recipe sheet",
+      "ctaSecondary": "See how it works"
+    },
+    "painPoints": {
+      "title": "The Biggest Pain in the Kitchen",
+      "subtitle": "Does this sound familiar?",
+      "points": [
+        {
+          "icon": "time",
+          "title": "Recipes without real cost",
+          "description": "You spend hours perfecting a dish but have no idea what it actually costs per serving until the month closes."
+        },
+        {
+          "icon": "rejection",
+          "title": "Scaling goes wrong every time",
+          "description": "Tripling a recipe by hand leads to waste, inconsistency, and cost overruns that are hard to trace back to a specific dish."
+        },
+        {
+          "icon": "search",
+          "title": "Ingredient prices keep changing",
+          "description": "Supplier prices shift weekly. Without tracking, a dish that was profitable in January bleeds margin by March."
+        },
+        {
+          "icon": "lowRate",
+          "title": "Yield is never factored in",
+          "description": "You buy 1 kg of onion but only 800 g is usable after prep. That 20% loss is real money and most recipe tools ignore it."
+        }
+      ]
+    },
+    "candidatePainPoints": {
+      "title": "Do you really know your food cost?",
+      "subtitle": "Before you price a dish, the numbers behind it must be right. Every week of guesswork is a week of margin you’ll never recover.",
+      "points": [
+        {
+          "icon": "ats",
+          "title": "Dishes priced on gut feeling, not data",
+          "description": "Without a detailed cost breakdown, you may be selling your most popular dishes at a loss and never know it."
+        },
+        {
+          "icon": "keywords",
+          "title": "Food cost % you can actually trust",
+          "description": "Tech Cuisine tracks every ingredient, applies yield correction factors, and gives you a true food cost percentage for each dish on your menu."
+        },
+        {
+          "icon": "structure",
+          "title": "A menu built around margin, not just taste",
+          "description": "See which dishes are stars (high profit, high popularity) and which are dogs (low margin, low demand) and make menu decisions with confidence."
+        },
+        {
+          "icon": "target",
+          "title": "Waste turned into real financial data",
+          "description": "Every gram discarded is money lost. Tech Cuisine converts your waste logs into financial impact so you know exactly what the bin is costing you."
+        }
+      ],
+      "cta": "Start calculating my costs"
+    },
+    "benefits": {
+      "title": "Complete Solution for Your Kitchen",
+      "items": [
+        {
+          "icon": "zap",
+          "title": "Smart Recipe Sheets in Minutes",
+          "description": "Build technical sheets with ingredients, yield factors, and prep costs. Get the real cost per serving automatically calculated."
+        },
+        {
+          "icon": "brain",
+          "title": "AI-Powered Cost Analysis",
+          "description": "Paste a recipe or describe a dish and let AI build the cost breakdown, suggest yield corrections, and flag margin risks."
+        },
+        {
+          "icon": "target",
+          "title": "Menu Engineering That Pays Off",
+          "description": "Calculate food cost percentage, get suggested selling prices, and classify every dish in your BC matrix stars, puzzles, plowhorses, or dogs."
+        },
+        {
+          "icon": "shield",
+          "title": "Scale Without Surprises",
+          "description": "From 4 to 400 portions in one click. Quantities, costs, and yield factors scale automatically so every batch is consistent and profitable."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "step1": {
+        "title": "Add Your Ingredients",
+        "description": "Enter your ingredients with purchase quantities, unit costs, and yield correction factors for a complete cost picture."
+      },
+      "step2": {
+        "title": "AI Builds Your Recipe Sheet",
+        "description": "Let AI analyse your recipe, apply yield factors, and calculate the true cost per serving automatically."
+      },
+      "step3": {
+        "title": "Get Your Food Cost %",
+        "description": "See your food cost percentage, suggested selling price, and where the recipe sits in your menu matrix."
+      },
+      "step4": {
+        "title": "Track, Scale, and Optimise",
+        "description": "Monitor ingredient price changes, scale recipes for any batch size, and keep your margins under control."
+      }
+    },
+    "demo": {
+      "title": "Kitchen Intelligence Suite",
+      "subtitle": "From recipe creation to menu engineering: everything a professional kitchen needs to run profitably.",
+      "features": [
+        {
+          "title": "AI Recipe Cost Analysis",
+          "description": "Describe your dish and our AI builds a full cost breakdown with yield-corrected quantities and ingredient prices."
+        },
+        {
+          "title": "Food Cost Score",
+          "description": "Each dish receives a food cost percentage and a suggested selling price based on your target margin."
+        },
+        {
+          "title": "Batch Scaling",
+          "description": "Scale any recipe up or down instantly — quantities, costs, and yield factors all adjust automatically."
+        },
+        {
+          "title": "Menu Matrix",
+          "description": "Instantly see which dishes earn you the most and which are dragging margin so every menu decision is backed by data."
+        }
+      ],
+      "cta": "Start Optimising My Kitchen",
+      "videoPlaceholder": "Demo video coming soon",
+      "stats": [
+        {
+          "number": "30%",
+          "label": "Average Food Cost Reduction",
+          "color": "text-green-400"
+        },
+        {
+          "number": "2×",
+          "label": "Faster Recipe Costing",
+          "color": "text-lime-400"
+        },
+        {
+          "number": "95%",
+          "label": "Cost Calculation Accuracy",
+          "color": "text-amber-400"
+        }
+      ]
+    },
+    "socialProof": {
+      "title": "Built for Professional Kitchens",
+      "stats": [
+        {
+          "number": "500+",
+          "label": "Recipes Costed",
+          "color": "text-yellow-400"
+        },
+        {
+          "number": "50+",
+          "label": "Restaurants",
+          "color": "text-green-400"
+        },
+        {
+          "number": "28%",
+          "label": "Avg Margin Gain",
+          "color": "text-lime-400"
+        },
+        {
+          "number": "4.9/5",
+          "label": "Chef Satisfaction",
+          "color": "text-orange-400"
+        }
+      ]
+    },
+    "resultsTestimonials": {
+      "title": "Results that speak for themselves",
+      "subtitle": "Real chefs and restaurateurs using Tech Cuisine to take control of their kitchen economics.",
+      "metrics": [
+        {
+          "number": "500+",
+          "label": "Recipes Costed"
+        },
+        {
+          "number": "28%",
+          "label": "Avg Food Cost Reduction"
+        },
+        {
+          "number": "24/7",
+          "label": "AI Analysis"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "I finally know what every dish on my menu actually costs. Tech Cuisine caught three recipes where we were basically giving food away and we repriced and margin jumped overnight.",
+          "authorName": "Sofia Marques",
+          "authorRole": "Executive Chef, Lisbon",
+          "resultValue": "32%",
+          "resultLabel": "Food Cost Reduction"
+        },
+        {
+          "quote": "Scaling a 4-portion recipe to 200 used to mean an hour of spreadsheet work and usually a mistake. Now it takes 30 seconds and the numbers are always right.",
+          "authorName": "Markus Bauer",
+          "authorRole": "Catering Operations Manager",
+          "resultValue": "3×",
+          "resultLabel": "Faster Batch Scaling"
+        },
+        {
+          "quote": "The menu matrix showed us our signature dish was a 'dog' loved by few, poor margin. We reworked the recipe and repositioned it. Best move we made this year.",
+          "authorName": "Claire Dubois",
+          "authorRole": "Restaurant Owner, Paris",
+          "resultValue": "45%",
+          "resultLabel": "Margin Increase on Key Dishes"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions about Tech Cuisine",
+      "subtitle": "Quick answers about cost control, AI analysis, and how the platform works for professional kitchens.",
+      "items": [
+        {
+          "question": "Does Tech Cuisine offer a free trial?",
+          "answer": "Yes. You start with 7 free uses to test recipe costing and analysis in practice."
+        },
+        {
+          "question": "What is a technical recipe sheet?",
+          "answer": "A technical sheet (ficha técnica) is the professional standard for documenting a recipe: ingredients, purchase quantities, yield correction factors, unit costs, and the calculated cost per serving. Tech Cuisine builds and maintains these automatically."
+        },
+        {
+          "question": "What is a yield correction factor and why does it matter?",
+          "answer": "When you buy 1 kg of a vegetable, you rarely use all of it — cleaning, trimming, and cooking create losses. The yield factor accounts for this: if an onion has a 0.8 yield, you only get 800 g of usable product from 1 kg purchased. Without this correction, your cost per serving is always understated."
+        },
+        {
+          "question": "How does Tech Cuisine calculate food cost percentage?",
+          "answer": "Food Cost % = (Total Recipe Cost ÷ Selling Price) × 100. Tech Cuisine calculates your recipe cost per serving (with yield corrections applied), and lets you set your target margin to see what the selling price should be."
+        },
+        {
+          "question": "What is the menu matrix (BC matrix)?",
+          "answer": "The BC matrix classifies each dish by two dimensions: popularity and profitability. Stars have both. Plowhorses are popular but low margin. Puzzles are profitable but rarely ordered. Dogs have low demand and low margin. Knowing where each dish sits tells you where to focus your menu engineering."
+        },
+        {
+          "question": "Can Tech Cuisine scale a recipe automatically?",
+          "answer": "Yes. Enter the base yield (e.g. 4 portions) and the target yield (e.g. 80 portions) and every ingredient quantity, yield-corrected amount, and cost updates instantly."
+        },
+        {
+          "question": "Does the AI understand culinary terminology?",
+          "answer": "Yes. The AI is trained to understand professional kitchen language: preparation methods, yield factors, ingredient synonyms, and standard units across different culinary traditions."
+        },
+        {
+          "question": "Can I track supplier prices over time?",
+          "answer": "Price tracking and supplier management are features currently in development. The platform is built to support this from day one — early users will get access first."
+        },
+        {
+          "question": "Which languages does the platform support?",
+          "answer": "Tech Cuisine is available in English and Portuguese."
+        },
+        {
+          "question": "Does it work on mobile?",
+          "answer": "Yes. The interface is optimised for mobile browsers so you can cost recipes, check margins, and review your menu from anywhere — including the kitchen pass."
+        },
+        {
+          "question": "What types of businesses benefit most?",
+          "answer": "Any food operation that needs to control cost: fine dining restaurants, casual dining, catering companies, hotel kitchens, ghost kitchens, and culinary schools. If you have a menu and a food cost problem, Tech Cuisine is built for you."
+        },
+        {
+          "question": "How much does it cost?",
+          "answer": "The price is not yet defined. The free tier includes 7 free uses to test recipe costing and analysis in practice."
+        },
+        {
+          "question": "What data do you store?",
+          "answer": "Only what is needed to run the platform: your account information, recipe sheets, ingredient data, and usage history. We do not sell your data or share it with third parties."
+        },
+        {
+          "question": "Is Tech Cuisine only for Michelin-level restaurants?",
+          "answer": "Not at all. The principles of food cost control apply to every professional kitchen — from a neighbourhood bistro to a stadium concession. The tools are designed to be practical for any kitchen managing real costs."
+        }
+      ]
+    },
+    "footer": {
+      "description": "For kitchens that refuse to lose money on good food. Precision costing, menu engineering, and AI analysis in one place.",
+      "company": "Company",
+      "about": "About",
+      "resources": "Resources",
+      "compareTools": "Compare tools",
+      "information": "Information",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "copyright": "Tech Cuisine. All rights reserved.",
+      "location": "Lisbon, Portugal",
+      "legal": "Legal",
+      "cookies": "Cookies"
+    },
+    "compareTeaser": {
+      "heading": "How does Tech Cuisine compare?",
+      "body": "Spreadsheets, paper forms, generic tools — great for other tasks, limited for kitchen cost control. See what Tech Cuisine brings specifically to recipe costing and menu engineering.",
+      "cta": "See the comparison"
+    },
+    "aiToolkit": {
+      "title": "Your AI-powered kitchen toolkit",
+      "description": "From the first recipe to a full menu strategy: four tools that give your kitchen financial clarity at every stage.",
+      "items": {
+        "recipeBreakdown": {
+          "title": "Instant recipe cost breakdown",
+          "description": "Paste a recipe or describe a dish in plain language and get a full cost breakdown with yield-corrected quantities and ingredient prices in seconds."
+        },
+        "sellingPrice": {
+          "title": "Suggested selling price",
+          "description": "Set your target food cost percentage and get an AI-suggested selling price for each dish anchored to real cost data, not gut feeling."
+        },
+        "foodCostCheck": {
+          "title": "Food cost % checker",
+          "description": "See instantly how your recipe's cost compares to your target margin: where you are, what to cut, and how small changes in yield or sourcing shift the numbers."
+        },
+        "menuMatrix": {
+          "title": "Menu matrix analysis",
+          "description": "Understand which dishes drive profit and which drag it down specific data on popularity vs margin so every menu decision is backed by numbers."
+        }
+      }
+    }
+  },
+  "ComparePage": {
+    "metadata": {
+      "title": "Tech Cuisine vs recipe apps, spreadsheets and ERPs — real recipe costing and menu engineering for Portugal",
+      "description": "Compare Tech Cuisine with recipe apps, spreadsheets and generic management suites. See how real-cost recipe sheets, supplier price tracking and AI-powered menu engineering make the difference for professional kitchens in Portugal."
+    },
+    "h1": "Tech Cuisine and other kitchen tools — what's actually different?",
+    "lead": "There are recipe apps. There is Excel. There are systems built for other markets. Tech Cuisine was built from the ground up for the professional Portuguese kitchen: shaped by the feedback of a renowned pastry chef and the demands of people who live behind the stove.",
+    "origin": {
+      "title": "Born inside a real kitchen",
+      "paragraphs": [
+        "This was not a whiteboard idea. Tech Cuisine was built with direct feedback from a renowned pastry chef in Portugal — someone who knows the difference between gross and net yield, understands what it means when butter prices jump without warning, and knows that a costing error is not a slip, it is a bill that does not balance.",
+        "What shaped the product was reality: recipe sheets that calculate the true cost per portion, ingredients with yield factors, scaling without recalculating from memory, and a menu view that shows where the profit actually is before it is too late."
+      ]
+    },
+    "cardsSectionAria": "Tool comparisons",
+    "recipeApps": {
+      "title": "Recipe apps",
+      "context": "Recipe apps handle the creative side well: inspiration, discovery, organizing preparations. They are the ideal starting point for home cooks or anyone exploring techniques.",
+      "focus": "Tech Cuisine operates at a different layer: operations and financial viability. It calculates the real cost per portion with yield factors (what you buy vs what you actually use), scales recipes without losing precision, and ranks each dish by real margin — not just apparent popularity."
+    },
+    "spreadsheets": {
+      "title": "Excel and spreadsheets",
+      "context": "Spreadsheets are powerful and flexible. Many kitchens rely on them for years because they work, they are free, and anyone can open a file.",
+      "focus": "The issue is not Excel — it is what Excel cannot calculate automatically: net ingredient yield, supplier price history, Food Cost Percentage per dish, and alerts when margins fall below sustainable levels. Tech Cuisine does all of this in real time, without manual macros."
+    },
+    "genericStack": {
+      "title": "ERPs and global management suites",
+      "context": "There are robust management systems built for large-scale operations with multiple warehouses, franchises, and diversified markets. Serious tools for serious scale.",
+      "focus": "They were built for a different reality. Tech Cuisine was designed specifically for the suppliers, prices, and market dynamics of Portugal: seasonal, local, with raw materials that shift in price every week. No adapters, no forty-hour setup, no support team that does not know what a quenelle is."
+    },
+    "cta": {
+      "text": "Try Tech Cuisine",
+      "href": "/auth/register"
+    },
+    "faq": {
+      "title": "Questions from people who work in a kitchen",
+      "items": [
+        {
+          "question": "Isn't this just another recipe app with nice photos?",
+          "answer": "No. Tech Cuisine was not built for inspiration — it was built for operations. The difference is in the recipe sheet with real cost per portion, yield factors per ingredient (what you buy vs what you actually use), precise scaling, and menu engineering with Food Cost Percentage. It is for people who need the numbers to work, not for those who want to save recipes."
+        },
+        {
+          "question": "I have used Excel for years. Why would I switch?",
+          "answer": "Excel does what you tell it to — but it does not know that 1 kg of cauliflower yields 600 g of florets. It does not update when a supplier changes their price list. It does not automatically calculate the FCP for each dish or warn you when margins are at risk. Tech Cuisine does not replace your logic; it replaces the repetitive manual work that takes time away from the kitchen."
+        },
+        {
+          "question": "Supplier prices in Portugal change constantly. How does Tech Cuisine handle that?",
+          "answer": "That is exactly what it was designed for. The price history per ingredient lets you track variation over time, anticipate increases, and make decisions before margins are compromised. When the cost of an ingredient rises, the impact on each dish and on the menu is calculated automatically."
+        },
+        {
+          "question": "What type of kitchen is Tech Cuisine for?",
+          "answer": "For professional kitchens in Portugal that need real control: restaurants, pastry shops, catering operations, dark kitchens. Any operation where ingredient prices matter, recipes need to scale precisely, and the menu must be profitable — not just well-presented."
+        }
+      ]
+    }
+  },
+  "AboutPage": {
+    "metadata": {
+      "title": "How Tech Cuisine came to be — a pastry chef, real costs and the kitchen that deserves serious tools",
+      "description": "The story behind Tech Cuisine: recipe costing, ingredient prices, recipe scaling and purposeful AI — built from the feedback of a renowned pastry chef in Portugal."
+    },
+    "h1": "Built from a real kitchen",
+    "lead": "This is not another recipe app with pretty photos. It is a tool made for people who live behind the stove — where ingredient prices shift every week and a costing mistake can close a kitchen.",
+    "sections": [
+      {
+        "title": "The pressure that never reaches the plate",
+        "paragraphs": [
+          "Shifts that start before dawn and end past midnight. Raw materials that jump in price without warning. Recipes scaled from memory at three in the afternoon with forty covers incoming. Waste that translates directly into lost margin.",
+          "Professional kitchens are among the most demanding environments in the world — and most of them are still managed with spreadsheets that do not know the difference between gross yield and net yield."
+        ]
+      },
+      {
+        "title": "The wrong tools are not on your level",
+        "paragraphs": [
+          "There are recipe apps. There are generic spreadsheets. There are systems designed for markets with different scales and different currencies.",
+          "What is missing in Portugal — and in many markets — is something that speaks the real language of the kitchen: correction factors, cost per portion, supplier price history, one-click scalability. Not tricks. Not pretty dashboards that do not understand what a duck stock or a scallop yield actually means."
+        ]
+      },
+      {
+        "title": "Born from clear eyes",
+        "paragraphs": [
+          "Tech Cuisine was built from a very concrete vision: that of a leading pastry chef in Portugal who, over many years, watched the same problem repeat itself. Exceptional recipes, boundless creativity — and cost management that fell behind because the available tools were not made for this industry.",
+          "That perspective shaped every product decision: what gets tracked, what gets calculated, what gets automated, and what stays in the hands of the professional."
+        ]
+      },
+      {
+        "title": "You are the hero of your kitchen",
+        "paragraphs": [
+          "Tech Cuisine does not come to replace your instinct or your technique. It comes to handle what consumes time without creating value: calculating, converting, scaling, comparing prices, suggesting margins.",
+          "The challenge of running a viable kitchen is not just having a great recipe — it is knowing what it costs, what it yields, what you can charge, and what needs to change when the price of beef tenderloin rises 20%. Technology with purpose frees you for what only you can do."
+        ]
+      },
+      {
+        "title": "Value first. Invitation second.",
+        "paragraphs": [
+          "Before asking anything of you, we want Tech Cuisine to give you something: clarity. A chef's or pastry chef's time is too scarce to waste on vague promises.",
+          "Try it. Log a recipe cost sheet. See what the real cost of a dish says about the price you charge. Only after you feel the value does it make sense to stay — and we hope you will."
+        ]
+      },
+      {
+        "title": "What guides us",
+        "paragraphs": [
+          "We believe an honest tool answers the hard questions before they are asked — including \"is this actually worth it?\".",
+          "We believe the most effective message is the clearest, not the most elaborate — and that technology should serve a purpose, not impress.",
+          "We believe the strongest communities form around shared purpose: building kitchens that are better, more profitable, and more free."
+        ]
+      }
+    ],
+    "cta": {
+      "text": "Create a Tech Cuisine account",
+      "href": "/auth/register"
+    }
+  },
+  "dashboard": {
+    "sections": {
+      "dashboard": {
+        "title": "Dashboard",
+        "description": "Welcome to your control panel"
+      },
+      "recipes": {
+        "title": "My Recipes",
+        "description": "Manage your culinary recipes"
+      },
+      "profile": {
+        "title": "My Profile",
+        "description": "Manage your personal information"
+      },
+      "settings": {
+        "title": "Settings",
+        "description": "Customize your settings"
+      },
+      "plans": {
+        "title": "My Plans",
+        "description": "Manage your subscription and resources"
+      },
+      "admin": {
+        "title": "Admin",
+        "description": "Manage users and platform data"
+      },
+      "premiumAlert": {
+        "title": "Premium Subscription Activated!",
+        "description": "Your premium subscription has been successfully activated. You now have access to all premium platform features."
+      },
+      "ingredients": {
+        "title": "Ingredients",
+        "description": "Manage your ingredients"
+      },
+      "plates": {
+        "title": "Plates",
+        "description": "Manage your menu plates"
+      },
+      "suppliers": {
+        "title": "Suppliers",
+        "description": "Manage your suppliers"
+      },
+      "sales-records": {
+        "title": "Sales Records",
+        "description": "View all recorded sales"
+      },
+      "price-observations": {
+        "title": "Price Tracking",
+        "description": "Monitor ingredient price history"
+      },
+      "reports": {
+        "title": "Reports",
+        "description": "Executive summary of your metrics"
+      }
+    },
+    "cards": {
+      "recipes": {
+        "title": "My Recipes",
+        "description": "View and manage all your culinary recipes."
+      },
+      "profile": {
+        "title": "My Profile",
+        "description": "Manage your personal information, professional experience and contact details."
+      },
+      "settings": {
+        "title": "Settings",
+        "description": "Customize your preferences, notifications and account settings."
+      },
+      "plans": {
+        "title": "My Current Plans",
+        "description": "View your current plan, available resources and upgrade options."
+      },
+      "admin": {
+        "title": "Admin",
+        "description": "Manage users and platform statistics."
+      },
+      "ingredients": {
+        "title": "Ingredients",
+        "description": "Manage ingredients, purchase units and categories."
+      },
+      "suppliers": {
+        "title": "Suppliers",
+        "description": "Manage suppliers, contacts and types."
+      },
+      "sales-records": {
+        "title": "Sales Records",
+        "description": "Record and track every sale across your plates."
+      },
+      "price-observations": {
+        "title": "Price Tracking",
+        "description": "Record ingredient prices and find the best deals by supplier."
+      },
+      "reports": {
+        "title": "Reports",
+        "description": "Export your executive summary as PDF."
+      }
+    },
+    "admin": {
+      "title": "Admin",
+      "stats": "Statistics",
+      "usersCount": "Users",
+      "users": "Users",
+      "userDetail": "User details",
+      "toggleAdmin": "Toggle admin",
+      "accessDenied": "You do not have permission to access this section.",
+      "name": "Name",
+      "email": "Email",
+      "admin": "Admin",
+      "createdAt": "Created",
+      "updatedAt": "Updated",
+      "actions": "Actions",
+      "details": "Details",
+      "loading": "Loading...",
+      "error": "Error loading data",
+      "nextPage": "Next",
+      "prevPage": "Previous",
+      "id": "ID",
+      "pageLabel": "Page {page}",
+      "analytics": "Analytics",
+      "employment": "Employment",
+      "employed": "Employed",
+      "notEmployed": "Not employed",
+      "roles": "Roles",
+      "userRole": "User",
+      "businessRole": "Business",
+      "topCountries": "Top countries",
+      "topStates": "Top states",
+      "subscriptions": "Subscriptions",
+      "unknown": "Unknown",
+      "ingredientsCount": "Ingredients",
+      "recipesCount": "Recipes",
+      "platesCount": "Plates",
+      "suppliersCount": "Suppliers",
+      "salesRecordsCount": "Sales Records",
+      "totalSales": "Total Sales",
+      "totalRecipeCost": "Total Recipe Cost",
+      "platformReportTitle": "Platform Report",
+      "exportPdf": "Export PDF",
+      "exportingPdf": "Exporting..."
+    },
+    "reports": {
+      "title": "Reports",
+      "subtitle": "Your executive summary",
+      "downloadPdf": "Download PDF",
+      "downloading": "Generating PDF...",
+      "error": "Error loading report",
+      "generatedAt": "Generated at",
+      "kpis": {
+        "ingredients": "Ingredients",
+        "recipes": "Recipes",
+        "plates": "Plates",
+        "suppliers": "Suppliers",
+        "salesRecords": "Sales Records",
+        "totalSales": "Total Sales",
+        "totalRecipeCost": "Total Recipe Cost",
+        "users": "Users",
+        "countsSection": "Counts",
+        "financialsSection": "Financials"
+      },
+      "pdf": {
+        "title": "User Report",
+        "subtitle": "Tech Cuisine — Executive Summary"
+      }
+    }
+  },
+  "sidebar": {
+    "menuItems": {
+      "dashboard": {
+        "label": "Dashboard",
+        "description": "Overview"
+      },
+      "recipes": {
+        "label": "My Recipes",
+        "description": "Culinary recipes"
+      },
+      "profile": {
+        "label": "My Profile",
+        "description": "Personal information"
+      },
+      "settings": {
+        "label": "Settings",
+        "description": "Preferences"
+      },
+      "plans": {
+        "label": "My Plans",
+        "description": "Current subscription"
+      },
+      "admin": {
+        "label": "Admin",
+        "description": "Admin management"
+      },
+      "ingredients": {
+        "label": "Ingredients",
+        "description": "Manage ingredients"
+      },
+      "plates": {
+        "label": "Plates",
+        "description": "Menu plates"
+      },
+      "suppliers": {
+        "label": "Suppliers",
+        "description": "Manage suppliers"
+      },
+      "sales-records": {
+        "label": "Sales records",
+        "description": "Track sales and revenue"
+      },
+      "price-observations": {
+        "label": "Price tracking",
+        "description": "Compare ingredient prices"
+      }
+    },
+    "user": {
+      "defaultName": "User",
+      "defaultEmail": "user@example.com"
+    },
+    "logout": "Logout",
+    "brand": {
+      "name": "Tech Cuisine",
+      "tagline": "Powered by Tech Cuisine"
+    }
+  },
+  "plans": {
+    "common": {
+      "period": "per month"
+    },
+    "header": {
+      "title": "My Subscription",
+      "subtitle": "Manage your Tech Cuisine subscription",
+      "backButton": "Back to Dashboard"
+    },
+    "currentPlan": {
+      "title": "Current Plan",
+      "subtitle": "Your current subscription plan",
+      "nextBilling": "Next billing",
+      "periodStart": "Period start",
+      "periodEnd": "Period end",
+      "status": "Status",
+      "active": "Active",
+      "purchase": "Purchase Plan",
+      "manageSubscription": "Manage Subscription"
+    },
+    "availablePlans": {
+      "title": "Subscription",
+      "popular": "Popular",
+      "current": "Current",
+      "choosePlan": "Subscribe"
+    },
+    "checkoutError": "Unable to start checkout. Please try again.",
+    "portalError": "Unable to open billing portal. Please try again.",
+    "loadSubscriptionError": "Failed to load subscription.",
+    "processingPaymentNotice": "We are processing your payment. Your new plan will be updated very soon.",
+    "subscriptionExpiredNotice": "Your subscription has expired. Renew your plan to continue accessing premium features.",
+    "comingSoon": "Subscription plans will be available in a future update.",
+    "usage": {
+      "title": "Plan Usage",
+      "subtitle": "Usage statistics for your current plan",
+      "recipesUsed": "Recipes Created",
+      "daysRemaining": "Days Remaining"
+    },
+    "plans": {
+      "free": {
+        "name": "Free",
+        "features": [
+          "Up to 3 recipes",
+          "AI Quota: 10 requests per month",
+          "PDF export",
+          "Email support"
+        ]
+      },
+      "techCuisine": {
+        "name": "Tech Cuisine",
+        "features": [
+          "Unlimited recipes and ingredients",
+          "AI-powered recipe cost analysis",
+          "Menu engineering matrix",
+          "Batch scaling for any yield",
+          "Ingredient price tracking",
+          "Sales records and reports",
+          "PDF export",
+          "Email support"
+        ]
+      }
+    }
+  },
+  "settings": {
+    "header": {
+      "title": "Settings",
+      "subtitle": "Customize your preferences and settings",
+      "backButton": "Back to Dashboard"
+    },
+    "loading": "Loading settings...",
+    "personalInfo": {
+      "title": "Personal Information",
+      "subtitle": "Manage your personal information",
+      "fields": {
+        "fullName": {
+          "label": "Full Name",
+          "placeholder": "Enter your full name"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Enter your phone number"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter your email"
+        },
+        "country": {
+          "label": "Country",
+          "placeholder": "Enter your country"
+        },
+        "state": {
+          "label": "State/Province",
+          "placeholder": "Enter your state or province"
+        },
+        "city": {
+          "label": "City",
+          "placeholder": "Enter your city"
+        },
+        "age": {
+          "label": "Age",
+          "placeholder": "Enter your age"
+        }
+      },
+      "saveButton": "Save Information"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "subtitle": "Configure your notification preferences",
+      "options": {
+        "newsletter": {
+          "title": "Newsletter",
+          "description": "Receive career tips, reminders and platform updates"
+        },
+        "marketingEmail": {
+          "title": "Marketing Email",
+          "description": "Receive offers and news"
+        },
+        "pushNotifications": {
+          "title": "Push Notifications",
+          "description": "Important browser alerts"
+        },
+        "cvReminders": {
+          "title": "CV Reminders",
+          "description": "Reminders to update your resume"
+        }
+      }
+    },
+    "appearance": {
+      "title": "Appearance",
+      "subtitle": "Customize the interface appearance",
+      "options": {
+        "darkMode": {
+          "title": "Dark Mode",
+          "description": "Enable dark theme"
+        },
+        "language": {
+          "label": "Language",
+          "options": {
+            "pt": "Português",
+            "en": "English",
+            "es": "Español",
+            "fr": "Français",
+            "de": "Deutsch"
+          }
+        }
+      },
+      "saveButton": "Save Changes",
+      "saving": "Saving...",
+      "saveSuccess": "Settings saved successfully!"
+    },
+    "regional": {
+      "title": "Regional",
+      "subtitle": "Configure units, currency and formatting",
+      "options": {
+        "temperatureUnit": {
+          "label": "Temperature Unit",
+          "celsius": "Celsius (°C)",
+          "fahrenheit": "Fahrenheit (°F)"
+        },
+        "currency": {
+          "label": "Currency"
+        },
+        "dateFormat": {
+          "label": "Date Format"
+        },
+        "decimalSeparator": {
+          "label": "Decimal Separator",
+          "comma": "Comma (1.234,56)",
+          "period": "Period (1,234.56)"
+        }
+      }
+    },
+    "privacy": {
+      "title": "Privacy",
+      "subtitle": "Control your privacy and data",
+      "options": {
+        "publicProfile": {
+          "title": "Public Profile",
+          "description": "Make profile publicly visible"
+        },
+        "analytics": {
+          "title": "Analytics",
+          "description": "Share usage data"
+        }
+      },
+      "downloadData": "Download My Data"
+    },
+    "dangerZone": {
+      "title": "Danger Zone",
+      "subtitle": "Irreversible actions that permanently affect your account",
+      "deleteButton": "Delete Account",
+      "discreetTrigger": "Permanently delete my account",
+      "dialog": {
+        "title": "Are you sure you want to delete your account?",
+        "description": "This action is permanent and cannot be undone. All your data and preferences will be permanently removed.",
+        "cancel": "No",
+        "confirm": "Yes, delete account",
+        "deleting": "Deleting..."
+      }
+    }
+  },
+  "profileSection": {
+    "header": {
+      "title": "My Profile",
+      "subtitle": "Manage your personal information",
+      "backButton": "Back to Dashboard"
+    },
+    "loading": "Loading profile...",
+    "saving": "Saving...",
+    "saveSuccess": "Data saved successfully!",
+    "photo": {
+      "title": "Profile Photo",
+      "changePhoto": "Change Photo"
+    },
+    "accountInfo": {
+      "title": "Account",
+      "subtitle": "Your login credentials",
+      "username": "Username",
+      "email": "Email"
+    },
+    "personalInfo": {
+      "title": "Culinary Profile",
+      "subtitle": "Your professional culinary information",
+      "fullName": "Full Name",
+      "bio": "Bio",
+      "bioPlaceholder": "Tell us about yourself...",
+      "profession": "Profession",
+      "nationality": "Nationality",
+      "nationalityPlaceholder": "Select nationality",
+      "nationalityOther": "Other",
+      "yearsOfExperience": "Years of Experience",
+      "culinarySpecialties": "Culinary Specialties",
+      "culinarySpecialtiesPlaceholder": "e.g. Pasta, Sushi, Pastry",
+      "kitchenRole": "Kitchen Role",
+      "establishmentType": "Establishment Type"
+    },
+    "professionalInfo": {
+      "title": "Work Situation",
+      "subtitle": "Details about your current situation",
+      "gender": "Gender",
+      "gender_male": "Male",
+      "gender_female": "Female",
+      "gender_other": "Other",
+      "gender_prefer_not_to_say": "Prefer not to say",
+      "employmentStatus": "Employment Status",
+      "employed": "Employed",
+      "unemployed": "Unemployed",
+      "currentSalary": "Current Salary",
+      "salaryPlaceholder": "Ex: 3000€",
+      "careerMigration": "Career Migration",
+      "careerMigrationText": "Yes, I'm migrating careers",
+      "saveChanges": "Save Changes"
+    }
+  },
+  "recipeManagement": {
+    "title": "My Recipes",
+    "subtitle": "View and manage all your culinary recipes",
+    "backToDashboard": "Back to Dashboard",
+    "filters": {
+      "all": "All",
+      "pending": "Pending",
+      "completed": "Completed",
+      "canceled": "Canceled"
+    },
+    "status": {
+      "pending": "Pending",
+      "completed": "Completed",
+      "canceled": "Canceled"
+    },
+    "actions": {
+      "view": "View Details"
+    },
+    "portions": "{count} portions",
+    "costPerPortion": "{cost} / portion",
+    "emptyState": {
+      "title": "No recipes found",
+      "action": "View all recipes"
+    },
+    "errorState": {
+      "title": "Error loading recipes",
+      "retry": "Try again"
+    },
+    "loadMore": "Load more",
+    "detail": {
+      "status": "Status",
+      "portions": "Reference portions",
+      "costPerPortion": "Cost per portion",
+      "totalCost": "Total cost",
+      "chefNotes": "Chef notes",
+      "close": "Close"
+    }
+  },
+  "cookie": {
+    "banner": {
+      "title": "We use cookies to improve your experience",
+      "description": "We use cookies and similar technologies to help personalize content, provide and improve our services, and analyze traffic. By clicking \"Accept All\", you consent to the use of cookies for all purposes. You can customize your preferences in our cookie settings.",
+      "necessary": "Necessary cookies",
+      "analytics": "Analytics cookies",
+      "marketing": "Marketing cookies",
+      "settings": "Settings",
+      "acceptAll": "Accept All"
+    },
+    "settings": {
+      "title": "Cookie Settings",
+      "description": "Manage your cookie preferences to control how we use your data",
+      "necessary": {
+        "title": "Necessary Cookies",
+        "status": "Always Active",
+        "description": "These cookies are essential for the proper functioning of the site. They cannot be disabled."
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "status": "Always Active",
+        "description": "These cookies help us understand how visitors interact with our site by collecting and reporting information anonymously."
+      },
+      "marketing": {
+        "title": "Marketing Cookies",
+        "status": "Always Active",
+        "description": "These cookies are used to track visitors across websites to display relevant and engaging advertisements."
+      },
+      "functional": {
+        "title": "Functional Cookies",
+        "status": "Always Active",
+        "description": "These cookies enable enhanced functionality and personalization, such as remembering your preferences."
+      },
+      "privacy": {
+        "title": "Your Privacy Matters",
+        "description": "We respect your privacy and are committed to protecting your personal data. You can change these settings at any time. For more information, please read our Privacy Policy and Terms of Use."
+      },
+      "rejectAll": "Reject All",
+      "savePreferences": "Save Preferences"
+    }
+  },
+  "termsOfUse": {
+    "title": "Terms of Service",
+    "effectiveDate": "Effective Date",
+    "effectiveDateValue": "May 4, 2026",
+    "lastUpdate": "Last Update",
+    "lastUpdateValue": "May 4, 2026",
+    "close": "Close",
+    "section1": {
+      "title": "1. Service Provider Information and Service Overview",
+      "subsection1": {
+        "title": "1.1. Provider Information",
+        "content": "The Service is provided by Daniel Fonseca da Silva, an independent worker in Portugal. For questions related to these Terms, please contact us at contact@techcuisine.com."
+      },
+      "subsection2": {
+        "title": "1.2. Service Description",
+        "content": "Tech Cuisine is a SaaS kitchen cost management platform providing technical recipe sheets, yield calculations, food cost analysis, menu engineering, and waste tracking. The Service allows management of ingredients, suppliers, prices, and recipes in an integrated environment, with financial reporting and kitchen operations analytics.",
+        "aiDisclosure": "AI Processing Disclosure: Our Service uses artificial intelligence systems, including Claude AI and ChatGPT, to analyze recipes, calculate costs, suggest pricing, and provide kitchen operational recommendations. AI processing supports menu engineering and food cost optimization decisions based on data entered by the user. Users are informed that certain features use algorithmic analysis to generate suggestions — these do not replace the professional judgment of the operator."
+      }
+    },
+    "section2": {
+      "title": "2. Acceptance and Modification of Terms",
+      "content": "By accessing or using our Service, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. These Terms constitute a legally binding agreement between you and the Service Provider under the laws of the Portuguese Republic and applicable European Union Regulations, including, but not limited to, GDPR. We reserve the right to modify these Terms at any time. Changes will be published on our website with an updated effective date. Continued use of the Service after changes constitutes acceptance of the modified Terms. Your electronic acceptance of these Terms creates a valid and enforceable contract in accordance with Portuguese law and European Union electronic contract formation requirements, including the eIDAS Regulation (Regulation (EU) No. 910/2014)."
+    },
+    "section3": {
+      "title": "3. User Eligibility and Account Registration",
+      "subsection1": {
+        "title": "3.1. Age Eligibility",
+        "content": "Our Service is available to all users on the planet. However, for users in the European Union, the user must be of the minimum legal age to enter into binding contracts (generally 18 years, or the age determined by Portuguese law or the law of the consumer's country of residence, if applicable), and comply with the Terms registered here and local laws governing their use of communication platforms and automated services."
+      },
+      "subsection2": {
+        "title": "3.2. Account Registration",
+        "content": "To use the Service, users must create an account by providing accurate and up-to-date information. Users are responsible for maintaining the confidentiality of their access credentials and for all activities that occur under their account."
+      }
+    },
+    "section4": {
+      "title": "4. Acceptable Use of the Service",
+      "subsection1": {
+        "title": "4.1",
+        "content": "Users agree to use the Service only for lawful purposes and in accordance with these Terms. It is prohibited to use the Service for any illegal, fraudulent activity or that violates the rights of third parties."
+      },
+      "subsection2": {
+        "title": "4.2",
+        "content": "Users may not attempt to access unauthorized areas of the Service, interfere with the operation of the Service, or use any automated method to access the Service without prior authorization."
+      }
+    },
+    "section5": {
+      "title": "5. Subscription System and Tokens",
+      "intro": "We offer services through purchases based on subscription plans. Users can subscribe to plans for continuous access.",
+      "subsection1": {
+        "title": "5.1. Payment Processing",
+        "content": "All payments are processed securely through Stripe, a third-party payment processor. When making purchases, you agree to comply with Stripe's Terms of Service and acknowledge that your payment information will be processed in accordance with their security standards and our Privacy Policy."
+      },
+      "subsection2": {
+        "title": "5.2. European Right of Withdrawal (Right of Withdrawal)",
+        "content": "Standard Right: European residents (including in Portugal) acting as consumers have the right to withdraw (cancel) any online purchase within 14 days from the date of conclusion of the subscription contract, and receive a full refund, under the terms of Directive 2011/83/EU on Consumer Rights. Exception for Digital Services: The user acknowledges and accepts that they lose their 14-day withdrawal right if the provision of the service (immediate platform access and processing of recipe and account data) is started immediately after purchase with their express consent and acknowledgment that, by doing so, they lose the right of withdrawal. If the Service is fully executed at the user's request during the 14-day period, the right of withdrawal also ceases."
+      },
+      "subsection3": {
+        "title": "5.3. Billing and Subscription Cancellation",
+        "content": "Subscriptions are automatically renewed at the end of each billing period. We will provide at least 30 days' notice for subscription price increases. Users can cancel subscriptions at any time through account settings or by contacting support. Cancellation will take effect at the end of the current billing period."
+      }
+    },
+    "section6": {
+      "title": "6. Intellectual Property Rights",
+      "subsection1": {
+        "title": "6.1. Provider Property",
+        "content": "The Service, including software, algorithms, trademarks, and content (excluding user data and publicly available domain information), is the property of the Service Provider and protected under Portuguese and international intellectual property laws."
+      },
+      "subsection2": {
+        "title": "6.2. Limited License to User",
+        "content": "We grant users a limited, non-exclusive, and non-transferable license to access and use the Service strictly for professional purposes of kitchen cost management and menu engineering, during the term of their subscription."
+      },
+      "subsection3": {
+        "title": "6.3. Third-Party Information and Data Ownership",
+        "content": "Recipes, ingredients, supplier data, prices, and kitchen operations entered by users are handled in accordance with the Privacy Policy. The Service may use publicly available domain-relevant information (e.g. ingredient market prices) to enrich analyses, without claiming ownership of such information. Users retain full ownership of any data and content they provide to the Service. By using the Service, users grant the Provider a worldwide, non-exclusive, royalty-free, sublicensable, and transferable license to process, format, store, and display their information only to the extent necessary for Service delivery."
+      }
+    },
+    "section7": {
+      "title": "7. Data Protection and Privacy",
+      "subsection1": {
+        "title": "7.1",
+        "content": "The processing of users' personal data is governed by our Privacy Policy, which complies with the European Union's General Data Protection Regulation (GDPR) and Portuguese data protection laws."
+      },
+      "subsection2": {
+        "title": "7.2",
+        "content": "Users have the right to access, rectify, delete, limit processing, data portability, and object to the processing of their personal data, as provided for in the GDPR."
+      }
+    },
+    "section8": {
+      "title": "8. Cookies and Similar Technologies",
+      "subsection1": {
+        "title": "8.1",
+        "content": "The Service uses cookies and similar technologies in compliance with the ePrivacy Directive (2002/58/EC) and GDPR. For more information about cookie use, please see our Privacy Policy."
+      },
+      "subsection2": {
+        "title": "8.2",
+        "content": "Users can manage their cookie preferences through browser settings or our website's cookie settings."
+      }
+    },
+    "section9": {
+      "title": "9. Legal Compliance and Privacy Policy",
+      "content": "For the global operation of the Service, users' personal data may be transferred to countries outside the European Economic Area (EEA), including the USA and United Kingdom. Any international transfers are subject to appropriate safeguards, in accordance with Article 46 of the GDPR, and will be protected through the implementation of Standard Contractual Clauses (SCCs) approved by the European Commission, or other valid transfer mechanisms, ensuring that data maintains a level of protection essentially equivalent to that guaranteed by the GDPR."
+    },
+    "section10": {
+      "title": "10. Indemnification",
+      "subsection1": {
+        "title": "10.1",
+        "content": "Users agree to indemnify, defend, and hold harmless the Service Provider from any claims, damages, losses, liabilities, and expenses (including attorney's fees) arising from the user's use of the Service, violation of these Terms, or violation of any third-party rights."
+      }
+    },
+    "section11": {
+      "title": "11. Limitation of Liability and Warranty Exclusions",
+      "subsection1": {
+        "title": "11.1. Warranty Disclaimer (\"As Is\")",
+        "content": "The Service is provided \"as is\" and \"as available\" without warranties of any kind, express or implied, including, but not limited to warranties of accuracy, reliability, fitness for a particular purpose, or non-infringement. Cost calculations, ingredient market prices, and AI-generated recommendations depend on data entered by the user and third-party information, and may contain inaccuracies. Users should independently verify all calculations and recommendations before making financial or operational decisions. We are not responsible for decisions made based on Service data."
+      },
+      "subsection2": {
+        "title": "11.2. Limitation of Liability",
+        "content": "To the maximum extent permitted by applicable law, the total liability of the Service Provider for all claims related to the Service shall not exceed the amounts paid by the user in the 12 months prior to the claim. This limitation applies regardless of the legal theory on which the claim is based."
+      },
+      "subsection3": {
+        "title": "11.3. Exclusion of Indirect Damages",
+        "content": "We will not be liable for indirect, incidental, special, consequential, or punitive damages, including, but not limited to lost profits, business interruption, or loss of business opportunities, unless such damages result from intentional misconduct or gross negligence on our part."
+      },
+      "subsection4": {
+        "title": "11.4. Non-Excludable Liability (EU/Portugal Law Compliance)",
+        "content": "Nothing in these Terms limits or excludes our liability for: Death or Personal Injury resulting from our negligence; Fraud or fraudulent misrepresentation; or Any other liability that cannot be limited or excluded under the laws of the Portuguese Republic or applicable European Union laws."
+      }
+    },
+    "section12": {
+      "title": "12. Termination",
+      "subsection1": {
+        "title": "12.1",
+        "content": "The Service Provider reserves the right to suspend or terminate the user's access to the Service, at any time, without prior notice, for violation of these Terms or for any other reason at the Service Provider's discretion."
+      },
+      "subsection2": {
+        "title": "12.2",
+        "content": "The user may terminate their account at any time through account settings or by contacting support."
+      }
+    },
+    "section13": {
+      "title": "13. Service Modifications",
+      "subsection1": {
+        "title": "13.1",
+        "content": "The Service Provider reserves the right to modify, suspend, or discontinue any aspect of the Service at any time, with or without prior notice."
+      },
+      "subsection2": {
+        "title": "13.2",
+        "content": "The Service Provider will not be liable to the user or any third party for any modification, suspension, or discontinuation of the Service."
+      }
+    },
+    "section14": {
+      "title": "14. Applicable Law and Dispute Resolution",
+      "subsection1": {
+        "title": "14.1. Applicable Law",
+        "content": "These Terms are governed and interpreted in accordance with the laws of the Portuguese Republic and applicable European Union laws (including EU consumer protection regulations), without regard to their conflict of law principles."
+      },
+      "subsection2": {
+        "title": "14.2. Jurisdiction (Forum)",
+        "content": "Any dispute, controversy, or claim arising from or in connection with these Terms, or their violation, resolution, or invalidity, shall be submitted to the jurisdiction of Portuguese courts, with the court in the Service Provider's area of residence being competent, or, at the consumer's choice, the court in the area of their residence, under Regulation (EU) No. 1215/2012."
+      },
+      "subsection3": {
+        "title": "14.3. EU Consumer Rights",
+        "content": "Notwithstanding Clause 14.2, if the user acts as a consumer and resides in another member state of the European Union, the Applicable Law and jurisdiction will be governed by EU consumer protection rules, which allow the consumer to bring an action in the courts of their country of residence."
+      },
+      "subsection4": {
+        "title": "14.4. EU Alternative Dispute Resolution (ADR)",
+        "content": "Consumers in Portugal and other EU member states may seek dispute resolution through the European Commission's Online Dispute Resolution (ODR) platform, accessible at https://ec.europa.eu/consumers/odr/. Portuguese consumers may also resort to the Consumer Conflict Arbitration Center. The parties agree to attempt good faith negotiation before initiating formal legal proceedings."
+      }
+    },
+    "section15": {
+      "title": "15. Additional Provisions",
+      "subsection1": {
+        "title": "15.1. Agreement Integrity",
+        "content": "These Terms, together with the Privacy Policy, constitute the complete agreement between the user and the Service Provider regarding the use of the Service and supersede all prior agreements."
+      },
+      "subsection2": {
+        "title": "15.2. Severability",
+        "content": "If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect."
+      },
+      "subsection3": {
+        "title": "15.3. Prevailing Language",
+        "content": "The Portuguese or English version of these Terms will prevail in case of conflicts with translations."
+      },
+      "subsection4": {
+        "title": "15.4. Waiver",
+        "content": "The Service Provider's failure to enforce any right or provision of these Terms will not constitute a waiver of such right or provision."
+      },
+      "subsection5": {
+        "title": "15.5. Assignment",
+        "content": "The user may not assign or transfer these Terms or any rights granted herein without the prior written consent of the Service Provider. The Service Provider may assign these Terms without restrictions."
+      },
+      "subsection6": {
+        "title": "15.6. Contact",
+        "content": "For questions related to these Terms, please contact us at contact@techcuisine.com."
+      }
+    }
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy and Data Protection",
+    "effectiveDate": "Effective Date",
+    "effectiveDateValue": "May 4, 2026",
+    "lastUpdate": "Last Update",
+    "lastUpdateValue": "May 4, 2026",
+    "section1": {
+      "title": "1. Introduction and Scope",
+      "content": "Tech Cuisine (\"Service\") is operated by Daniel Fonseca da Silva, an independent worker in Portugal (\"Provider\", \"we\", \"our\" or \"us\"), and respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, process, and protect information when you use the Tech Cuisine service (\"Service\").",
+      "compliance": "Regulatory Compliance:",
+      "complianceContent": "This policy complies with the Brazilian General Data Protection Law (LGPD), European GDPR, US state privacy laws including the California Consumer Privacy Act (CCPA), Canada's Personal Information Protection and Electronic Documents Act (PIPEDA), the UK's Personal Information Protection and Electronic Documents Act, and applicable international data protection regulations.",
+      "serviceOverview": "Service Overview:",
+      "serviceOverviewContent": "The Service provides a SaaS kitchen cost management platform, including technical recipe sheets, cost per serving calculations, ingredient yield factors, menu engineering, waste tracking, ingredient and supplier pricing, financial reports, and AI-powered analysis of recipes and kitchen operations."
+    },
+    "section2": {
+      "title": "2. Data Controller Information and Contact Details",
+      "dataController": "Data Controller",
+      "dataControllerValue": "Daniel Fonseca da Silva",
+      "privacyInquiries": "Privacy Inquiries",
+      "privacyInquiriesValue": "contact@techcuisine.com",
+      "customerSupport": "Customer Support",
+      "customerSupportValue": "contact@techcuisine.com"
+    },
+    "section3": {
+      "title": "3. Categories of Personal Information We Collect",
+      "subsection1": {
+        "title": "Information You Provide Directly:",
+        "accountInfo": "Account Information: Email address, notification preference settings, user preferences",
+        "paymentInfo": "Payment Information: Billing details processed through Stripe (we do not store complete payment card information)",
+        "communicationData": "Communication Data: Support inquiries, feedback, and correspondence"
+      },
+      "subsection2": {
+        "title": "Information Collected Automatically:",
+        "usageData": "Usage Data: Service interaction patterns, feature usage, search queries, and preferences",
+        "technicalInfo": "Technical Information: IP addresses, device information, browser type, access times",
+        "botInteraction": "App Interaction Data: Commands used, response patterns, service configuration choices, and interactions with the AI assistant",
+        "sessionInfo": "Session Information: Login timestamps, session duration",
+        "profileData": "Profile Data: Name, email, phone, establishment information (when voluntarily provided by the user)"
+      },
+      "subsection3": {
+        "title": "Marketing and Analytics Data:",
+        "siteAnalysis": "Site Analytics: Google Analytics, Facebook Pixel, Yahoo marketing pixels for site optimization",
+        "marketingAttribution": "Marketing Attribution: Campaign effectiveness, referral sources, user acquisition metrics",
+        "cookieData": "Cookie Data: Session management cookies, preference settings, authentication tokens"
+      }
+    },
+    "section4": {
+      "title": "4. Legal Basis for Processing and Purposes of Use",
+      "subsection1": {
+        "title": "LGPD Legal Bases:",
+        "consent": "Consent: For marketing communications, analytics, and optional features, and processing of sensitive data (when applicable)",
+        "contract": "Contract Performance: For service delivery, payment processing, and account management",
+        "legitimateInterest": "Legitimate Interest: For service improvement, fraud prevention, and customer support",
+        "legalCompliance": "Legal Compliance: For tax obligations, regulatory reporting, and law enforcement requests"
+      },
+      "subsection2": {
+        "title": "GDPR Legal Bases (for EU users):",
+        "consent": "Consent (Article 6(1)(a)): Marketing, analytics, and optional data processing",
+        "contract": "Contract Performance (Article 6(1)(b)): Service delivery and payment processing",
+        "legitimateInterests": "Legitimate Interests (Article 6(1)(f)): Service improvement, security, and fraud prevention",
+        "legalObligation": "Legal Obligation (Article 6(1)(c)): Regulatory compliance and legal requirements",
+        "sensitiveData": "Sensitive Data (Article 9): When sensitive data such as gender is processed, we base it on explicit consent from the data subject"
+      },
+      "subsection3": {
+        "title": "Processing Purposes:",
+        "serviceDelivery": "Service Delivery: Providing the kitchen cost and menu management platform, technical recipe sheets, financial analyses, and reports",
+        "aiProcessing": "AI Processing: Use of Claude AI and ChatGPT for recipe analysis, cost calculation, pricing suggestions, and kitchen operational recommendations",
+        "paymentProcessing": "Payment Processing: Subscription management and billing through Stripe",
+        "customerSupport": "Customer Support: Responding to inquiries, troubleshooting, and service assistance",
+        "serviceImprovement": "Service Improvement: Analyzing usage patterns to enhance features and functionality",
+        "marketingAnalysis": "Marketing and Analytics: Understanding user behavior and promoting relevant services",
+        "legalCompliance": "Legal Compliance: Meeting tax, regulatory, and law enforcement obligations"
+      }
+    },
+    "section5": {
+      "title": "5. AI Processing and Automated Decision Making",
+      "subsection1": {
+        "title": "AI Systems Used:",
+        "contentAnalysis": "Content Analysis: Processing recipe and ingredient data for relevance, quality, and cost accuracy",
+        "jobScoring": "Recipe and Cost Evaluation: Algorithmic analysis of technical sheets, yields, and margins for food cost optimization",
+        "contextExpansion": "Automatic Context Expansion: Enriching recipe and ingredient information with additional relevant data (e.g. market prices, measurement equivalences)",
+        "recommendationGeneration": "Recommendation Generation: Personalizing menu, pricing, and kitchen operations suggestions based on user data"
+      },
+      "subsection2": {
+        "title": "Automated Decision Making Rights:",
+        "humanReview": "Request human review of AI-driven recommendations",
+        "understandLogic": "Understand the logic behind automated processing that affects your service experience",
+        "optOut": "Opt out of using certain AI-powered features while maintaining access to the main service",
+        "accessInfo": "Access information about how AI systems process your data"
+      },
+      "transparency": "AI Transparency: AI processing involves analysis of user preferences, search history, and interaction patterns to improve recommendation accuracy. Users may request detailed explanations of AI decision-making processes that affect their service experience."
+    },
+    "section6": {
+      "title": "6. Data Sharing and Third-Party Processors",
+      "subsection1": {
+        "title": "Payment Processing:",
+        "content": "Stripe: Processes all payment transactions. Shared data includes billing information and transaction details. Stripe maintains independent privacy practices described in its privacy policy."
+      },
+      "subsection2": {
+        "title": "Service Infrastructure:",
+        "content": "Cloud Hosting Providers: Service technical data and user information stored in secure cloud infrastructure"
+      },
+      "subsection3": {
+        "title": "AI Processing Partners:",
+        "content": "Anthropic (Claude AI): Account data, recipes, and kitchen operations processed for analysis and recommendations. OpenAI (ChatGPT): Similar processing for recipe enrichment and user assistance."
+      },
+      "subsection4": {
+        "title": "Marketing and Analytics:",
+        "googleAnalytics": "Google Analytics: Site usage analysis for service improvement",
+        "facebookPixel": "Facebook Pixel: Marketing attribution and campaign optimization",
+        "yahooAnalytics": "Yahoo Analytics: Additional marketing performance analysis"
+      },
+      "noDataSale": "No Data Sale: We do not sell personal information to third parties for their direct marketing purposes."
+    },
+    "section7": {
+      "title": "7. International Data Transfers",
+      "subsection1": {
+        "title": "Transfer Locations:",
+        "usa": "United States: For AI processing (Anthropic, OpenAI) and payment processing (Stripe)",
+        "eu": "European Union: For cloud infrastructure and service delivery",
+        "other": "Other Countries: As necessary for service operation and third-party processing"
+      },
+      "subsection2": {
+        "title": "Transfer Safeguards:",
+        "sccs": "Standard Contractual Clauses (SCCs): We use Standard Contractual Clauses approved by the European Commission for EU data transfers, and clauses approved by ANPD for transfers from Brazil",
+        "dataProcessing": "Data Processing Agreements: Comprehensive agreements with all international processors that include data protection obligations",
+        "privacyShield": "Privacy Shield Successors: Appropriate frameworks for US data transfers when available",
+        "adequateProtection": "Adequate Protection: Ensuring that recipient countries provide adequate levels of data protection equivalent to EU and Brazil standards"
+      },
+      "userRights": "User Rights Regarding Transfers: Users may request information about international transfers affecting their data and the safeguards protecting their information in foreign jurisdictions."
+    },
+    "section8": {
+      "title": "8. Data Retention and Deletion",
+      "subsection1": {
+        "title": "Retention Periods:",
+        "accountData": "Account Data: Retained while the account is active plus 30 days after closure",
+        "paymentInfo": "Payment Information: 7 years for tax and financial record keeping (European/international requirements)",
+        "usageAnalysis": "Usage Analysis: 24 months for service improvement analysis",
+        "marketingData": "Marketing Data: Until consent is withdrawn or maximum 3 years",
+        "legalCompliance": "Legal Compliance Data: As required by applicable laws and regulations"
+      },
+      "subsection2": {
+        "title": "Automatic Deletion:",
+        "content": "We implement automated deletion processes to remove data after retention periods end. Users receive notification before automatic deletion when required by law. We collect and retain only data necessary for specified purposes and regularly review retention practices to minimize storage duration."
+      }
+    },
+    "section9": {
+      "title": "9. Comprehensive User Rights Framework",
+      "subsection1": {
+        "title": "Universal Rights (Available to All Users):",
+        "informed": "Right to be Informed: Clear information about data processing at collection",
+        "access": "Right of Access: Obtain copies of personal data and processing information",
+        "rectification": "Right of Rectification: Correct inaccurate or incomplete information",
+        "deletion": "Right of Deletion: Request erasure of personal data (\"right to be forgotten\")",
+        "portability": "Right to Data Portability: Export data in machine-readable format",
+        "opposition": "Right of Opposition: Object to processing for direct marketing and legitimate interests"
+      },
+      "subsection2": {
+        "title": "Brazilian Users (LGPD Rights):",
+        "confirmation": "Right of Confirmation: Confirm existence of data processing",
+        "information": "Right of Information: Detailed information about processing activities",
+        "anonymization": "Right of Anonymization: Request anonymization of unnecessary data",
+        "withdrawConsent": "Right to Withdraw Consent: Easy mechanism for consent withdrawal",
+        "explanation": "Right of Explanation: Understand automated decision-making processes"
+      },
+      "subsection3": {
+        "title": "US State Law Rights (California, Virginia, Colorado, etc.):",
+        "know": "Right to Know: Categories of personal information collected and processed",
+        "delete": "Right to Delete: Request deletion of personal information",
+        "optOut": "Right to Opt-Out: Opt out of sale/sharing and targeted advertising",
+        "nonDiscrimination": "Right to Non-Discrimination: Equal service regardless of privacy choices",
+        "correct": "Right to Correct: Rectify inaccurate personal information"
+      },
+      "subsection4": {
+        "title": "Canadian Users (PIPEDA Rights):",
+        "access": "Right of Access: Access personal information maintained by the organization",
+        "contest": "Right to Contest: Contest accuracy and completeness of information",
+        "withdrawConsent": "Right to Withdraw Consent: Withdraw consent subject to contractual restrictions",
+        "complain": "Right to Complain: File complaints with the Privacy Commissioner"
+      }
+    },
+    "section10": {
+      "title": "10. Exercising Your Rights",
+      "subsection1": {
+        "title": "How to Submit Requests:",
+        "content": "Email: contact@techcuisine.com with \"Privacy Request\" in the subject line"
+      },
+      "subsection2": {
+        "title": "Request Processing:",
+        "responseTime": "Response Time: 15 days (LGPD), 30 days (GDPR), 45 days (CCPA)",
+        "identityVerification": "Identity Verification: Reasonable measures to confirm requester identity",
+        "noFee": "No Fee: Generally free unless requests are excessive or repetitive",
+        "statusUpdates": "Status Updates: Regular communication about request processing status"
+      },
+      "subsection3": {
+        "title": "Request Fulfillment:",
+        "dataAccess": "Data Access: Comprehensive information about data processing",
+        "dataDeletion": "Data Deletion: Complete erasure subject to legal retention requirements",
+        "dataPortability": "Data Portability: Machine-readable format (JSON, CSV, XML)",
+        "consentWithdrawal": "Consent Withdrawal: Immediate cessation of consent-based processing"
+      }
+    },
+    "section11": {
+      "title": "11. Cookies and Tracking Technologies",
+      "subsection1": {
+        "title": "Types of Cookies Used:",
+        "essential": "Essential Cookies: Necessary for basic service functionality and security",
+        "analytics": "Analytics Cookies: Google Analytics for site performance analysis",
+        "marketing": "Marketing Cookies: Facebook Pixel, Yahoo marketing pixels for campaign optimization",
+        "preference": "Preference Cookies: Remember user settings and preferences"
+      },
+      "subsection2": {
+        "title": "Cookie Consent:",
+        "granularControl": "Granular Control: Users can accept/reject specific cookie categories",
+        "consentManagement": "Consent Management: Easy-to-use cookie preferences center",
+        "withdrawalRights": "Withdrawal Rights: Simple mechanism to withdraw cookie consent",
+        "equalProminence": "Equal Prominence: Accept and reject options receive equal emphasis"
+      },
+      "subsection3": {
+        "title": "Opt-Out Mechanisms:",
+        "gpc": "Global Privacy Control (GPC): Respect browser-based opt-out signals",
+        "cookieSettings": "Cookie Settings: Preference management accessible on all pages",
+        "marketingOptOut": "Marketing Opt-Out: Direct opt-out links in marketing communications",
+        "analyticsOptOut": "Analytics Opt-Out: Support for Google Analytics browser opt-out plugin"
+      }
+    },
+    "section12": {
+      "title": "12. Data Security and Breach Procedures",
+      "subsection1": {
+        "title": "Security Measures:",
+        "encryption": "Encryption: AES-256 encryption for data at rest, TLS 1.3 for data in transit",
+        "accessControls": "Access Controls: Role-based access permissions and multi-factor authentication",
+        "regularAudits": "Regular Audits: Periodic security assessments and penetration testing",
+        "employeeTraining": "Employee Training: Comprehensive privacy and security training programs"
+      },
+      "subsection2": {
+        "title": "Breach Response:",
+        "detection": "Detection: 24/7 monitoring and incident detection systems",
+        "assessment": "Assessment: Rapid risk assessment and impact analysis",
+        "notification": "Notification: Regulatory notification within 72 hours (GDPR), 3 business days (LGPD)",
+        "userCommunication": "User Communication: Immediate notification if breach likely to cause harm",
+        "remediation": "Remediation: Immediate measures to contain and remediate security incidents"
+      },
+      "subsection3": {
+        "title": "Data Protection Measures:",
+        "privacyByDesign": "Privacy by Design: Privacy protections integrated into system architecture",
+        "dataMinimization": "Data Minimization: Collect only information necessary for specified purposes",
+        "regularDeletion": "Regular Deletion: Automated removal of data after retention periods",
+        "vendorSecurity": "Vendor Security: Comprehensive security requirements for all data processors"
+      }
+    },
+    "section13": {
+      "title": "13. Children's Privacy",
+      "content": "Although our Service is available to all users, we do not knowingly collect personal information from children under 13 years of age without parental consent in compliance with COPPA (Children's Online Privacy Protection Act).",
+      "parentsCan": "If we become aware that we have collected information from children under 13, parents may:",
+      "requestAccess": "Request access to their children's information",
+      "requestDeletion": "Request deletion of their children's personal information",
+      "refuseCollection": "Refuse additional collection of their children's information",
+      "enhancedProtections": "Enhanced Protections: Users aged 13 to 16 in EU jurisdictions receive enhanced privacy protections under GDPR requirements."
+    },
+    "section14": {
+      "title": "14. Marketing and Communication Preferences",
+      "subsection1": {
+        "title": "Marketing Communications:",
+        "explicitConsent": "Explicit Consent: Opt-in for marketing communications",
+        "serviceRelationship": "Service Relationship: Transactional messages related to service use",
+        "legitimateInterest": "Legitimate Interest: Service improvement communications when permitted"
+      },
+      "subsection2": {
+        "title": "Communication Controls:",
+        "subscriptionManagement": "Subscription Management: Easy unsubscribe links in all marketing emails",
+        "granularPreferences": "Granular Preferences: Choose specific types of communications to receive",
+        "immediateEffect": "Immediate Effect: Opt-out requests processed within 10 business days"
+      }
+    },
+    "section15": {
+      "title": "15. Updates to this Privacy Policy",
+      "siteNotice": "Site Notice: Prominent publication of updated policy with effective date",
+      "emailNotification": "Email Notification: Direct communication to registered users",
+      "serviceNotification": "Service Notification: In-app notices for significant changes",
+      "reviewPeriod": "Users have 30 days to review changes before they take effect. Continued use after the effective date constitutes acceptance of updated terms."
+    },
+    "section16": {
+      "title": "16. Contact Information and Complaints",
+      "subsection1": {
+        "title": "Privacy Inquiries:",
+        "email": "Email",
+        "emailValue": "contact@techcuisine.com with \"Privacy Request\" in the subject line",
+        "responseTime": "Response Time",
+        "responseTimeValue": "15 business days for general inquiries"
+      },
+      "subsection2": {
+        "title": "Regulatory Complaints:",
+        "brazil": "Brazil (LGPD): National Data Protection Authority (ANPD) - www.gov.br/anpd",
+        "eu": "EU (GDPR): Relevant EU supervisory authority in your member state",
+        "california": "California: California Attorney General - oag.ca.gov",
+        "canada": "Canada (PIPEDA): Office of the Privacy Commissioner of Canada - priv.gc.ca"
+      },
+      "commitment": "We are committed to resolving privacy concerns promptly and encourage users to contact us directly before filing regulatory complaints. We maintain detailed records of complaint resolution efforts to demonstrate compliance with applicable privacy laws.",
+      "compliance": "This Privacy Policy complies with Brazilian LGPD, US state privacy laws, Canadian PIPEDA, EU GDPR, and international data protection standards. Regular updates ensure ongoing compliance with evolving regulatory requirements."
+    }
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "subtitle": "Still have questions? We're here to help you.",
+    "email": "Email",
+    "responseTime": "Response time",
+    "responseTimeValue": "24 hours",
+    "formTitle": "Send us a Message",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Select a subject",
+    "subjects": {
+      "general": "General inquiry",
+      "support": "Technical Support",
+      "billing": "Billing question",
+      "feature": "Feature request",
+      "bug": "Bug report"
+    },
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again later.",
+    "turnstileLabel": "Human verification",
+    "turnstileNotConfigured": "The contact form cannot send messages because verification is not configured (NEXT_PUBLIC_TURNSTILE_SITE_KEY).",
+    "contactFormUnavailable": "Message sending is temporarily unavailable."
+  },
+  "errorDialog": {
+    "title": "An error occurred",
+    "ok": "OK",
+    "retry": "Try again",
+    "rateLimitHint": "You have reached the request limit. Please wait a moment before trying again.",
+    "planLimit": {
+      "title": "Monthly AI limit reached",
+      "lead": "You have used all the AI generations included in your current plan for this billing period.",
+      "resetHint": "Your quota will reset at the start of the next billing period.",
+      "upgradeHint": "Upgrade your plan to get more AI generations and unlock additional features.",
+      "upgradeCta": "View plans"
+    },
+    "subscriptionFeature": {
+      "title": "Feature not available on your plan",
+      "lead": "This feature is not included in your current subscription plan.",
+      "upgradeHint": "Upgrade your plan to unlock this and other premium features.",
+      "upgradeCta": "View plans"
+    },
+    "rateLimit": {
+      "title": "Too many requests"
+    }
+  },
+  "aiUsageBar": {
+    "loading": "Loading AI usage...",
+    "error": "Unable to load AI usage",
+    "unlimited": "Unlimited AI usage",
+    "noPlan": "Your current plan does not include AI usage",
+    "label": "You used {used} of {limit} AI requests this month",
+    "ariaLabel": "AI usage: {used} of {limit} requests used this month",
+    "depleted": "You have reached your monthly AI limit",
+    "almostFull": "Only {remaining} AI request(s) remaining this month"
+  },
+  "paymentConfirmation": {
+    "title": "Subscription Confirmed",
+    "message": "Your purchase was successfully completed on the platform",
+    "description": "Your subscription has been successfully processed and your account is now active",
+    "goToDashboard": "Go to Dashboard"
+  },
+  "profileAiUsage": {
+    "title": "Plans & Usage",
+    "subtitle": "Your AI request usage for the current period",
+    "planLabel": "Plan",
+    "periodLabel": "Period",
+    "usedLabel": "Used",
+    "remainingLabel": "Remaining",
+    "limitLabel": "Limit",
+    "loading": "Loading usage data…",
+    "error": "Could not load usage data",
+    "unlimited": "You have unlimited AI requests on your current plan",
+    "noPlan": "Your current plan does not include AI features"
+  },
+  "navigation": {
+    "sectionBack": "Back"
+  },
+  "logo": {
+    "name": "Tech Cuisine",
+    "tagline": "Smart kitchen cost control",
+    "imageAlt": "Tech Cuisine logo"
+  },
+  "ingredientManagement": {
+    "title": "Ingredients",
+    "subtitle": "Manage all your ingredients",
+    "searchPlaceholder": "Search ingredients...",
+    "addButton": "Add",
+    "editButton": "Edit",
+    "deleteButton": "Delete",
+    "active": "Active",
+    "inactive": "Inactive",
+    "emptyState": {
+      "title": "No ingredients yet",
+      "noResults": "No ingredients found"
+    },
+    "errorState": {
+      "title": "Error loading ingredients",
+      "retry": "Try again"
+    },
+    "createDialog": {
+      "title": "New ingredient"
+    },
+    "editDialog": {
+      "title": "Edit ingredient"
+    },
+    "form": {
+      "name": "Name",
+      "nameRequired": "Name is required",
+      "purchaseUnit": "Purchase unit",
+      "purchaseUnitRequired": "Purchase unit is required",
+      "price": "Price",
+      "pricePlaceholder": "e.g. 2.49",
+      "priceHint": "Per purchase unit (optional). Currency follows your Settings (Regional) or the app default.",
+      "priceInvalidAmount": "Enter a valid non-negative price or leave the field empty.",
+      "category": "Category",
+      "notes": "Notes (density / packaging)",
+      "tags": "Tags",
+      "tagsHint": "e.g. protein, fresh, staple (comma-separated)",
+      "active": "Active",
+      "suppliers": "Suppliers",
+      "suppliersHint": "Order determines the primary supplier (first in list).",
+      "suppliersLoading": "Loading suppliers...",
+      "addSupplier": "Add",
+      "noSuppliersYet": "Create suppliers in the Suppliers section.",
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "removeSupplier": "Remove supplier",
+      "supplierPlaceholder": "Select a supplier...",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving..."
+    },
+    "deleteDialog": {
+      "title": "Delete ingredient",
+      "description": "Are you sure you want to delete \"{name}\"? This action cannot be undone.",
+      "confirm": "Delete",
+      "cancel": "Cancel",
+      "deleting": "Deleting..."
+    },
+    "aiSuggest": {
+      "button": "Use AI",
+      "loading": "Consulting AI...",
+      "hint": "Click Use AI to auto-fill the fields",
+      "priceInfo": "AI-estimated price",
+      "error": "Error fetching AI suggestion",
+      "nameRequired": "Enter the ingredient name before using AI",
+      "settingsNotice": "AI is using default locale (English, USD, United States). For personalized suggestions, set your language, currency, and nationality in your profile configuration."
+    }
+  },
+  "supplierManagement": {
+    "title": "Suppliers",
+    "subtitle": "Manage all your suppliers",
+    "searchPlaceholder": "Search suppliers...",
+    "addButton": "Add",
+    "editButton": "Edit",
+    "deleteButton": "Delete",
+    "active": "Active",
+    "inactive": "Inactive",
+    "types": {
+      "distributor": "Distributor",
+      "producer": "Producer",
+      "other": "Other"
+    },
+    "emptyState": {
+      "title": "No suppliers yet",
+      "noResults": "No suppliers found"
+    },
+    "errorState": {
+      "title": "Error loading suppliers",
+      "retry": "Try again"
+    },
+    "createDialog": {
+      "title": "New supplier"
+    },
+    "editDialog": {
+      "title": "Edit supplier"
+    },
+    "form": {
+      "name": "Name",
+      "nameRequired": "Name is required",
+      "supplierType": "Supplier type",
+      "contactPhone": "Contact phone",
+      "contactEmail": "Contact email",
+      "address": "Address",
+      "notes": "Notes",
+      "active": "Active",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving..."
+    },
+    "deleteDialog": {
+      "title": "Delete supplier",
+      "description": "Are you sure you want to delete \"{name}\"? This action cannot be undone.",
+      "confirm": "Delete",
+      "cancel": "Cancel",
+      "deleting": "Deleting..."
+    }
+  },
+  "plateManagement": {
+    "title": "Plates",
+    "subtitle": "Manage your menu plates",
+    "searchPlaceholder": "Search plates...",
+    "addButton": "Add",
+    "editButton": "Edit",
+    "deleteButton": "Delete",
+    "active": "Active",
+    "inactive": "Inactive",
+    "emptyState": {
+      "title": "No plates yet",
+      "noResults": "No plates found"
+    },
+    "errorState": {
+      "title": "Error loading plates",
+      "retry": "Try again"
+    },
+    "createDialog": {
+      "title": "New plate"
+    },
+    "editDialog": {
+      "title": "Edit plate"
+    },
+    "form": {
+      "name": "Name",
+      "nameRequired": "Name is required",
+      "description": "Description",
+      "menuSection": "Menu section",
+      "menuSectionHint": "e.g. Starters, Mains, Desserts",
+      "sellingPrice": "Selling price",
+      "currency": "Currency",
+      "targetFoodCostPct": "Target food cost (%)",
+      "active": "Active",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving..."
+    },
+    "deleteDialog": {
+      "title": "Delete plate",
+      "description": "Are you sure you want to delete \"{name}\"? This action cannot be undone.",
+      "confirm": "Delete",
+      "cancel": "Cancel",
+      "deleting": "Deleting..."
+    }
+  },
+  "priceObservationManagement": {
+    "title": "Price Observations",
+    "subtitle": "Track and compare ingredient prices across suppliers",
+    "selectIngredient": "Select an ingredient",
+    "ingredientSearchPlaceholder": "Search ingredients...",
+    "addButton": "Add price",
+    "loading": "Loading...",
+    "noSupplier": "No supplier",
+    "bestPricesTitle": "Best prices by supplier",
+    "historyTitle": "Price history",
+    "filtersTitle": "Filter history",
+    "kpi": {
+      "salesRecords": "Total sales",
+      "totalSales": "Total revenue"
+    },
+    "filters": {
+      "from": "From",
+      "to": "To",
+      "supplier": "Supplier",
+      "allSuppliers": "All suppliers",
+      "apply": "Apply"
+    },
+    "emptyState": {
+      "noBest": "No price data yet",
+      "noHistory": "No records match the selected filters",
+      "noIngredients": "No ingredients found"
+    },
+    "hint": {
+      "selectIngredient": {
+        "title": "Choose an ingredient first",
+        "description": "Type in the search field above, pick an ingredient from the list, and prices and history will appear here."
+      }
+    },
+    "errorState": {
+      "title": "Error loading data",
+      "retry": "Try again",
+      "pdfError": "Failed to generate PDF"
+    },
+    "createDialog": {
+      "title": "Record a price"
+    },
+    "form": {
+      "observedAt": "Date & time",
+      "observedAtRequired": "Date and time are required",
+      "unit": "Unit",
+      "unitPlaceholder": "e.g. kg, L, unit",
+      "unitRequired": "Unit is required",
+      "pricePerUnit": "Price per unit",
+      "priceRequired": "Price is required",
+      "currency": "Currency",
+      "currencyRequired": "Currency is required",
+      "supplier": "Supplier",
+      "noSupplier": "No supplier",
+      "packLabel": "Pack label",
+      "packLabelPlaceholder": "e.g. 5 kg box",
+      "source": "Source",
+      "sourceManual": "Manual",
+      "sourceInvoice": "Invoice",
+      "sourceApi": "API",
+      "ingredientRequired": "Please select an ingredient first",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving..."
+    },
+    "pdf": {
+      "title": "Price History",
+      "subtitle": "Best prices and full price history",
+      "generatedLabel": "Generated on",
+      "export": "Export PDF",
+      "generating": "Generating...",
+      "bestPricesSection": "Best prices by supplier",
+      "historySection": "Full price history",
+      "rankCol": "#",
+      "supplierCol": "Supplier",
+      "priceCol": "Price",
+      "unitCol": "Unit",
+      "currencyCol": "Currency",
+      "observedAtCol": "Date",
+      "packLabelCol": "Pack",
+      "noSupplier": "No supplier",
+      "noPack": "—"
+    }
+  },
+  "salesRecordManagement": {
+    "title": "Sales Records",
+    "subtitle": "Track every sale across all your plates",
+    "searchPlaceholder": "Search by plate or channel...",
+    "addButton": "Add sale",
+    "total": "Total",
+    "unitPrice": "Unit price",
+    "emptyState": {
+      "title": "No sales recorded yet",
+      "noResults": "No records found"
+    },
+    "errorState": {
+      "title": "Error loading sales records",
+      "retry": "Try again"
+    },
+    "createDialog": {
+      "title": "Record a sale"
+    },
+    "form": {
+      "plate": "Plate",
+      "plateRequired": "Please select a plate",
+      "selectPlate": "Select a plate...",
+      "soldAt": "Date & time",
+      "soldAtRequired": "Date and time are required",
+      "quantity": "Quantity",
+      "quantityRequired": "Quantity must be at least 1",
+      "unitPrice": "Unit price",
+      "unitPriceRequired": "Unit price is required",
+      "currency": "Currency",
+      "currencyRequired": "Currency is required",
+      "channel": "Channel",
+      "channelPlaceholder": "e.g. dine-in, delivery, takeaway",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving...",
+      "saveError": "Failed to save the record"
+    }
+  }
+}
