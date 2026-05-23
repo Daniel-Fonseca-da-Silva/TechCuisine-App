@@ -9,10 +9,6 @@ jest.mock('next/server', () => ({
   },
 }))
 
-jest.mock('@/lib/auth-config', () => ({
-  AUTH_CONFIG: { SESSION_COOKIE_NAME: 'session-token' },
-}))
-
 jest.mock('@/lib/get-session', () => ({
   getSession: jest.fn(),
 }))

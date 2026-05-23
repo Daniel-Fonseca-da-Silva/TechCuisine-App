@@ -8,19 +8,26 @@ jest.mock('next/server', () => ({
   },
 }))
 
-jest.mock('@/lib/auth-config', () => ({
-  AUTH_CONFIG: { SESSION_COOKIE_NAME: 'session-token' },
+jest.mock('@/lib/get-session', () => ({
+  getSession: jest.fn(),
 }))
 
 const originalFetch = global.fetch
 const originalEnv = process.env
 
-function createRequest(sessionToken?: string) {
-  return {
-    cookies: { get: () => (sessionToken ? { value: sessionToken } : undefined) },
-  } as unknown as NextRequest
+const authenticatedSession = {
+  authenticated: true as const,
+  user: { id: 'u1', name: 'User', email: 'u@example.com', image: null },
+  sessionToken: 'session-123',
 }
 
+const unauthSession = { authenticated: false as const, user: null }
+
+function createRequest() {
+  return {} as unknown as NextRequest
+}
+
+import { getSession } from '@/lib/get-session'
 import { GET } from './route'
 import { NextRequest } from 'next/server'
 
@@ -35,6 +42,7 @@ describe('GET /api/subscriptions/me', () => {
   })
 
   it('returns 401 when session token is missing', async () => {
+    ;(getSession as jest.Mock).mockResolvedValue(unauthSession)
     const request = createRequest()
     const response = await GET(request)
     expect(response.status).toBe(401)
@@ -44,11 +52,12 @@ describe('GET /api/subscriptions/me', () => {
   })
 
   it('returns 200 and subscription data when backend succeeds', async () => {
+    ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve({ plan: 'pro', status: 'active' }),
     })
-    const request = createRequest('session-123')
+    const request = createRequest()
     const response = await GET(request)
     expect(response.status).toBe(200)
     const data = await response.json()

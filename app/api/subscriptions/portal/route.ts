@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { AUTH_CONFIG } from '@/lib/auth-config'
+import { getSession } from '@/lib/get-session'
 
 const BACKEND_API_URL = process.env.BACKEND_API_URL
 
@@ -19,8 +19,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: 'BACKEND_API_URL is not configured' }, { status: 500 })
     }
 
-    const sessionToken = request.cookies.get(AUTH_CONFIG.SESSION_COOKIE_NAME)?.value
-    if (!sessionToken) {
+    const session = await getSession(request)
+    if (!session.authenticated || !session.sessionToken) {
       return NextResponse.json({ success: false, error: 'Not authenticated' }, { status: 401 })
     }
 
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${sessionToken}`,
+        'Authorization': `Bearer ${session.sessionToken}`,
       },
       body: JSON.stringify({ return_url: returnUrl }),
       cache: 'no-store',
@@ -59,4 +59,3 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 })
   }
 }
-

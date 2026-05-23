@@ -8,23 +8,28 @@ jest.mock('next/server', () => ({
   },
 }))
 
-jest.mock('@/lib/auth-config', () => ({
-  AUTH_CONFIG: { SESSION_COOKIE_NAME: 'session-token' },
+jest.mock('@/lib/get-session', () => ({
+  getSession: jest.fn(),
 }))
 
 const originalFetch = global.fetch
 const originalEnv = process.env
 
-function createPostRequest(
-  sessionToken: string | undefined,
-  body: Record<string, unknown>
-) {
+const authenticatedSession = {
+  authenticated: true as const,
+  user: { id: 'u1', name: 'User', email: 'u@example.com', image: null },
+  sessionToken: 'session-123',
+}
+
+const unauthSession = { authenticated: false as const, user: null }
+
+function createPostRequest(body: Record<string, unknown>) {
   return {
-    cookies: { get: () => (sessionToken ? { value: sessionToken } : undefined) },
     json: () => Promise.resolve(body),
   } as unknown as NextRequest
 }
 
+import { getSession } from '@/lib/get-session'
 import { POST } from './route'
 import { NextRequest } from 'next/server'
 
@@ -45,7 +50,8 @@ describe('POST /api/subscriptions/checkout', () => {
   }
 
   it('returns 401 when session token is missing', async () => {
-    const request = createPostRequest(undefined, validBody)
+    ;(getSession as jest.Mock).mockResolvedValue(unauthSession)
+    const request = createPostRequest(validBody)
     const response = await POST(request)
     expect(response.status).toBe(401)
     const data = await response.json()
@@ -54,7 +60,8 @@ describe('POST /api/subscriptions/checkout', () => {
   })
 
   it('returns 400 when plan is not allowed', async () => {
-    const request = createPostRequest('session-123', {
+    ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
+    const request = createPostRequest({
       ...validBody,
       plan: 'enterprise',
     })
@@ -66,8 +73,9 @@ describe('POST /api/subscriptions/checkout', () => {
   })
 
   it('returns 400 for legacy plans (medium, ultra, business)', async () => {
+    ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
     for (const plan of ['medium', 'ultra', 'business']) {
-      const request = createPostRequest('session-123', { ...validBody, plan })
+      const request = createPostRequest({ ...validBody, plan })
       const response = await POST(request)
       expect(response.status).toBe(400)
       const data = await response.json()
@@ -76,6 +84,7 @@ describe('POST /api/subscriptions/checkout', () => {
   })
 
   it('proxies simple plan to backend', async () => {
+    ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       json: () =>
@@ -84,7 +93,7 @@ describe('POST /api/subscriptions/checkout', () => {
           checkout_url: 'https://checkout.stripe.com/c/pay/cs_1',
         }),
     })
-    const request = createPostRequest('session-123', validBody)
+    const request = createPostRequest(validBody)
     const response = await POST(request)
     expect(response.status).toBe(200)
     const data = await response.json()

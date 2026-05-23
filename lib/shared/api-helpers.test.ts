@@ -8,12 +8,21 @@ jest.mock('next/server', () => ({
   },
 }))
 
-jest.mock('@/lib/auth-config', () => ({
-  AUTH_CONFIG: { SESSION_COOKIE_NAME: 'session-token' },
+jest.mock('@/lib/get-session', () => ({
+  getSession: jest.fn(),
 }))
 
 import type { NextRequest } from 'next/server'
+import { getSession } from '@/lib/get-session'
 import { handleGenerateAIRequest } from './api-helpers'
+
+const authenticatedSession = {
+  authenticated: true as const,
+  user: { id: 'u1', name: 'User', email: 'u@example.com', image: null },
+  sessionToken: 'session-123',
+}
+
+const unauthSession = { authenticated: false as const, user: null }
 
 const defaultOptions = {
   endpoint: '/generate',
@@ -22,12 +31,9 @@ const defaultOptions = {
   logContext: 'Test',
 }
 
-function createRequest(body: object, sessionToken?: string) {
+function createRequest(body: object) {
   return {
     json: () => Promise.resolve(body),
-    cookies: {
-      get: () => (sessionToken ? { value: sessionToken } : undefined),
-    },
   } as NextRequest
 }
 
@@ -38,6 +44,7 @@ describe('api-helpers', () => {
   beforeEach(() => {
     process.env = { ...originalEnv }
     process.env.BACKEND_API_URL = 'https://api.example.com'
+    ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
   })
 
   afterEach(() => {
@@ -48,7 +55,7 @@ describe('api-helpers', () => {
 
   describe('handleGenerateAIRequest', () => {
     it('returns 400 when content is missing', async () => {
-      const request = createRequest({}, 'token')
+      const request = createRequest({})
       const response = await handleGenerateAIRequest(request, defaultOptions)
       expect(response.status).toBe(400)
       const data = await response.json()
@@ -57,7 +64,7 @@ describe('api-helpers', () => {
     })
 
     it('returns 400 when content is empty string', async () => {
-      const request = createRequest({ content: '' }, 'token')
+      const request = createRequest({ content: '' })
       const response = await handleGenerateAIRequest(request, defaultOptions)
       expect(response.status).toBe(400)
       const data = await response.json()
@@ -65,7 +72,7 @@ describe('api-helpers', () => {
     })
 
     it('returns 400 when content is only whitespace', async () => {
-      const request = createRequest({ content: '   ' }, 'token')
+      const request = createRequest({ content: '   ' })
       const response = await handleGenerateAIRequest(request, defaultOptions)
       expect(response.status).toBe(400)
       const data = await response.json()
@@ -73,6 +80,7 @@ describe('api-helpers', () => {
     })
 
     it('returns 401 when session token is missing', async () => {
+      ;(getSession as jest.Mock).mockResolvedValue(unauthSession)
       const request = createRequest({ content: 'Hello' })
       const response = await handleGenerateAIRequest(request, defaultOptions)
       expect(response.status).toBe(401)
@@ -87,7 +95,7 @@ describe('api-helpers', () => {
         json: () => Promise.resolve({ result: 'generated-data' }),
       })
 
-      const request = createRequest({ content: 'Hello world' }, 'session-123')
+      const request = createRequest({ content: 'Hello world' })
       const response = await handleGenerateAIRequest(request, defaultOptions)
       expect(response.status).toBe(200)
       const data = await response.json()
@@ -112,7 +120,7 @@ describe('api-helpers', () => {
         json: () => Promise.resolve({}),
       })
 
-      const request = createRequest({ content: '  trimmed  ' }, 'token')
+      const request = createRequest({ content: '  trimmed  ' })
       await handleGenerateAIRequest(request, defaultOptions)
       expect(global.fetch).toHaveBeenCalledWith(
         expect.any(String),
@@ -129,7 +137,7 @@ describe('api-helpers', () => {
         json: () => Promise.resolve({ message: 'Invalid input' }),
       })
 
-      const request = createRequest({ content: 'Bad' }, 'token')
+      const request = createRequest({ content: 'Bad' })
       const response = await handleGenerateAIRequest(request, defaultOptions)
       expect(response.status).toBe(422)
       const data = await response.json()
@@ -144,14 +152,14 @@ describe('api-helpers', () => {
         json: () => Promise.resolve({}),
       })
 
-      const request = createRequest({ content: 'x' }, 'token')
+      const request = createRequest({ content: 'x' })
       const response = await handleGenerateAIRequest(request, defaultOptions)
       const data = await response.json()
       expect(data.error).toBe('Generation failed')
     })
 
     it('returns 500 and generic error when request throws', async () => {
-      const request = createRequest({ content: 'x' }, 'token')
+      const request = createRequest({ content: 'x' })
       request.json = () => Promise.reject(new Error('Network error'))
       const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
 
