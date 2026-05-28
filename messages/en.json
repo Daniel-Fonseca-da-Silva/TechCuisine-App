@@ -44,8 +44,8 @@
       "alreadyHaveAccount": "Already have an account?",
       "login": "Login",
       "welcomeAlert": {
-        "title": "Link Sent!",
-        "message": "Check your email and click the link to access your account."
+        "title": "Account created!",
+        "message": "Your account was created successfully. Log in to continue."
       },
       "errors": {
         "nameRequired": "Name is required",

@@ -25,12 +25,12 @@ export async function POST(request: NextRequest) {
       if (apiResponse.status === 409) {
         const data = await apiResponse.json()
         return NextResponse.json(
-          { success: false, error: data.detail || 'Username ou email já cadastrado' },
+          { success: false, error: data.detail || 'Username or email already registered' },
           { status: 409 }
         )
       }
       return NextResponse.json(
-        { success: false, error: 'Erro ao criar usuário' },
+        { success: false, error: 'Error creating user' },
         { status: apiResponse.status }
       )
     }
