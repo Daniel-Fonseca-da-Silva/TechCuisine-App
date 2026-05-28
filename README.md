@@ -1,6 +1,6 @@
 # Tech Cuisine App
 
-Frontend for Tech Cuisine — a kitchen management platform for professional chefs. Built with Next.js 15, NextAuth.js, Tailwind CSS, and Radix UI.
+Frontend for Tech Cuisine — a kitchen management platform for professional chefs. Built with Next.js 15, JWT + cookie auth, Tailwind CSS, and Radix UI.
 
 ---
 
@@ -19,7 +19,7 @@ Copy `.env.example` to `.env.local` and fill in your values. Never commit `.env.
 | `BACKEND_API_URL` | **Yes** | Base URL of the Tech Cuisine API, e.g. `http://localhost:8000`. |
 | `BACKEND_STATIC_TOKEN` | **Yes** | Static bearer token for server-to-API calls that do not carry a user token. |
 | `BACKEND_APIKEY` | **Yes** | API key used by internal Next.js route handlers when calling the backend. |
-| `NEXTAUTH_URL` | **Yes** | Canonical URL of this Next.js app (required by NextAuth.js in production). |
+| `NEXTAUTH_URL` | **Yes** | Canonical base URL of this app (used by `getBaseUrl()` for server-side redirects and links). |
 | `NEXT_PUBLIC_APP_URL` | **Yes** | Public base URL; exposed to the browser for client-side links. |
 | `NEXT_PUBLIC_DEFAULT_CURRENCY` | No | Default currency code, e.g. `BRL`. |
 | `ACCESS_COOKIE_NAME` | No | Name of the access token cookie (default `tc-access`). |
@@ -30,8 +30,6 @@ Copy `.env.example` to `.env.local` and fill in your values. Never commit `.env.
 | `STRIPE_SECRET_KEY` | No | Stripe secret key. Payment features are disabled when absent. |
 | `STRIPE_PRICE_ID` | No | Stripe Price ID for the subscription plan. |
 | `ADMIN_CLEANUP_KEY` | No | Secret key for the admin token-cleanup endpoint. |
-
-> **NEXTAUTH_SECRET** is read directly by `next-auth` from the environment. Set it in `.env.local` — it must never appear in committed files.
 
 ---
 
@@ -102,7 +100,6 @@ tech-cuisine-app/
 ├── hooks/                     # React hooks
 ├── lib/                       # Shared utilities and API clients
 ├── messages/                  # i18n JSON files (en, pt)
-├── prisma/                    # Prisma schema (if used)
 ├── public/                    # Static assets
 ├── .env.example               # Template — copy to .env.local and fill secrets
 ├── .env.test                  # Committed non-sensitive test defaults

@@ -1,5 +1,5 @@
 /**
- * Cache sessions in memory to reduce database queries
+ * Cache sessions in memory to reduce API/session validation calls
  */
 
 interface CachedSession {
