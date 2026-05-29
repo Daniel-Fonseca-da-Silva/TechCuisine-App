@@ -5,31 +5,27 @@ import type { AbstractIntlMessages } from 'next-intl';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { AboutPageContent } from '@/components/features/about/about-page-content';
-import { routing } from '@/i18n/routing';
+import { buildAlternates, buildOgImage } from '@/lib/seo';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('AboutPage.metadata');
   const locale = await getLocale();
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? '';
-  const ogImageUrl = `${baseUrl}/open-graph.png`;
-  const isDefault = locale === routing.defaultLocale;
-  const localePrefix = isDefault ? '' : `/${locale}`;
-  const canonical = baseUrl ? `${baseUrl}${localePrefix}/about` : undefined;
+  const { canonical, languages } = buildAlternates('/about', locale);
 
   return {
     title: t('title'),
     description: t('description'),
+    alternates: { canonical, languages },
     openGraph: {
       title: t('title'),
       description: t('description'),
       type: 'website',
-      images: [{ url: ogImageUrl, width: 1200, height: 630 }],
+      images: buildOgImage(),
     },
     twitter: {
       card: 'summary_large_image',
-      images: [ogImageUrl],
+      images: buildOgImage().map(i => i.url),
     },
-    ...(canonical ? { alternates: { canonical } } : {}),
   };
 }
 

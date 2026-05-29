@@ -6,16 +6,19 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { CookieConsentBanner } from "@/components/cookie/cookie-consent-banner";
 import { SetDocumentLocale } from "@/components/layout/set-document-locale";
 import { RegisterServiceWorker } from "@/components/pwa/register-service-worker";
+import { buildAlternates, buildOgImage } from '@/lib/seo';
 import Script from "next/script";
 
 interface Props {
   children: React.ReactNode;
 }
 
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? '';
+
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('metadata');
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? '';
-  const ogImageUrl = `${baseUrl}/open-graph.png`;
+  const locale = await getLocale();
+  const { canonical, languages } = buildAlternates('', locale);
 
   return {
     title: t('title'),
@@ -35,20 +38,46 @@ export async function generateMetadata(): Promise<Metadata> {
         type: 'image/png',
       },
     },
+    alternates: { canonical, languages },
     openGraph: {
       title: t('title'),
       description: t('description'),
       type: 'website',
-      images: [{ url: ogImageUrl, width: 1200, height: 630 }],
+      images: buildOgImage(),
     },
     twitter: {
       card: 'summary_large_image',
-      images: [ogImageUrl],
+      images: buildOgImage().map(i => i.url),
     },
   };
 }
 
 const GTM_ID = 'GTM-WJ5GDM43';
+
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${baseUrl}/#organization`,
+      name: 'Tech Cuisine',
+      url: baseUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/techcuisine-512x512.png`,
+        width: 512,
+        height: 512,
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${baseUrl}/#website`,
+      url: baseUrl,
+      name: 'Tech Cuisine',
+      publisher: { '@id': `${baseUrl}/#organization` },
+    },
+  ],
+};
 
 export default async function LocaleLayout({ children }: Props) {
   const allMessages = await getMessages();
@@ -58,6 +87,10 @@ export default async function LocaleLayout({ children }: Props) {
   return (
     <>
       <SetDocumentLocale locale={locale} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

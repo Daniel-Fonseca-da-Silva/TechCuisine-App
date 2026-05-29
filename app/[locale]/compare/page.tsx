@@ -1,28 +1,30 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, getLocale } from 'next-intl/server';
 import type { AbstractIntlMessages } from 'next-intl';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { CompareContent } from '@/components/features/compare-content';
+import { buildAlternates, buildOgImage } from '@/lib/seo';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('ComparePage.metadata');
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? '';
-  const ogImageUrl = `${baseUrl}/open-graph.png`;
+  const locale = await getLocale();
+  const { canonical, languages } = buildAlternates('/compare', locale);
 
   return {
     title: t('title'),
     description: t('description'),
+    alternates: { canonical, languages },
     openGraph: {
       title: t('title'),
       description: t('description'),
       type: 'website',
-      images: [{ url: ogImageUrl, width: 1200, height: 630 }],
+      images: buildOgImage(),
     },
     twitter: {
       card: 'summary_large_image',
-      images: [ogImageUrl],
+      images: buildOgImage().map(i => i.url),
     },
   };
 }

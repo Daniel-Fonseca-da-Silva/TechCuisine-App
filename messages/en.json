@@ -1295,6 +1295,10 @@
         "title": "15.6. Contact",
         "content": "For questions related to these Terms, please contact us at contact@techcuisine.com."
       }
+    },
+    "metadata": {
+      "title": "Terms of Service — Tech Cuisine usage terms and conditions",
+      "description": "Terms governing your use of Tech Cuisine: subscription plans, acceptable use, intellectual property, and your rights as a user."
     }
   },
   "privacyPolicy": {
@@ -1597,6 +1601,10 @@
       },
       "commitment": "We are committed to resolving privacy concerns promptly and encourage users to contact us directly before filing regulatory complaints. We maintain detailed records of complaint resolution efforts to demonstrate compliance with applicable privacy laws.",
       "compliance": "This Privacy Policy complies with Brazilian LGPD, US state privacy laws, Canadian PIPEDA, EU GDPR, and international data protection standards. Regular updates ensure ongoing compliance with evolving regulatory requirements."
+    },
+    "metadata": {
+      "title": "Privacy Policy — Tech Cuisine data protection and GDPR compliance",
+      "description": "Read how Tech Cuisine collects, uses and protects your personal data in compliance with GDPR, LGPD and CCPA."
     }
   },
   "Contact": {
@@ -1627,7 +1635,11 @@
     "error": "Failed to send message. Please try again later.",
     "turnstileLabel": "Human verification",
     "turnstileNotConfigured": "The contact form cannot send messages because verification is not configured (NEXT_PUBLIC_TURNSTILE_SITE_KEY).",
-    "contactFormUnavailable": "Message sending is temporarily unavailable."
+    "contactFormUnavailable": "Message sending is temporarily unavailable.",
+    "metadata": {
+      "title": "Contact Tech Cuisine — support, billing and feature questions",
+      "description": "Get in touch with the Tech Cuisine team for technical support, billing questions, feature requests or general inquiries. We reply within 24 hours."
+    }
   },
   "errorDialog": {
     "title": "An error occurred",
@@ -1968,6 +1980,69 @@
       "save": "Save",
       "saving": "Saving...",
       "saveError": "Failed to save the record"
+    }
+  },
+  "AiToolsPage": {
+    "metadata": {
+      "title": "AI culinary tools — recipe costing, food cost and menu engineering | Tech Cuisine",
+      "description": "Explore Tech Cuisine's four AI-powered kitchen tools: instant recipe cost breakdown, suggested selling price, food cost % checker, and menu matrix analysis."
+    },
+    "h1": "AI-powered tools for professional kitchens",
+    "lead": "Four focused tools that turn your recipe data into financial clarity — from the first cost breakdown to a full menu strategy.",
+    "cta": "Try Tech Cuisine free",
+    "tools": {
+      "recipe-cost-breakdown": {
+        "title": "Instant recipe cost breakdown",
+        "description": "Paste a recipe or describe a dish in plain language and get a full cost breakdown with yield-corrected quantities and ingredient prices in seconds.",
+        "longDescription": "Stop guessing ingredient costs. Describe any dish in natural language and Tech Cuisine's AI instantly parses the recipe, applies real yield factors for each ingredient, and calculates the true cost per portion. Link your own supplier prices for an accurate, always-up-to-date food cost.",
+        "benefits": [
+          "Yield-corrected quantities per ingredient",
+          "Supplier price integration",
+          "Instant cost per portion",
+          "Side-by-side recipe comparison"
+        ],
+        "cta": "Start calculating recipes",
+        "schemaDescription": "AI tool that calculates recipe cost breakdowns with yield-corrected quantities and real supplier prices for professional kitchens."
+      },
+      "selling-price-calculator": {
+        "title": "Suggested selling price",
+        "description": "Set your target food cost percentage and get an AI-suggested selling price for each dish anchored to real cost data, not gut feeling.",
+        "longDescription": "Every dish has a number that makes it viable. Enter your target food cost % and Tech Cuisine calculates the minimum selling price that keeps your margin intact — then lets you model alternative scenarios when costs shift.",
+        "benefits": [
+          "Target food cost % input",
+          "Minimum and recommended selling prices",
+          "Margin modelling with ingredient substitutions",
+          "Seasonal price adjustment alerts"
+        ],
+        "cta": "Price your menu correctly",
+        "schemaDescription": "AI tool that calculates suggested selling prices for restaurant dishes based on real ingredient costs and target food cost percentages."
+      },
+      "food-cost-checker": {
+        "title": "Food cost % checker",
+        "description": "See instantly how your recipe's cost compares to your target margin: where you are, what to cut, and how small changes in yield or sourcing shift the numbers.",
+        "longDescription": "Understand exactly where your food cost stands before a dish hits the menu. The food cost checker compares your actual cost to your target percentage, highlights which ingredients are driving it up, and simulates the impact of sourcing or yield changes.",
+        "benefits": [
+          "Real-time food cost % vs target",
+          "Per-ingredient cost breakdown",
+          "What-if analysis for sourcing changes",
+          "Historical food cost tracking"
+        ],
+        "cta": "Check your food cost",
+        "schemaDescription": "AI tool that checks food cost percentage against target margins and identifies cost-saving opportunities for restaurant recipes."
+      },
+      "menu-matrix-analysis": {
+        "title": "Menu matrix analysis",
+        "description": "Understand which dishes drive profit and which drag it down — specific data on popularity vs margin so every menu decision is backed by numbers.",
+        "longDescription": "A menu matrix plots every dish on two axes: how much it contributes to profit vs how often it sells. Stars, plowhorses, puzzles and dogs — Tech Cuisine categorises your dishes automatically and recommends whether to promote, reprice, rework or remove each one.",
+        "benefits": [
+          "Automatic dish categorisation (Stars, Plowhorses, Puzzles, Dogs)",
+          "Popularity vs contribution margin chart",
+          "Repricing and promotion recommendations",
+          "Export-ready menu engineering report"
+        ],
+        "cta": "Analyse your menu",
+        "schemaDescription": "AI menu engineering tool that categorises dishes by profitability and popularity to optimise restaurant menu strategy."
+      }
     }
   }
 }

@@ -1,11 +1,33 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
+import type { Metadata } from 'next';
+import { getTranslations, getLocale } from 'next-intl/server';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { buildAlternates, buildOgImage } from '@/lib/seo';
 
-export default function PrivacyPolicyPage() {
-  const t = useTranslations('privacyPolicy');
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('privacyPolicy.metadata');
+  const locale = await getLocale();
+  const { canonical, languages } = buildAlternates('/privacy-policy', locale);
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: { canonical, languages },
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      type: 'website',
+      images: buildOgImage(),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: buildOgImage().map(i => i.url),
+    },
+  };
+}
+
+export default async function PrivacyPolicyPage() {
+  const t = await getTranslations('privacyPolicy');
 
   return (
     <div className="min-h-screen">

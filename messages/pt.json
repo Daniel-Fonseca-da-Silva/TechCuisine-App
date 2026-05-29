@@ -1284,6 +1284,10 @@
         "title": "15.6. Contato",
         "content": "Para questões relacionadas a estes Termos, entre em contato através do email contact@techcuisine.com."
       }
+    },
+    "metadata": {
+      "title": "Termos de Serviço — condições de utilização do Tech Cuisine",
+      "description": "Termos que regem a utilização do Tech Cuisine: planos de subscrição, utilização aceitável, propriedade intelectual e os seus direitos enquanto utilizador."
     }
   },
   "privacyPolicy": {
@@ -1586,6 +1590,10 @@
       },
       "commitment": "Estamos comprometidos em resolver preocupações de privacidade prontamente e encorajamos os usuários a entrar em contato conosco diretamente antes de apresentar reclamações regulatórias. Mantemos registros detalhados dos esforços de resolução de reclamações para demonstrar conformidade com as leis de privacidade aplicáveis.",
       "compliance": "Esta Política de Privacidade está em conformidade com a LGPD brasileira, as leis de privacidade estaduais dos EUA, o PIPEDA canadense, o GDPR da UE e os padrões internacionais de proteção de dados. Atualizações regulares garantem conformidade contínua com requisitos regulatórios em evolução."
+    },
+    "metadata": {
+      "title": "Política de Privacidade — proteção de dados e conformidade RGPD no Tech Cuisine",
+      "description": "Saiba como o Tech Cuisine recolhe, usa e protege os seus dados pessoais em conformidade com o RGPD, LGPD e CCPA."
     }
   },
   "Contact": {
@@ -1616,7 +1624,11 @@
     "error": "Falha ao enviar mensagem. Tente novamente mais tarde.",
     "turnstileLabel": "Verificação humana",
     "turnstileNotConfigured": "O formulário de contacto não pode enviar mensagens porque a verificação não está configurada (NEXT_PUBLIC_TURNSTILE_SITE_KEY).",
-    "contactFormUnavailable": "O envio de mensagens está temporariamente indisponível."
+    "contactFormUnavailable": "O envio de mensagens está temporariamente indisponível.",
+    "metadata": {
+      "title": "Contacto Tech Cuisine — suporte, faturação e sugestões",
+      "description": "Fale com a equipa Tech Cuisine para suporte técnico, questões de faturação, pedidos de funcionalidades ou dúvidas gerais. Respondemos em 24 horas."
+    }
   },
   "errorDialog": {
     "title": "Ocorreu um erro",
@@ -1957,6 +1969,69 @@
       "save": "Guardar",
       "saving": "A guardar...",
       "saveError": "Erro ao guardar o registo"
+    }
+  },
+  "AiToolsPage": {
+    "metadata": {
+      "title": "Ferramentas de IA culinária — ficha técnica, food cost e engenharia de cardápio | Tech Cuisine",
+      "description": "Conheça as quatro ferramentas de IA do Tech Cuisine: ficha técnica instantânea, preço de venda sugerido, verificador de food cost % e análise da matriz de cardápio."
+    },
+    "h1": "Ferramentas de IA para cozinhas profissionais",
+    "lead": "Quatro ferramentas focadas que transformam os seus dados de receitas em clareza financeira — da primeira ficha técnica à estratégia completa de cardápio.",
+    "cta": "Experimentar o Tech Cuisine grátis",
+    "tools": {
+      "recipe-cost-breakdown": {
+        "title": "Ficha técnica instantânea",
+        "description": "Descreva uma receita em linguagem natural e obtenha uma ficha técnica completa com quantidades corrigidas por rendimento e preços de ingredientes em segundos.",
+        "longDescription": "Chega de adivinhar custos de ingredientes. Descreva qualquer prato em linguagem natural e a IA do Tech Cuisine analisa a receita, aplica fatores de rendimento reais a cada ingrediente e calcula o custo por porção correto. Ligue os seus preços de fornecedores para um food cost sempre atualizado.",
+        "benefits": [
+          "Quantidades corrigidas por rendimento por ingrediente",
+          "Integração com preços de fornecedores",
+          "Custo por porção instantâneo",
+          "Comparação de receitas lado a lado"
+        ],
+        "cta": "Começar a calcular receitas",
+        "schemaDescription": "Ferramenta de IA que calcula fichas técnicas com quantidades corrigidas por rendimento e preços reais de fornecedores para cozinhas profissionais."
+      },
+      "selling-price-calculator": {
+        "title": "Preço de venda sugerido",
+        "description": "Defina a sua percentagem de food cost desejada e obtenha um preço de venda sugerido por IA para cada prato, ancorado em dados de custo reais.",
+        "longDescription": "Cada prato tem um número que o torna viável. Introduza a sua % de food cost alvo e o Tech Cuisine calcula o preço de venda mínimo que mantém a margem intacta — e permite simular cenários alternativos quando os custos mudam.",
+        "benefits": [
+          "Input de % de food cost alvo",
+          "Preços de venda mínimo e recomendado",
+          "Modelação de margem com substituições de ingredientes",
+          "Alertas de ajuste de preço sazonal"
+        ],
+        "cta": "Calcular o preço correto do seu cardápio",
+        "schemaDescription": "Ferramenta de IA que calcula preços de venda sugeridos para pratos de restaurante com base em custos reais e % de food cost alvo."
+      },
+      "food-cost-checker": {
+        "title": "Verificador de food cost %",
+        "description": "Veja instantaneamente como o custo da sua receita se compara à sua margem-alvo: onde está, o que cortar e como pequenas mudanças no rendimento ou fornecimento alteram os números.",
+        "longDescription": "Perceba exatamente onde está o seu food cost antes de um prato entrar no cardápio. O verificador de food cost compara o custo real com a percentagem-alvo, destaca os ingredientes que o estão a puxar para cima e simula o impacto de mudanças no fornecimento ou rendimento.",
+        "benefits": [
+          "Food cost % real vs alvo em tempo real",
+          "Decomposição de custo por ingrediente",
+          "Análise hipotética para mudanças de fornecimento",
+          "Histórico de food cost"
+        ],
+        "cta": "Verificar o seu food cost",
+        "schemaDescription": "Ferramenta de IA que verifica a percentagem de food cost face às margens alvo e identifica oportunidades de redução de custos em receitas de restaurante."
+      },
+      "menu-matrix-analysis": {
+        "title": "Análise da matriz de cardápio",
+        "description": "Perceba quais pratos impulsionam o lucro e quais o arrastam — dados concretos sobre popularidade vs margem para que cada decisão de cardápio seja sustentada por números.",
+        "longDescription": "A matriz de cardápio posiciona cada prato em dois eixos: quanto contribui para o lucro vs com que frequência é vendido. Estrelas, cavalos de trabalho, incógnitas e cães — o Tech Cuisine categoriza os seus pratos automaticamente e recomenda se deve promover, reajustar preço, reformular ou remover cada um.",
+        "benefits": [
+          "Categorização automática de pratos (Estrelas, Cavalos, Incógnitas, Cães)",
+          "Gráfico popularidade vs margem de contribuição",
+          "Recomendações de reajuste de preço e promoção",
+          "Relatório de engenharia de cardápio exportável"
+        ],
+        "cta": "Analisar o seu cardápio",
+        "schemaDescription": "Ferramenta de IA de engenharia de cardápio que categoriza pratos por rentabilidade e popularidade para otimizar a estratégia de cardápio de restaurantes."
+      }
     }
   }
 }
