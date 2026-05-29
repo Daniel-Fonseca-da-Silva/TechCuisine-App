@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // High-value marketing pages
-  const marketingRoutes = ['/about', '/compare', '/ai-tools', '/contact'];
+  const marketingRoutes = ['/about', '/compare', '/ai-tools', '/contact', '/blog/recipe-cost-and-profit'];
   for (const route of marketingRoutes) {
     for (const locale of routing.locales) {
       entries.push({

@@ -28,6 +28,7 @@ describe('Footer', () => {
     expect(screen.getByText('HomePage.footer.company')).toBeInTheDocument()
     expect(screen.getByText('HomePage.footer.legal')).toBeInTheDocument()
     expect(screen.getByText('HomePage.footer.information')).toBeInTheDocument()
+    expect(screen.getByText('HomePage.footer.news')).toBeInTheDocument()
   })
 
   it('renders cookie settings button and opens modal on click', () => {
@@ -43,14 +44,21 @@ describe('Footer', () => {
     expect(screen.getByRole('link', { name: 'HomePage.footer.terms' })).toHaveAttribute('href', '/terms-of-use')
   })
 
-  it('renders compare tools link', () => {
+  it('renders compare tools link exactly once in Company column', () => {
     render(<Footer />)
-    expect(screen.getByRole('link', { name: 'HomePage.footer.compareTools' })).toHaveAttribute('href', '/compare')
+    const compareLinks = screen.getAllByRole('link', { name: 'HomePage.footer.compareTools' })
+    expect(compareLinks).toHaveLength(1)
+    expect(compareLinks[0]).toHaveAttribute('href', '/compare')
   })
 
   it('renders about link', () => {
     render(<Footer />)
     expect(screen.getByRole('link', { name: 'HomePage.footer.about' })).toHaveAttribute('href', '/about')
+  })
+
+  it('renders blog recipe cost link', () => {
+    render(<Footer />)
+    expect(screen.getByRole('link', { name: 'HomePage.footer.blogRecipeCost' })).toHaveAttribute('href', '/blog/recipe-cost-and-profit')
   })
 
   it('renders social links for Instagram and LinkedIn', () => {

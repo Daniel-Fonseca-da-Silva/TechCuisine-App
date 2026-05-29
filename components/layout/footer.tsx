@@ -98,14 +98,16 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Compare tools */}
+            {/* News */}
             <div className="text-center md:text-left">
-              <Link
-                href="/compare"
-                className="inline-block text-white font-semibold hover:text-white/90 transition-colors"
-              >
-                {t('compareTools')}
-              </Link>
+              <h4 className="text-white font-semibold mb-4">{t('news')}</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/blog/recipe-cost-and-profit" className="text-white/80 hover:text-white transition-colors">
+                    {t('blogRecipeCost')}
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
 
