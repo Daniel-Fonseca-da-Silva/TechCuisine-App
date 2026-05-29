@@ -2,120 +2,120 @@
   "auth": {
     "login": {
       "title": "Login",
-      "subtitle": "Entre com seu usuário e senha",
-      "username": "Usuário",
-      "usernamePlaceholder": "meu_usuario",
-      "password": "Senha",
+      "subtitle": "Inicia sessão com o teu nome de utilizador e palavra-passe",
+      "username": "Nome de utilizador",
+      "usernamePlaceholder": "meu_utilizador",
+      "password": "Palavra-passe",
       "passwordPlaceholder": "••••••••",
       "action": "Entrar",
-      "loading": "Entrando...",
-      "forgotPassword": "Esqueci minha senha",
-      "dontHaveAccount": "Não tem uma conta?",
-      "register": "Cadastrar",
-      "errorInvalidCredentials": "Usuário ou senha inválidos.",
-      "errorUnexpected": "Erro inesperado. Tente novamente.",
+      "loading": "A entrar...",
+      "forgotPassword": "Esqueci a minha palavra-passe",
+      "dontHaveAccount": "Não tens uma conta?",
+      "register": "Registar",
+      "errorInvalidCredentials": "Nome de utilizador ou palavra-passe inválidos.",
+      "errorUnexpected": "Erro inesperado. Tenta novamente.",
       "sessionExpired": {
         "title": "Sessão Expirada",
-        "message": "Sua sessão expirou por segurança. Por favor, faça login novamente para continuar."
+        "message": "A tua sessão expirou por segurança. Por favor, inicia sessão novamente para continuar."
       },
       "sessionError": {
         "title": "Erro de Sessão",
-        "message": "Ocorreu um erro com sua sessão. Por favor, faça login novamente."
+        "message": "Ocorreu um erro com a tua sessão. Por favor, inicia sessão novamente."
       }
     },
     "register": {
       "title": "Criar conta",
-      "subtitle": "Preencha os dados para criar sua conta",
-      "username": "Nome de usuário",
-      "usernamePlaceholder": "meu_usuario",
+      "subtitle": "Preenche os dados para criar a tua conta",
+      "username": "Nome de utilizador",
+      "usernamePlaceholder": "meu_utilizador",
       "email": "Email",
       "emailPlaceholder": "meu@email.com",
-      "password": "Senha",
+      "password": "Palavra-passe",
       "passwordPlaceholder": "••••••••",
-      "passwordConfirm": "Confirmar senha",
+      "passwordConfirm": "Confirmar palavra-passe",
       "action": "Criar Conta",
-      "alreadyHaveAccount": "Já tem uma conta?",
-      "login": "Fazer login",
+      "alreadyHaveAccount": "Já tens uma conta?",
+      "login": "Iniciar sessão",
       "welcomeAlert": {
         "title": "Conta criada!",
-        "message": "Sua conta foi criada com sucesso. Faça login para continuar."
+        "message": "A tua conta foi criada com sucesso. Inicia sessão para continuar."
       },
       "errors": {
-        "usernameMinLength": "Usuário deve ter no mínimo 3 caracteres",
-        "usernameMaxLength": "Usuário deve ter no máximo 50 caracteres",
-        "passwordMinLength": "Senha deve ter no mínimo 8 caracteres",
-        "passwordStrength": "Senha deve conter pelo menos uma maiúscula, uma minúscula, um número e um caractere especial",
-        "passwordMismatch": "As senhas não coincidem"
+        "usernameMinLength": "O nome de utilizador deve ter no mínimo 3 caracteres",
+        "usernameMaxLength": "O nome de utilizador deve ter no máximo 50 caracteres",
+        "passwordMinLength": "A palavra-passe deve ter no mínimo 8 caracteres",
+        "passwordStrength": "A palavra-passe deve conter pelo menos uma maiúscula, uma minúscula, um número e um caractere especial",
+        "passwordMismatch": "As palavras-passe não coincidem"
       }
     },
     "forgotPassword": {
-      "title": "Esqueci minha senha",
-      "subtitle": "Digite seu email para receber instruções de recuperação",
+      "title": "Esqueci a minha palavra-passe",
+      "subtitle": "Introduz o teu email para receber instruções de recuperação",
       "email": "meu@email.com",
-      "subtitle2": "Seu email",
+      "subtitle2": "O teu email",
       "action": "Enviar Instruções",
-      "loading": "Enviando instruções...",
+      "loading": "A enviar instruções...",
       "backToLogin": "Voltar ao login",
       "codeSent": {
         "title": "Instruções enviadas!",
-        "message": "Instruções de recuperação de senha foram enviadas para seu email. Verifique sua caixa de entrada e siga as instruções para redefinir sua senha."
+        "message": "Instruções de recuperação de palavra-passe foram enviadas para o teu email. Verifica a tua caixa de entrada e segue as instruções para redefinir a tua palavra-passe."
       }
     },
     "resetPassword": {
-      "title": "Definir nova senha",
-      "subtitle": "Digite sua nova senha abaixo",
-      "newPassword": "Nova senha",
-      "newPasswordPlaceholder": "Sua nova senha",
-      "confirmPassword": "Confirmar senha",
-      "confirmPasswordPlaceholder": "Repita a nova senha",
-      "action": "Redefinir senha",
-      "loading": "Redefinindo...",
+      "title": "Definir nova palavra-passe",
+      "subtitle": "Introduz a tua nova palavra-passe abaixo",
+      "newPassword": "Nova palavra-passe",
+      "newPasswordPlaceholder": "A tua nova palavra-passe",
+      "confirmPassword": "Confirmar palavra-passe",
+      "confirmPasswordPlaceholder": "Repete a nova palavra-passe",
+      "action": "Redefinir palavra-passe",
+      "loading": "A redefinir...",
       "backToLogin": "Voltar ao login",
       "success": {
-        "title": "Senha atualizada!",
-        "message": "Sua senha foi redefinida. Agora você pode entrar com a nova senha."
+        "title": "Palavra-passe atualizada!",
+        "message": "A tua palavra-passe foi redefinida. Agora podes entrar com a nova palavra-passe."
       },
       "errors": {
         "invalidToken": "Este link de redefinição é inválido ou já foi utilizado.",
-        "expiredToken": "Este link de redefinição expirou. Por favor, solicite um novo.",
-        "missingToken": "Token de redefinição ausente. Use o link enviado para o seu email.",
-        "passwordMismatch": "As senhas não coincidem",
-        "passwordStrength": "Senha deve conter pelo menos uma maiúscula, uma minúscula, um número e um caractere especial",
-        "passwordMinLength": "Senha deve ter no mínimo 8 caracteres",
-        "general": "Ocorreu um erro. Por favor, tente novamente."
+        "expiredToken": "Este link de redefinição expirou. Por favor, solicita um novo.",
+        "missingToken": "Token de redefinição ausente. Usa o link enviado para o teu email.",
+        "passwordMismatch": "As palavras-passe não coincidem",
+        "passwordStrength": "A palavra-passe deve conter pelo menos uma maiúscula, uma minúscula, um número e um caractere especial",
+        "passwordMinLength": "A palavra-passe deve ter no mínimo 8 caracteres",
+        "general": "Ocorreu um erro. Por favor, tenta novamente."
       }
     }
   },
   "metadata": {
-    "title": "Tech Cuisine — gestão de custos de cozinha com IA para chefs e restaurateurs",
+    "title": "Tech Cuisine: gestão de custos de cozinha com IA para chefs e restauradores",
     "description": "Transforme as suas receitas em pratos lucrativos. O Tech Cuisine calcula o custo por porção, controla os preços de ingredientes, faz engenharia de cardápio para maximizar margem e sinaliza o desperdício antes que chegue ao resultado."
   },
   "ErrorPage": {
     "title": "Erro"
   },
   "LoadingPage": {
-    "title": "Carregando..."
+    "title": "A carregar..."
   },
   "HomePage": {
     "navigation": {
       "home": "Início",
-      "contact": "Contato",
+      "contact": "Contacto",
       "language": "Idioma",
       "login": "Entrar",
-      "startNow": "Registrar Aqui"
+      "startNow": "Registar Aqui"
     },
     "hero": {
       "badge": "A maioria dos restaurantes fecha por causa dos custos de alimentos, não por má comida. Aqui é onde isso muda.",
       "headline": "Saiba o custo real antes do prato sair da cozinha.",
       "highlightWord": "custo",
-      "subheadline": "Os seus números também devem cozinhar com precisão. Nosso sistema constrói fichas técnicas inteligentes que calculam o custo real por porção, escalam para qualquer tamanho de lote e mostram exatamente onde a margem está a ser perdida. Pare de adivinhar, comece a controlar.",
+      "subheadline": "Os seus números também devem cozinhar com precisão. O nosso sistema constrói fichas técnicas inteligentes que calculam o custo real por porção, escalam para qualquer tamanho de lote e mostram exatamente onde a margem está a ser perdida. Para de adivinhar, começa a controlar.",
       "freeTierLine": "Comece com 7 dias de teste grátis",
       "ctaPrimary": "Criar a minha primeira ficha técnica",
       "ctaSecondary": "Ver como funciona"
     },
     "painPoints": {
       "title": "A Maior Dor na Cozinha",
-      "subtitle": "Isso soa familiar?",
+      "subtitle": "Isto parece-te familiar?",
       "points": [
         {
           "icon": "time",
@@ -125,12 +125,12 @@
         {
           "icon": "rejection",
           "title": "Escalar a receita sai sempre errado",
-          "description": "Triplicar uma receita à mão gera desperdício, inconsistência e estouros de custo difíceis de rastrear."
+          "description": "Triplicar uma receita à mão gera desperdício, inconsistência e estouros de custo difíceis de acompanhar."
         },
         {
           "icon": "search",
           "title": "Preços de ingredientes mudam sempre",
-          "description": "Os preços dos fornecedores oscilam semanalmente. Sem rastreamento, um prato lucrativo em janeiro sangra margem em março."
+          "description": "Os preços dos fornecedores oscilam semanalmente. Sem acompanhamento, um prato lucrativo em janeiro sangra margem em março."
         },
         {
           "icon": "lowRate",
@@ -151,7 +151,7 @@
         {
           "icon": "keywords",
           "title": "Food cost % em que pode confiar",
-          "description": "O Tech Cuisine rastreia cada ingrediente, aplica fatores de rendimento e devolve a percentagem real de custo de cada prato do seu cardápio."
+          "description": "O Tech Cuisine acompanha cada ingrediente, aplica fatores de rendimento e devolve a percentagem real de custo de cada prato do seu cardápio."
         },
         {
           "icon": "structure",
@@ -224,7 +224,7 @@
         },
         {
           "title": "Escalonamento de Lotes",
-          "description": "Escale qualquer receita para cima ou para baixo instantaneamente quantidades, custos e fatores de rendimento ajustam-se automaticamente."
+          "description": "Escale qualquer receita para cima ou para baixo instantaneamente: quantidades, custos e fatores de rendimento ajustam-se automaticamente."
         },
         {
           "title": "Matriz de Cardápio",
@@ -278,7 +278,7 @@
     },
     "resultsTestimonials": {
       "title": "Resultados que falam por si",
-      "subtitle": "Chefs e restaurateurs reais que usam o Tech Cuisine para controlar a economia da sua cozinha.",
+      "subtitle": "Chefs e restauradores reais que usam o Tech Cuisine para controlar a economia da sua cozinha.",
       "metrics": [
         {
           "number": "500+",
@@ -350,8 +350,8 @@
           "answer": "Sim. A IA foi treinada para compreender linguagem profissional de cozinha: métodos de preparação, fatores de rendimento, sinónimos de ingredientes e unidades padrão de diferentes tradições culinárias."
         },
         {
-          "question": "Posso rastrear os preços dos fornecedores ao longo do tempo?",
-          "answer": "O rastreamento de preços e a gestão de fornecedores são funcionalidades em desenvolvimento. A plataforma foi construída para suportar isso desde o início os utilizadores antecipados terão acesso em primeiro lugar."
+          "question": "Posso acompanhar os preços dos fornecedores ao longo do tempo?",
+          "answer": "O acompanhamento de preços e a gestão de fornecedores são funcionalidades em desenvolvimento. A plataforma foi construída para suportar isso desde o início. Os utilizadores antecipados terão acesso em primeiro lugar."
         },
         {
           "question": "Que idiomas a plataforma suporta?",
@@ -367,7 +367,7 @@
         },
         {
           "question": "Qual é o preço?",
-          "answer": "O preco ainda nao esta definido. O plano gratuito inclui 7 usos gratuitos para testar o cálculo de receitas e a análise na prática."
+          "answer": "O preço ainda não está definido. O plano gratuito inclui 7 usos gratuitos para testar o cálculo de receitas e a análise na prática."
         },
         {
           "question": "Que dados armazenam?",
@@ -391,7 +391,9 @@
       "copyright": "Tech Cuisine. Todos os direitos reservados.",
       "location": "Lisboa, Portugal",
       "legal": "Legal",
-      "cookies": "Cookies"
+      "cookies": "Cookies",
+      "news": "Notícias",
+      "blogRecipeCost": "Custos e lucro"
     },
     "compareTeaser": {
       "heading": "Como o Tech Cuisine se compara?",
@@ -423,15 +425,15 @@
   },
   "ComparePage": {
     "metadata": {
-      "title": "Tech Cuisine vs apps de receitas, Excel e ERPs — ficha técnica, custo real e cardápio pensado para Portugal",
-      "description": "Compare o Tech Cuisine com apps de receitas, folhas de cálculo e suites genéricas. Veja como a ficha técnica com rendimento real, o histórico de preços de fornecedores e a engenharia de cardápio com IA fazem a diferença para cozinhas profissionais em Portugal."
+      "title": "Tech Cuisine vs apps de receitas, Excel e ERPs: ficha técnica, custo real e cardápio pensado para Europa",
+      "description": "Compare o Tech Cuisine com apps de receitas, folhas de cálculo e suites genéricas. Veja como a ficha técnica com rendimento real, o histórico de preços de fornecedores e a engenharia de cardápio com IA fazem a diferença para cozinhas profissionais na Europa."
     },
-    "h1": "Tech Cuisine e outras ferramentas de cozinha o que é realmente diferente?",
+    "h1": "Tech Cuisine e outras ferramentas de cozinha: o que é realmente diferente?",
     "lead": "Há apps de receitas, há Excel e há sistemas pensados para outras realidades. O Tech Cuisine foi construído de raiz para a cozinha profissional portuguesa: com o feedback de uma pasteleira de renome e a exigência de quem vive do fogão.",
     "origin": {
       "title": "Nasceu de dentro da cozinha",
       "paragraphs": [
-        "Não é uma ideia de gabinete. O Tech Cuisine foi construído com o feedback direto de uma pasteleira de renome em Portugal alguém que conhece a diferença entre rendimento bruto e líquido, sabe o que significa ver o preço da manteiga subir sem aviso e entende que um erro de custo não é um descuido, é uma conta que não fecha.",
+        "Não é uma ideia de gabinete. O Tech Cuisine foi construído com o feedback direto de uma pasteleira de renome em Portugal, alguém que conhece a diferença entre rendimento bruto e líquido, sabe o que significa ver o preço da manteiga subir sem aviso e entende que um erro de custo não é um descuido, é uma conta que não fecha.",
         "O que moldou o produto foi a realidade: fichas técnicas que calculam o custo real por porção, ingredientes com fator de rendimento, escalabilidade sem recalcular de cabeça e um cardápio que mostra onde está o lucro antes que seja tarde."
       ]
     },
@@ -464,7 +466,7 @@
         },
         {
           "question": "Já uso Excel há anos. Porque é que mudaria?",
-          "answer": "O Excel faz o que você manda mas não sabe que 1 kg de couve-flor rende 600 g de flores. Não atualiza o preço quando o fornecedor muda a tabela. Não calcula automaticamente o FCP de cada prato nem alerta quando a margem está em risco. O Tech Cuisine não substitui a sua lógica, substitui o trabalho manual repetitivo que consome tempo que devia estar na cozinha."
+          "answer": "O Excel faz o que tu mandas, mas não sabe que 1 kg de couve-flor rende 600 g de flores. Não atualiza o preço quando o fornecedor muda a tabela. Não calcula automaticamente o FCP de cada prato nem alerta quando a margem está em risco. O Tech Cuisine não substitui a tua lógica, substitui o trabalho manual repetitivo que consome tempo que devia estar na cozinha."
         },
         {
           "question": "Os preços dos fornecedores mudam muito. Como o Tech Cuisine lida com isso?",
@@ -479,8 +481,8 @@
   },
   "AboutPage": {
     "metadata": {
-      "title": "Como nasceu o Tech Cuisine — uma pasteleira, custos reais e a cozinha que merece ferramentas sérias",
-      "description": "A história por detrás do Tech Cuisine: fichas técnicas, custos de ingredientes, escalabilidade de receitas e IA com critério — construído a partir do feedback de uma pasteleira de renome em Portugal."
+      "title": "Como nasceu o Tech Cuisine: uma pasteleira, custos reais e a cozinha que merece ferramentas sérias",
+      "description": "A história por detrás do Tech Cuisine: fichas técnicas, custos de ingredientes, escalabilidade de receitas e IA com critério, construído a partir do feedback de uma pasteleira de renome em Portugal."
     },
     "h1": "Construído a partir da cozinha real",
     "lead": "Não é mais um app de receitas bonitas. É uma ferramenta criada para quem vive do fogão onde o preço do ingrediente muda toda a semana e um erro de custo pode fechar uma cozinha.",
@@ -496,7 +498,7 @@
         "title": "As ferramentas erradas não estão à tua altura",
         "paragraphs": [
           "Há apps de receitas. Há planilhas genéricas. Há sistemas pensados para mercados de outras dimensões e outras moedas.",
-          "O que falta em Portugal e em muitos mercados é algo que fale a língua da cozinha real: fator de correção, custo por porção, histórico de preços de fornecedores, escalabilidade com um clique. Não truques. Não dashboards bonitos que não entendem o que é um fundo de pato ou o rendimento de uma vieira."
+          "O que falta na Europa e em muitos mercados é algo que fale a língua da cozinha real: fator de correção, custo por porção, histórico de preços de fornecedores, escalabilidade com um clique. Não truques. Não dashboards bonitos que não entendem o que é um fundo de pato ou o rendimento de uma vieira."
         ]
       },
       {
@@ -538,31 +540,31 @@
     "sections": {
       "dashboard": {
         "title": "Dashboard",
-        "description": "Bem-vindo ao seu painel de controle"
+        "description": "Bem-vindo ao teu painel de controlo"
       },
       "recipes": {
-        "title": "Minhas Receitas",
-        "description": "Gerencie suas receitas culinárias"
+        "title": "As Minhas Receitas",
+        "description": "Gere as tuas receitas culinárias"
       },
       "profile": {
-        "title": "Meu Perfil",
-        "description": "Gerencie suas informações pessoais"
+        "title": "O Meu Perfil",
+        "description": "Gere as tuas informações pessoais"
       },
       "settings": {
-        "title": "Configurações",
-        "description": "Personalize suas configurações"
+        "title": "Definições",
+        "description": "Personaliza as tuas definições"
       },
       "plans": {
-        "title": "Meus Planos",
-        "description": "Gerencie sua assinatura e recursos"
+        "title": "Os Meus Planos",
+        "description": "Gere a tua subscrição e recursos"
       },
       "admin": {
         "title": "Admin",
-        "description": "Gerenciar usuários e dados da plataforma"
+        "description": "Gerir utilizadores e dados da plataforma"
       },
       "premiumAlert": {
-        "title": "Assinatura Premium Ativada!",
-        "description": "Sua inscrição premium foi ativada com sucesso. Agora você tem acesso a todos os recursos premium da plataforma."
+        "title": "Subscrição Premium Ativada!",
+        "description": "A tua subscrição premium foi ativada com sucesso. Agora tens acesso a todos os recursos premium da plataforma."
       },
       "ingredients": {
         "title": "Ingredientes",
@@ -591,24 +593,24 @@
     },
     "cards": {
       "recipes": {
-        "title": "Minhas Receitas",
-        "description": "Visualize e gerencie todas as suas receitas culinárias."
+        "title": "As Minhas Receitas",
+        "description": "Vê e gere todas as tuas receitas culinárias."
       },
       "profile": {
-        "title": "Meu Perfil",
-        "description": "Gerencie suas informações pessoais, experiência profissional e dados de contato."
+        "title": "O Meu Perfil",
+        "description": "Gere as tuas informações pessoais, experiência profissional e dados de contacto."
       },
       "settings": {
-        "title": "Configurações",
-        "description": "Personalize suas preferências, notificações e configurações da conta."
+        "title": "Definições",
+        "description": "Personaliza as tuas preferências, notificações e definições da conta."
       },
       "plans": {
-        "title": "Meus Planos Atuais",
-        "description": "Visualize seu plano atual, recursos disponíveis e opções de upgrade."
+        "title": "Os Meus Planos Atuais",
+        "description": "Vê o teu plano atual, os recursos disponíveis e as opções de upgrade."
       },
       "admin": {
         "title": "Admin",
-        "description": "Gerenciar usuários e estatísticas da plataforma."
+        "description": "Gerir utilizadores e estatísticas da plataforma."
       },
       "ingredients": {
         "title": "Ingredientes",
@@ -634,11 +636,11 @@
     "admin": {
       "title": "Admin",
       "stats": "Estatísticas",
-      "usersCount": "Usuários",
-      "users": "Usuários",
-      "userDetail": "Detalhes do usuário",
+      "usersCount": "Utilizadores",
+      "users": "Utilizadores",
+      "userDetail": "Detalhes do utilizador",
       "toggleAdmin": "Alternar admin",
-      "accessDenied": "Você não tem permissão para acessar esta seção.",
+      "accessDenied": "Não tens permissão para aceder a esta secção.",
       "name": "Nome",
       "email": "E-mail",
       "admin": "Admin",
@@ -646,7 +648,7 @@
       "updatedAt": "Atualizado em",
       "actions": "Ações",
       "details": "Detalhes",
-      "loading": "Carregando...",
+      "loading": "A carregar...",
       "error": "Erro ao carregar dados",
       "nextPage": "Próxima",
       "prevPage": "Anterior",
@@ -706,20 +708,20 @@
         "description": "Visão geral"
       },
       "recipes": {
-        "label": "Minhas Receitas",
+        "label": "As Minhas Receitas",
         "description": "Receitas culinárias"
       },
       "profile": {
-        "label": "Meu Perfil",
+        "label": "O Meu Perfil",
         "description": "Informações pessoais"
       },
       "settings": {
-        "label": "Configurações",
+        "label": "Definições",
         "description": "Preferências"
       },
       "plans": {
-        "label": "Meus Planos",
-        "description": "Assinatura atual"
+        "label": "Os Meus Planos",
+        "description": "Subscrição atual"
       },
       "admin": {
         "label": "Admin",
@@ -747,8 +749,8 @@
       }
     },
     "user": {
-      "defaultName": "Usuário",
-      "defaultEmail": "usuario@exemplo.com"
+      "defaultName": "Utilizador",
+      "defaultEmail": "utilizador@exemplo.com"
     },
     "logout": "Sair",
     "brand": {
@@ -761,20 +763,20 @@
       "period": "por mês"
     },
     "header": {
-      "title": "Minha Assinatura",
-      "subtitle": "Gerencie a sua subscrição Tech Cuisine",
+      "title": "A Minha Subscrição",
+      "subtitle": "Gere a tua subscrição Tech Cuisine",
       "backButton": "Voltar ao Dashboard"
     },
     "currentPlan": {
       "title": "Plano Atual",
-      "subtitle": "Seu plano de assinatura atual",
+      "subtitle": "O teu plano de subscrição atual",
       "nextBilling": "Próxima cobrança",
       "periodStart": "Início do período",
       "periodEnd": "Fim do período",
       "status": "Status",
       "active": "Ativo",
       "purchase": "Comprar plano",
-      "manageSubscription": "Gerenciar Assinatura"
+      "manageSubscription": "Gerir Subscrição"
     },
     "availablePlans": {
       "title": "Assinatura",
@@ -785,12 +787,12 @@
     "checkoutError": "Não foi possível iniciar o checkout. Tente novamente.",
     "portalError": "Não foi possível abrir o portal de faturação. Tente novamente.",
     "loadSubscriptionError": "Falha ao carregar a subscrição.",
-    "processingPaymentNotice": "Estamos processando seu pagamento. Muito em breve seu novo plano será atualizado.",
+    "processingPaymentNotice": "Estamos a processar o teu pagamento. Muito em breve o teu novo plano será atualizado.",
     "subscriptionExpiredNotice": "A sua subscrição expirou. Renove o seu plano para continuar a ter acesso às funcionalidades premium.",
     "comingSoon": "Os planos de subscrição serão implementados numa atualização futura.",
     "usage": {
       "title": "Uso do Plano",
-      "subtitle": "Estatísticas de uso do seu plano atual",
+      "subtitle": "Estatísticas de uso do teu plano atual",
       "recipesUsed": "Receitas Criadas",
       "daysRemaining": "Dias Restantes"
     },
@@ -811,7 +813,7 @@
           "Análise de custo de receitas com IA",
           "Matriz de engenharia de menu",
           "Escalonamento por qualquer quantidade",
-          "Rastreamento de preços de ingredientes",
+          "Acompanhamento de preços de ingredientes",
           "Registos de vendas e relatórios",
           "Exportação em PDF",
           "Suporte por email"
@@ -821,49 +823,49 @@
   },
   "settings": {
     "header": {
-      "title": "Configurações",
-      "subtitle": "Personalize suas preferências e configurações",
+      "title": "Definições",
+      "subtitle": "Personaliza as tuas preferências e definições",
       "backButton": "Voltar ao Dashboard"
     },
-    "loading": "Carregando configurações...",
+    "loading": "A carregar definições...",
     "personalInfo": {
       "title": "Informações Pessoais",
-      "subtitle": "Gerencie suas informações pessoais",
+      "subtitle": "Gere as tuas informações pessoais",
       "fields": {
         "fullName": {
           "label": "Nome Completo",
-          "placeholder": "Digite seu nome completo"
+          "placeholder": "Introduz o teu nome completo"
         },
         "phone": {
           "label": "Telefone",
-          "placeholder": "Digite seu número de telefone"
+          "placeholder": "Introduz o teu número de telefone"
         },
         "email": {
           "label": "Email",
-          "placeholder": "Digite seu email"
+          "placeholder": "Introduz o teu email"
         },
         "country": {
           "label": "País",
-          "placeholder": "Digite seu país"
+          "placeholder": "Introduz o teu país"
         },
         "state": {
           "label": "Distrito",
-          "placeholder": "Digite o seu distrito"
+          "placeholder": "Introduz o teu distrito"
         },
         "city": {
           "label": "Cidade",
-          "placeholder": "Digite sua cidade"
+          "placeholder": "Introduz a tua cidade"
         },
         "age": {
           "label": "Idade",
-          "placeholder": "Digite sua idade"
+          "placeholder": "Introduz a tua idade"
         }
       },
-      "saveButton": "Salvar Informações"
+      "saveButton": "Guardar Informações"
     },
     "notifications": {
       "title": "Notificações",
-      "subtitle": "Configure suas preferências de notificação",
+      "subtitle": "Configura as tuas preferências de notificação",
       "options": {
         "newsletter": {
           "title": "Newsletter",
@@ -879,13 +881,13 @@
         },
         "cvReminders": {
           "title": "Lembretes de CV",
-          "description": "Lembretes para atualizar seu currículo"
+          "description": "Lembretes para atualizar o teu currículo"
         }
       }
     },
     "appearance": {
       "title": "Aparência",
-      "subtitle": "Personalize a aparência da interface",
+      "subtitle": "Personaliza a aparência da interface",
       "options": {
         "darkMode": {
           "title": "Modo Escuro",
@@ -902,13 +904,13 @@
           }
         }
       },
-      "saveButton": "Salvar Alterações",
-      "saving": "Salvando...",
-      "saveSuccess": "Configurações salvas com sucesso!"
+      "saveButton": "Guardar Alterações",
+      "saving": "A guardar...",
+      "saveSuccess": "Definições guardadas com sucesso!"
     },
     "regional": {
       "title": "Regional",
-      "subtitle": "Configure unidades, moeda e formatação",
+      "subtitle": "Configura unidades, moeda e formatação",
       "options": {
         "temperatureUnit": {
           "label": "Unidade de Temperatura",
@@ -930,7 +932,7 @@
     },
     "privacy": {
       "title": "Privacidade",
-      "subtitle": "Controle sua privacidade e dados",
+      "subtitle": "Controla a tua privacidade e dados",
       "options": {
         "publicProfile": {
           "title": "Perfil Público",
@@ -938,10 +940,10 @@
         },
         "analytics": {
           "title": "Analytics",
-          "description": "Compartilhar dados de uso"
+          "description": "Partilhar dados de uso"
         }
       },
-      "downloadData": "Baixar Meus Dados"
+      "downloadData": "Transferir os Meus Dados"
     },
     "dangerZone": {
       "title": "Zona de Perigo",
@@ -959,29 +961,29 @@
   },
   "profileSection": {
     "header": {
-      "title": "Meu Perfil",
-      "subtitle": "Gerencie suas informações pessoais",
+      "title": "O Meu Perfil",
+      "subtitle": "Gere as tuas informações pessoais",
       "backButton": "Voltar ao Dashboard"
     },
-    "loading": "Carregando perfil...",
-    "saving": "Salvando...",
-    "saveSuccess": "Dados salvos com sucesso!",
+    "loading": "A carregar perfil...",
+    "saving": "A guardar...",
+    "saveSuccess": "Dados guardados com sucesso!",
     "photo": {
       "title": "Foto do Perfil",
       "changePhoto": "Alterar Foto"
     },
     "accountInfo": {
       "title": "Conta",
-      "subtitle": "Suas credenciais de acesso",
+      "subtitle": "As tuas credenciais de acesso",
       "username": "Utilizador",
       "email": "Email"
     },
     "personalInfo": {
       "title": "Perfil Culinário",
-      "subtitle": "Suas informações profissionais culinárias",
+      "subtitle": "As tuas informações profissionais culinárias",
       "fullName": "Nome Completo",
       "bio": "Bio",
-      "bioPlaceholder": "Fale um pouco sobre você...",
+      "bioPlaceholder": "Fala um pouco sobre ti...",
       "profession": "Profissão",
       "nationality": "Nacionalidade",
       "nationalityPlaceholder": "Selecione a nacionalidade",
@@ -994,25 +996,25 @@
     },
     "professionalInfo": {
       "title": "Situação Profissional",
-      "subtitle": "Detalhes sobre sua situação atual",
+      "subtitle": "Detalhes sobre a tua situação atual",
       "gender": "Sexo",
       "gender_male": "Masculino",
       "gender_female": "Feminino",
       "gender_other": "Outro",
       "gender_prefer_not_to_say": "Prefiro não dizer",
-      "employmentStatus": "Status de Emprego",
+      "employmentStatus": "Situação de Emprego",
       "employed": "Empregado",
       "unemployed": "Desempregado",
       "currentSalary": "Salário Atual",
       "salaryPlaceholder": "Ex: 3000€",
-      "careerMigration": "Migrando de Carreira",
-      "careerMigrationText": "Sim, estou migrando de carreira",
-      "saveChanges": "Salvar Alterações"
+      "careerMigration": "Mudança de Carreira",
+      "careerMigrationText": "Sim, estou a mudar de carreira",
+      "saveChanges": "Guardar Alterações"
     }
   },
   "recipeManagement": {
-    "title": "Minhas Receitas",
-    "subtitle": "Visualize e gerencie todas as suas receitas culinárias",
+    "title": "As Minhas Receitas",
+    "subtitle": "Vê e gere todas as tuas receitas culinárias",
     "backToDashboard": "Voltar ao Dashboard",
     "filters": {
       "all": "Todas",
@@ -1050,43 +1052,43 @@
   },
   "cookie": {
     "banner": {
-      "title": "Utilizamos cookies para melhorar sua experiência",
-      "description": "Utilizamos cookies e tecnologias similares para ajudar a personalizar conteúdo, fornecer e melhorar nossos serviços e analisar tráfego. Ao clicar em \"Aceitar Todos\", você consente com o uso de cookies para todos os fins. Você pode personalizar suas preferências em nossas configurações de cookies.",
+      "title": "Utilizamos cookies para melhorar a tua experiência",
+      "description": "Utilizamos cookies e tecnologias similares para ajudar a personalizar conteúdo, fornecer e melhorar os nossos serviços e analisar tráfego. Ao clicar em \"Aceitar Todos\", consentes com o uso de cookies para todos os fins. Podes personalizar as tuas preferências nas nossas definições de cookies.",
       "necessary": "Cookies necessários",
       "analytics": "Cookies de análise",
       "marketing": "Cookies de marketing",
-      "settings": "Configurações",
+      "settings": "Definições",
       "acceptAll": "Aceitar Todos"
     },
     "settings": {
-      "title": "Configurações de Cookies",
-      "description": "Gerencie suas preferências de cookies para controlar como utilizamos seus dados",
+      "title": "Definições de Cookies",
+      "description": "Gere as tuas preferências de cookies para controlar como usamos os teus dados",
       "necessary": {
         "title": "Cookies Necessários",
         "status": "Sempre Ativos",
-        "description": "Esses cookies são essenciais para o funcionamento adequado do site. Eles não podem ser desativados."
+        "description": "Estes cookies são essenciais para o funcionamento adequado do site. Não podem ser desativados."
       },
       "analytics": {
         "title": "Cookies de Análise",
         "status": "Sempre Ativos",
-        "description": "Esses cookies nos ajudam a entender como os visitantes interagem com nosso site coletando e relatando informações anonimamente."
+        "description": "Estes cookies ajudam-nos a entender como os visitantes interagem com o nosso site, recolhendo e reportando informações anonimamente."
       },
       "marketing": {
         "title": "Cookies de Marketing",
         "status": "Sempre Ativos",
-        "description": "Esses cookies são usados para rastrear visitantes em sites para exibir anúncios relevantes e envolventes."
+        "description": "Estes cookies são usados para acompanhar visitantes em sites e exibir anúncios relevantes e envolventes."
       },
       "functional": {
         "title": "Cookies Funcionais",
         "status": "Sempre Ativos",
-        "description": "Esses cookies permitem funcionalidades aprimoradas e personalização, como lembrar suas preferências."
+        "description": "Estes cookies permitem funcionalidades aprimoradas e personalização, como lembrar as tuas preferências."
       },
       "privacy": {
-        "title": "Sua Privacidade Importa",
-        "description": "Respeitamos sua privacidade e estamos comprometidos em proteger seus dados pessoais. Você pode alterar essas configurações a qualquer momento. Para mais informações, leia nossa Política de Privacidade e Termos de Uso."
+        "title": "A Tua Privacidade Importa",
+        "description": "Respeitamos a tua privacidade e estamos comprometidos em proteger os teus dados pessoais. Podes alterar estas definições a qualquer momento. Para mais informações, lê a nossa Política de Privacidade e Termos de Uso."
       },
       "rejectAll": "Rejeitar Todos",
-      "savePreferences": "Salvar Preferências"
+      "savePreferences": "Guardar Preferências"
     }
   },
   "termsOfUse": {
@@ -1100,27 +1102,27 @@
       "title": "1. Informações do Prestador de Serviço e Visão Geral do Serviço",
       "subsection1": {
         "title": "1.1. Informações do Prestador",
-        "content": "O Serviço é prestado por Daniel Fonseca da Silva, trabalhador independente em Portugal. Para questões relacionadas a estes Termos, entre em contato através do email contact@techcuisine.com."
+        "content": "O Serviço é prestado por Daniel Fonseca da Silva, trabalhador independente em Portugal. Para questões relacionadas com estes Termos, entre em contacto através do email contact@techcuisine.com."
       },
       "subsection2": {
         "title": "1.2. Descrição do Serviço",
         "content": "O Tech Cuisine é uma plataforma SaaS de gestão de custos de cozinha que fornece fichas técnicas, cálculo de rendimentos, food cost, engenharia de cardápio e registo de desperdício. O Serviço permite gerir ingredientes, fornecedores, preços e receitas de forma integrada, com geração de relatórios e análises financeiras da cozinha.",
-        "aiDisclosure": "Divulgação de Processamento por IA: O Serviço utiliza sistemas de inteligência artificial, incluindo Claude AI e ChatGPT, para análise de receitas, cálculo de custos, sugestões de preços e recomendações operacionais de cozinha. O processamento por IA apoia decisões de engenharia de cardápio e otimização de food cost com base nos dados introduzidos pelo utilizador. Os utilizadores são informados de que determinadas funcionalidades utilizam análise algorítmica para gerar sugestões — estas não substituem a avaliação profissional do operador."
+        "aiDisclosure": "Divulgação de Processamento por IA: O Serviço utiliza sistemas de inteligência artificial, incluindo Claude AI e ChatGPT, para análise de receitas, cálculo de custos, sugestões de preços e recomendações operacionais de cozinha. O processamento por IA apoia decisões de engenharia de cardápio e otimização de food cost com base nos dados introduzidos pelo utilizador. Os utilizadores são informados de que determinadas funcionalidades utilizam análise algorítmica para gerar sugestões, as quais não substituem a avaliação profissional do operador."
       }
     },
     "section2": {
       "title": "2. Aceitação e Modificação dos Termos",
-      "content": "Ao aceder ou usar o nosso Serviço, você reconhece que leu, entendeu e concorda em estar vinculado a estes Termos e à nossa Política de Privacidade. Estes Termos constituem um acordo legalmente vinculativo entre você e o Prestador de Serviço sob as leis da República Portuguesa e os Regulamentos da União Europeia aplicáveis, incluindo, mas não se limitando a, o RGPD. Reservamo-nos o direito de modificar estes Termos a qualquer momento. As alterações serão publicadas no nosso site com uma data de vigência atualizada. O uso continuado do Serviço após as alterações constitui aceitação dos Termos modificados. A sua aceitação eletrónica destes Termos cria um contrato válido e executável de acordo com a legislação Portuguesa e os requisitos de formação de contratos eletrónicos da União Europeia, incluindo o Regulamento eIDAS (Regulamento (UE) n.º 910/2014)."
+      "content": "Ao aceder ou usar o Serviço, o utilizador reconhece que leu, entendeu e concorda em estar vinculado a estes Termos e à nossa Política de Privacidade. Estes Termos constituem um acordo legalmente vinculativo entre o utilizador e o Prestador de Serviço sob as leis da República Portuguesa e os Regulamentos da União Europeia aplicáveis, incluindo, mas não se limitando a, o RGPD. Reservamo-nos o direito de modificar estes Termos a qualquer momento. As alterações serão publicadas no nosso site com uma data de vigência atualizada. O uso continuado do Serviço após as alterações constitui aceitação dos Termos modificados. A aceitação eletrónica destes Termos cria um contrato válido e executável de acordo com a legislação Portuguesa e os requisitos de formação de contratos eletrónicos da União Europeia, incluindo o Regulamento eIDAS (Regulamento (UE) n.º 910/2014)."
     },
     "section3": {
-      "title": "3. Elegibilidade do Usuário e Registro de Conta",
+      "title": "3. Elegibilidade do Utilizador e Registo de Conta",
       "subsection1": {
         "title": "3.1. Elegibilidade de Idade",
-        "content": "Nosso Serviço está disponível para todos os usuários do planeta. No entanto, para utilizadores na União Europeia, o utilizador deve ter a idade mínima legal para celebrar contratos vinculativos (geralmente 18 anos, ou a idade determinada pela lei portuguesa ou pela lei do país de residência do consumidor, se aplicável), e cumprir os Termos aqui registrados e as leis locais que regem seu uso de plataformas de comunicação e serviços automatizados."
+        "content": "O nosso Serviço está disponível para todos os utilizadores do planeta. No entanto, para utilizadores na União Europeia, o utilizador deve ter a idade mínima legal para celebrar contratos vinculativos (geralmente 18 anos, ou a idade determinada pela lei portuguesa ou pela lei do país de residência do consumidor, se aplicável), e cumprir os Termos aqui registados e as leis locais que regem o seu uso de plataformas de comunicação e serviços automatizados."
       },
       "subsection2": {
-        "title": "3.2. Registro de Conta",
-        "content": "Para utilizar o Serviço, os utilizadores devem criar uma conta fornecendo informações precisas e atualizadas. Os utilizadores são responsáveis por manter a confidencialidade de suas credenciais de acesso e por todas as atividades que ocorram sob sua conta."
+        "title": "3.2. Registo de Conta",
+        "content": "Para utilizar o Serviço, os utilizadores devem criar uma conta fornecendo informações precisas e atualizadas. Os utilizadores são responsáveis por manter a confidencialidade das suas credenciais de acesso e por todas as atividades que ocorram sob a sua conta."
       }
     },
     "section4": {
@@ -1131,7 +1133,7 @@
       },
       "subsection2": {
         "title": "4.2",
-        "content": "Os utilizadores não podem tentar acessar áreas não autorizadas do Serviço, interferir com o funcionamento do Serviço ou usar qualquer método automatizado para acessar o Serviço sem autorização prévia."
+        "content": "Os utilizadores não podem tentar aceder a áreas não autorizadas do Serviço, interferir com o funcionamento do Serviço ou usar qualquer método automatizado para aceder ao Serviço sem autorização prévia."
       }
     },
     "section5": {
@@ -1139,7 +1141,7 @@
       "intro": "Oferecemos serviços através de compras baseadas em planos de assinatura. Os utilizadores podem subscrever planos para acesso contínuo.",
       "subsection1": {
         "title": "5.1. Processamento de Pagamento",
-        "content": "Todos os pagamentos são processados com segurança através do Stripe, um processador de pagamento de terceiros. Ao fazer compras, você concorda em cumprir os Termos de Serviço do Stripe e reconhece que suas informações de pagamento serão processadas de acordo com seus padrões de segurança e nossa Política de Privacidade."
+        "content": "Todos os pagamentos são processados com segurança através do Stripe, um processador de pagamento de terceiros. Ao fazer compras, o utilizador concorda em cumprir os Termos de Serviço do Stripe e reconhece que as suas informações de pagamento serão processadas de acordo com os seus padrões de segurança e a nossa Política de Privacidade."
       },
       "subsection2": {
         "title": "5.2. Direito Europeu de Rescisão (Direito de Arrependimento)",
@@ -1147,7 +1149,7 @@
       },
       "subsection3": {
         "title": "5.3. Cobrança e Cancelamento de Assinatura",
-        "content": "As assinaturas são renovadas automaticamente no final de cada período de cobrança. Forneceremos aviso de pelo menos 30 dias para aumentos de preço de assinatura. Os utilizadores podem cancelar assinaturas a qualquer momento através das configurações da conta ou entrando em contato com o suporte. O cancelamento entrará em vigor no final do período de cobrança atual."
+        "content": "As subscrições são renovadas automaticamente no final de cada período de faturação. Forneceremos aviso de pelo menos 30 dias para aumentos de preço de subscrição. Os utilizadores podem cancelar subscrições a qualquer momento através das definições da conta ou entrando em contacto com o suporte. O cancelamento entrará em vigor no final do período de faturação atual."
       }
     },
     "section6": {
@@ -1184,7 +1186,7 @@
       },
       "subsection2": {
         "title": "8.2",
-        "content": "Os utilizadores podem gerir as suas preferências de cookies através das configurações do navegador ou das configurações de cookies do nosso site."
+        "content": "Os utilizadores podem gerir as suas preferências de cookies através das definições do navegador ou das definições de cookies do nosso site."
       }
     },
     "section9": {
@@ -1225,7 +1227,7 @@
       },
       "subsection2": {
         "title": "12.2",
-        "content": "O utilizador pode encerrar sua conta a qualquer momento através das configurações da conta ou entrando em contato com o suporte."
+        "content": "O utilizador pode encerrar a sua conta a qualquer momento através das definições da conta ou entrando em contacto com o suporte."
       }
     },
     "section13": {
@@ -1281,12 +1283,12 @@
         "content": "O utilizador não pode ceder ou transferir estes Termos ou quaisquer direitos aqui concedidos sem o consentimento prévio por escrito do Prestador de Serviço. O Prestador de Serviço pode ceder estes Termos sem restrições."
       },
       "subsection6": {
-        "title": "15.6. Contato",
-        "content": "Para questões relacionadas a estes Termos, entre em contato através do email contact@techcuisine.com."
+        "title": "15.6. Contacto",
+        "content": "Para questões relacionadas com estes Termos, entre em contacto através do email contact@techcuisine.com."
       }
     },
     "metadata": {
-      "title": "Termos de Serviço — condições de utilização do Tech Cuisine",
+      "title": "Termos de Serviço: condições de utilização do Tech Cuisine",
       "description": "Termos que regem a utilização do Tech Cuisine: planos de subscrição, utilização aceitável, propriedade intelectual e os seus direitos enquanto utilizador."
     }
   },
@@ -1300,12 +1302,12 @@
       "title": "1. Introdução e Escopo",
       "content": "O Tech Cuisine (\"Serviço\") é operado por Daniel Fonseca da Silva, trabalhador independente em Portugal (\"Prestador\", \"nós\", \"nosso\" ou \"nossa\"), e respeita a sua privacidade, estando comprometido em proteger as suas informações pessoais. Esta Política de Privacidade explica como recolhemos, usamos, processamos e protegemos informações quando utiliza o Serviço Tech Cuisine.",
       "compliance": "Conformidade Regulatória:",
-      "complianceContent": "Esta política está em conformidade com a Lei Geral de Proteção de Dados (LGPD) brasileira, o GDPR europeu, as leis de privacidade estaduais dos EUA, incluindo a Lei de Privacidade do Consumidor da Califórnia (CCPA), a Lei de Proteção de Informações Pessoais e Documentos Eletrônicos do Canadá (PIPEDA), a Lei de Proteção de Informações Pessoais e Documentos Eletrônicos do Reino Unido, e regulamentações internacionais aplicáveis de proteção de dados.",
+      "complianceContent": "Esta política está em conformidade com a Lei Geral de Proteção de Dados (LGPD) brasileira, o RGPD europeu, as leis de privacidade estaduais dos EUA, incluindo a Lei de Privacidade do Consumidor da Califórnia (CCPA), a Lei de Proteção de Informações Pessoais e Documentos Eletrónicos do Canadá (PIPEDA), a Lei de Proteção de Informações Pessoais e Documentos Eletrónicos do Reino Unido, e regulamentos internacionais aplicáveis de proteção de dados.",
       "serviceOverview": "Visão Geral do Serviço:",
       "serviceOverviewContent": "O Serviço fornece uma plataforma SaaS de gestão de custos de cozinha, incluindo fichas técnicas, cálculo de custo por porção, rendimentos de ingredientes, engenharia de cardápio, registo de desperdício, preços de ingredientes e fornecedores, relatórios financeiros e análise por IA de receitas e operações de cozinha."
     },
     "section2": {
-      "title": "2. Informações do Controlador de Dados e Detalhes de Contato",
+      "title": "2. Informações do Controlador de Dados e Detalhes de Contacto",
       "dataController": "Controlador de Dados",
       "dataControllerValue": "Daniel Fonseca da Silva",
       "privacyInquiries": "Consultas de Privacidade",
@@ -1316,13 +1318,13 @@
     "section3": {
       "title": "3. Categorias de Informações Pessoais que Coletamos",
       "subsection1": {
-        "title": "Informações que Você Fornece Diretamente:",
-        "accountInfo": "Informações da Conta: Endereço de e-mail, configurações de notificação preferidas, preferências do usuário",
+        "title": "Informações que o Utilizador Fornece Diretamente:",
+        "accountInfo": "Informações da Conta: Endereço de e-mail, configurações de notificação preferidas, preferências do utilizador",
         "paymentInfo": "Informações de Pagamento: Detalhes de cobrança processados através do Stripe (não armazenamos informações completas do cartão de pagamento)",
         "communicationData": "Dados de Comunicação: Consultas de suporte, feedback e correspondência"
       },
       "subsection2": {
-        "title": "Informações Coletadas Automaticamente:",
+        "title": "Informações Recolhidas Automaticamente:",
         "usageData": "Dados de Uso: Padrões de interação com o serviço, uso de recursos, consultas de pesquisa e preferências",
         "technicalInfo": "Informações Técnicas: Endereços IP, informações do dispositivo, tipo de navegador, horários de acesso",
         "botInteraction": "Dados de Interação com a App: Comandos utilizados, padrões de resposta, escolhas de configuração do serviço e interações com o assistente de IA",
@@ -1332,8 +1334,8 @@
       "subsection3": {
         "title": "Dados de Marketing e Análise:",
         "siteAnalysis": "Análise do Site: Google Analytics, Facebook Pixel, pixels de marketing do Yahoo para otimização do site",
-        "marketingAttribution": "Atribuição de Marketing: Efetividade de campanhas, fontes de referência, métricas de aquisição de usuários",
-        "cookieData": "Dados de Cookies: Cookies de gerenciamento de sessão, configurações de preferências, tokens de autenticação"
+        "marketingAttribution": "Atribuição de Marketing: Efetividade de campanhas, fontes de referência, métricas de aquisição de utilizadores",
+        "cookieData": "Dados de Cookies: Cookies de gestão de sessão, configurações de preferências, tokens de autenticação"
       }
     },
     "section4": {
@@ -1341,26 +1343,26 @@
       "subsection1": {
         "title": "Bases Legais da LGPD:",
         "consent": "Consentimento: Para comunicações de marketing, análises e recursos opcionais, e processamento de dados sensíveis (quando aplicável)",
-        "contract": "Execução de Contrato: Para entrega de serviços, processamento de pagamentos e gerenciamento de contas",
+        "contract": "Execução de Contrato: Para entrega de serviços, processamento de pagamentos e gestão de contas",
         "legitimateInterest": "Interesse Legítimo: Para melhoria do serviço, prevenção de fraudes e suporte ao cliente",
         "legalCompliance": "Conformidade Legal: Para obrigações fiscais, relatórios regulatórios e solicitações de aplicação da lei"
       },
       "subsection2": {
-        "title": "Bases Legais do GDPR (para usuários da UE):",
+        "title": "Bases Legais do RGPD (para utilizadores da UE):",
         "consent": "Consentimento (Artigo 6(1)(a)): Marketing, análises e processamento opcional de dados",
         "contract": "Execução de Contrato (Artigo 6(1)(b)): Entrega de serviços e processamento de pagamentos",
         "legitimateInterests": "Interesses Legítimos (Artigo 6(1)(f)): Melhoria do serviço, segurança e prevenção de fraudes",
         "legalObligation": "Obrigação Legal (Artigo 6(1)(c)): Conformidade regulatória e requisitos legais",
-        "sensitiveData": "Dados Sensíveis (Artigo 9): Quando dados sensíveis como gênero são processados, baseamos-nos em consentimento explícito do titular dos dados"
+        "sensitiveData": "Dados Sensíveis (Artigo 9): Quando dados sensíveis como género são processados, baseamo-nos em consentimento explícito do titular dos dados"
       },
       "subsection3": {
         "title": "Finalidades de Processamento:",
         "serviceDelivery": "Entrega de Serviços: Fornecimento da plataforma de gestão de custos e cardápio de cozinha, fichas técnicas, análises financeiras e relatórios",
         "aiProcessing": "Processamento por IA: Uso de Claude AI e ChatGPT para análise de receitas, cálculo de custos, sugestões de preços e recomendações operacionais de cozinha",
-        "paymentProcessing": "Processamento de Pagamentos: Gerenciamento de assinaturas e cobrança através do Stripe",
+        "paymentProcessing": "Processamento de Pagamentos: Gestão de subscrições e faturação através do Stripe",
         "customerSupport": "Suporte ao Cliente: Resposta a consultas, solução de problemas e assistência ao serviço",
         "serviceImprovement": "Melhoria do Serviço: Análise de padrões de uso para aprimorar recursos e funcionalidades",
-        "marketingAnalysis": "Marketing e Análise: Compreensão do comportamento do usuário e promoção de serviços relevantes",
+        "marketingAnalysis": "Marketing e Análise: Compreensão do comportamento do utilizador e promoção de serviços relevantes",
         "legalCompliance": "Conformidade Legal: Atendimento a obrigações fiscais, regulatórias e de aplicação da lei"
       }
     },
@@ -1376,11 +1378,11 @@
       "subsection2": {
         "title": "Direitos de Tomada de Decisão Automatizada:",
         "humanReview": "Solicitar revisão humana de recomendações orientadas por IA",
-        "understandLogic": "Entender a lógica por trás do processamento automatizado que afeta sua experiência de serviço",
+        "understandLogic": "Entender a lógica por trás do processamento automatizado que afeta a sua experiência de serviço",
         "optOut": "Optar por não usar certos recursos alimentados por IA mantendo o acesso ao serviço principal",
-        "accessInfo": "Acessar informações sobre como os sistemas de IA processam seus dados"
+        "accessInfo": "Aceder a informações sobre como os sistemas de IA processam os seus dados"
       },
-      "transparency": "Transparência de IA: O processamento por IA envolve análise de preferências do usuário, histórico de pesquisa e padrões de interação para melhorar a precisão das recomendações. Os usuários podem solicitar explicações detalhadas dos processos de tomada de decisão por IA que afetam sua experiência de serviço."
+      "transparency": "Transparência de IA: O processamento por IA envolve análise de preferências do utilizador, histórico de pesquisa e padrões de interação para melhorar a precisão das recomendações. Os utilizadores podem solicitar explicações detalhadas dos processos de tomada de decisão por IA que afetam a sua experiência de serviço."
     },
     "section6": {
       "title": "6. Compartilhamento de Dados e Processadores de Terceiros",
@@ -1390,7 +1392,7 @@
       },
       "subsection2": {
         "title": "Infraestrutura de Serviço:",
-        "content": "Provedores de Hospedagem em Nuvem: Dados técnicos do serviço e informações do usuário armazenadas em infraestrutura de nuvem segura"
+        "content": "Fornecedores de Alojamento em Nuvem: Dados técnicos do serviço e informações do utilizador armazenadas em infraestrutura de nuvem segura"
       },
       "subsection3": {
         "title": "Parceiros de Processamento por IA:",
@@ -1419,7 +1421,7 @@
         "privacyShield": "Sucessores do Privacy Shield: Quadros apropriados para transferências de dados dos EUA quando disponíveis",
         "adequateProtection": "Proteção Adequada: Garantindo que os países receptores forneçam níveis adequados de proteção de dados equivalentes aos padrões da UE e do Brasil"
       },
-      "userRights": "Direitos do Usuário em Relação às Transferências: Os usuários podem solicitar informações sobre transferências internacionais que afetam seus dados e as salvaguardas que protegem suas informações em jurisdições estrangeiras."
+      "userRights": "Direitos do Utilizador em Relação às Transferências: Os utilizadores podem solicitar informações sobre transferências internacionais que afetam os seus dados e as salvaguardas que protegem as suas informações em jurisdições estrangeiras."
     },
     "section8": {
       "title": "8. Retenção e Exclusão de Dados",
@@ -1433,13 +1435,13 @@
       },
       "subsection2": {
         "title": "Exclusão Automática:",
-        "content": "Implementamos processos automatizados de exclusão para remover dados após o término dos períodos de retenção. Os usuários recebem notificação antes da exclusão automática quando exigido por lei. Coletamos e retemos apenas dados necessários para finalidades especificadas e revisamos regularmente as práticas de retenção para minimizar a duração do armazenamento."
+        "content": "Implementamos processos automatizados de eliminação para remover dados após o fim dos períodos de retenção. Os utilizadores recebem notificação antes da eliminação automática quando exigido por lei. Recolhemos e retemos apenas dados necessários para finalidades especificadas e revemos regularmente as práticas de retenção para minimizar a duração do armazenamento."
       }
     },
     "section9": {
-      "title": "9. Estrutura Abrangente de Direitos do Usuário",
+      "title": "9. Estrutura Abrangente de Direitos do Utilizador",
       "subsection1": {
-        "title": "Direitos Universais (Disponíveis para Todos os Usuários):",
+        "title": "Direitos Universais (Disponíveis para Todos os Utilizadores):",
         "informed": "Direito de ser Informado: Informações claras sobre processamento de dados na coleta",
         "access": "Direito de Acesso: Obter cópias de dados pessoais e informações de processamento",
         "rectification": "Direito de Retificação: Corrigir informações imprecisas ou incompletas",
@@ -1448,7 +1450,7 @@
         "opposition": "Direito de Oposição: Opor-se ao processamento para marketing direto e interesses legítimos"
       },
       "subsection2": {
-        "title": "Usuários Brasileiros (Direitos da LGPD):",
+        "title": "Utilizadores Brasileiros (Direitos da LGPD):",
         "confirmation": "Direito de Confirmação: Confirmar existência de processamento de dados",
         "information": "Direito de Informação: Informações detalhadas sobre atividades de processamento",
         "anonymization": "Direito de Anonimização: Solicitar anonimização de dados desnecessários",
@@ -1464,8 +1466,8 @@
         "correct": "Direito de Corrigir: Retificar informações pessoais imprecisas"
       },
       "subsection4": {
-        "title": "Usuários Canadenses (Direitos do PIPEDA):",
-        "access": "Direito de Acesso: Acessar informações pessoais mantidas pela organização",
+        "title": "Utilizadores Canadianos (Direitos do PIPEDA):",
+        "access": "Direito de Acesso: Aceder a informações pessoais mantidas pela organização",
         "contest": "Direito de Contestar: Contestar precisão e integridade das informações",
         "withdrawConsent": "Direito de Retirar Consentimento: Retirar consentimento sujeito a restrições contratuais",
         "complain": "Direito de Reclamar: Apresentar reclamações ao Comissário de Privacidade"
@@ -1475,7 +1477,7 @@
       "title": "10. Exercendo Seus Direitos",
       "subsection1": {
         "title": "Como Enviar Solicitações:",
-        "content": "E-mail: contact@techcuisine.com com \"Solicitação de Privacidade\" na linha de assunto"
+        "content": "E-mail: contact@techcuisine.com com \"Pedido de Privacidade\" na linha de assunto"
       },
       "subsection2": {
         "title": "Processamento de Solicitações:",
@@ -1493,25 +1495,25 @@
       }
     },
     "section11": {
-      "title": "11. Cookies e Tecnologias de Rastreamento",
+      "title": "11. Cookies e Tecnologias de Monitorização",
       "subsection1": {
         "title": "Tipos de Cookies Utilizados:",
         "essential": "Cookies Essenciais: Necessários para funcionalidade básica do serviço e segurança",
         "analytics": "Cookies de Análise: Google Analytics para análise de desempenho do site",
         "marketing": "Cookies de Marketing: Facebook Pixel, pixels de marketing do Yahoo para otimização de campanhas",
-        "preference": "Cookies de Preferência: Lembrar configurações e preferências do usuário"
+        "preference": "Cookies de Preferência: Lembrar configurações e preferências do utilizador"
       },
       "subsection2": {
         "title": "Consentimento de Cookies:",
-        "granularControl": "Controle Granular: Usuários podem aceitar/rejeitar categorias específicas de cookies",
-        "consentManagement": "Gerenciamento de Consentimento: Centro de preferências de cookies fácil de usar",
+        "granularControl": "Controlo Granular: Utilizadores podem aceitar/rejeitar categorias específicas de cookies",
+        "consentManagement": "Gestão de Consentimento: Centro de preferências de cookies fácil de usar",
         "withdrawalRights": "Direitos de Retirada: Mecanismo simples para retirar consentimento de cookies",
         "equalProminence": "Destaque Igual: Opções de aceitar e rejeitar recebem ênfase igual"
       },
       "subsection3": {
         "title": "Mecanismos de Opt-Out:",
         "gpc": "Controle Global de Privacidade (GPC): Respeitar sinais de opt-out baseados em navegador",
-        "cookieSettings": "Configurações de Cookies: Gerenciamento de preferências acessível em todas as páginas",
+        "cookieSettings": "Definições de Cookies: Gestão de preferências acessível em todas as páginas",
         "marketingOptOut": "Opt-Out de Marketing: Links diretos de opt-out em comunicações de marketing",
         "analyticsOptOut": "Opt-Out de Análise: Suporte ao complemento de navegador de opt-out do Google Analytics"
       }
@@ -1530,7 +1532,7 @@
         "detection": "Detecção: Monitoramento 24/7 e sistemas de detecção de incidentes",
         "assessment": "Avaliação: Avaliação rápida de risco e análise de impacto",
         "notification": "Notificação: Notificação regulatória dentro de 72 horas (GDPR), 3 dias úteis (LGPD)",
-        "userCommunication": "Comunicação ao Usuário: Notificação imediata se a violação provavelmente causar dano",
+        "userCommunication": "Comunicação ao Utilizador: Notificação imediata se a violação provavelmente causar dano",
         "remediation": "Remediação: Medidas imediatas para conter e remediar incidentes de segurança"
       },
       "subsection3": {
@@ -1543,12 +1545,12 @@
     },
     "section13": {
       "title": "13. Privacidade de Crianças",
-      "content": "Embora nosso Serviço esteja disponível para todos os usuários, não coletamos intencionalmente informações pessoais de crianças menores de 13 anos sem consentimento dos pais em conformidade com o COPPA (Children's Online Privacy Protection Act).",
-      "parentsCan": "Se tomarmos conhecimento de que coletamos informações de crianças menores de 13 anos, os pais podem:",
-      "requestAccess": "Solicitar acesso às informações de seus filhos",
-      "requestDeletion": "Solicitar exclusão das informações pessoais de seus filhos",
-      "refuseCollection": "Recusar coleta adicional de informações de seus filhos",
-      "enhancedProtections": "Proteções Aprimoradas: Usuários com idade entre 13 e 16 anos em jurisdições da UE recebem proteções aprimoradas de privacidade sob os requisitos do GDPR."
+      "content": "Embora o nosso Serviço esteja disponível para todos os utilizadores, não recolhemos intencionalmente informações pessoais de crianças menores de 13 anos sem consentimento dos pais em conformidade com o COPPA (Children's Online Privacy Protection Act).",
+      "parentsCan": "Se tomarmos conhecimento de que recolhemos informações de crianças menores de 13 anos, os pais podem:",
+      "requestAccess": "Solicitar acesso às informações dos seus filhos",
+      "requestDeletion": "Solicitar a eliminação das informações pessoais dos seus filhos",
+      "refuseCollection": "Recusar a recolha adicional de informações dos seus filhos",
+      "enhancedProtections": "Proteções Aprimoradas: Utilizadores com idade entre 13 e 16 anos em jurisdições da UE recebem proteções aprimoradas de privacidade sob os requisitos do RGPD."
     },
     "section14": {
       "title": "14. Preferências de Marketing e Comunicação",
@@ -1560,7 +1562,7 @@
       },
       "subsection2": {
         "title": "Controles de Comunicação:",
-        "subscriptionManagement": "Gerenciamento de Assinatura: Links fáceis de cancelamento de assinatura em todos os e-mails de marketing",
+        "subscriptionManagement": "Gestão de Subscrição: Links fáceis de cancelamento de subscrição em todos os e-mails de marketing",
         "granularPreferences": "Preferências Granulares: Escolher tipos específicos de comunicações para receber",
         "immediateEffect": "Efeito Imediato: Solicitações de opt-out processadas dentro de 10 dias úteis"
       }
@@ -1568,16 +1570,16 @@
     "section15": {
       "title": "15. Atualizações desta Política de Privacidade",
       "siteNotice": "Aviso no Site: Publicação proeminente da política atualizada com data de vigência",
-      "emailNotification": "Notificação por E-mail: Comunicação direta para usuários registrados",
+      "emailNotification": "Notificação por E-mail: Comunicação direta para utilizadores registados",
       "serviceNotification": "Notificação do Serviço: Avisos no aplicativo para mudanças significativas",
-      "reviewPeriod": "Os usuários têm 30 dias para revisar as mudanças antes que entrem em vigor. O uso continuado após a data de vigência constitui aceitação dos termos atualizados."
+      "reviewPeriod": "Os utilizadores têm 30 dias para rever as alterações antes de entrarem em vigor. O uso continuado após a data de vigência constitui aceitação dos termos atualizados."
     },
     "section16": {
-      "title": "16. Informações de Contato e Reclamações",
+      "title": "16. Informações de Contacto e Reclamações",
       "subsection1": {
         "title": "Consultas de Privacidade:",
         "email": "E-mail",
-        "emailValue": "contact@techcuisine.com com \"Solicitação de Privacidade\" na linha de assunto",
+        "emailValue": "contact@techcuisine.com com \"Pedido de Privacidade\" na linha de assunto",
         "responseTime": "Tempo de Resposta",
         "responseTimeValue": "15 dias úteis para consultas gerais"
       },
@@ -1588,23 +1590,23 @@
         "california": "Califórnia: Procurador-Geral da Califórnia - oag.ca.gov",
         "canada": "Canadá (PIPEDA): Escritório do Comissário de Privacidade do Canadá - priv.gc.ca"
       },
-      "commitment": "Estamos comprometidos em resolver preocupações de privacidade prontamente e encorajamos os usuários a entrar em contato conosco diretamente antes de apresentar reclamações regulatórias. Mantemos registros detalhados dos esforços de resolução de reclamações para demonstrar conformidade com as leis de privacidade aplicáveis.",
-      "compliance": "Esta Política de Privacidade está em conformidade com a LGPD brasileira, as leis de privacidade estaduais dos EUA, o PIPEDA canadense, o GDPR da UE e os padrões internacionais de proteção de dados. Atualizações regulares garantem conformidade contínua com requisitos regulatórios em evolução."
+      "commitment": "Estamos comprometidos em resolver preocupações de privacidade prontamente e encorajamos os utilizadores a entrar em contacto connosco diretamente antes de apresentar reclamações regulatórias. Mantemos registos detalhados dos esforços de resolução de reclamações para demonstrar conformidade com as leis de privacidade aplicáveis.",
+      "compliance": "Esta Política de Privacidade está em conformidade com a LGPD brasileira, as leis de privacidade estaduais dos EUA, o PIPEDA canadiano, o RGPD da UE e os padrões internacionais de proteção de dados. Atualizações regulares garantem conformidade contínua com requisitos regulatórios em evolução."
     },
     "metadata": {
-      "title": "Política de Privacidade — proteção de dados e conformidade RGPD no Tech Cuisine",
+      "title": "Política de Privacidade: proteção de dados e conformidade RGPD no Tech Cuisine",
       "description": "Saiba como o Tech Cuisine recolhe, usa e protege os seus dados pessoais em conformidade com o RGPD, LGPD e CCPA."
     }
   },
   "Contact": {
-    "title": "Fale Conosco",
-    "subtitle": "Ainda tem dúvidas? Estamos aqui para ajudar.",
+    "title": "Fala Connosco",
+    "subtitle": "Ainda tens dúvidas? Estamos aqui para ajudar.",
     "email": "E-mail",
     "responseTime": "Tempo de resposta",
     "responseTimeValue": "24 horas",
     "formTitle": "Envie-nos uma Mensagem",
     "name": "Nome",
-    "namePlaceholder": "Seu nome",
+    "namePlaceholder": "O teu nome",
     "emailLabel": "E-mail",
     "emailPlaceholder": "email@exemplo.com",
     "subject": "Assunto",
@@ -1619,14 +1621,14 @@
     "message": "Mensagem",
     "messagePlaceholder": "Como podemos ajudar?",
     "sendButton": "Enviar Mensagem",
-    "sending": "Enviando...",
+    "sending": "A enviar...",
     "success": "Mensagem enviada com sucesso!",
     "error": "Falha ao enviar mensagem. Tente novamente mais tarde.",
     "turnstileLabel": "Verificação humana",
     "turnstileNotConfigured": "O formulário de contacto não pode enviar mensagens porque a verificação não está configurada (NEXT_PUBLIC_TURNSTILE_SITE_KEY).",
     "contactFormUnavailable": "O envio de mensagens está temporariamente indisponível.",
     "metadata": {
-      "title": "Contacto Tech Cuisine — suporte, faturação e sugestões",
+      "title": "Contacto Tech Cuisine: suporte, faturação e sugestões",
       "description": "Fale com a equipa Tech Cuisine para suporte técnico, questões de faturação, pedidos de funcionalidades ou dúvidas gerais. Respondemos em 24 horas."
     }
   },
@@ -1634,18 +1636,18 @@
     "title": "Ocorreu um erro",
     "ok": "OK",
     "retry": "Tentar novamente",
-    "rateLimitHint": "Você atingiu o limite de requisições. Aguarde um momento antes de tentar novamente.",
+    "rateLimitHint": "Atingiste o limite de pedidos. Aguarda um momento antes de tentar novamente.",
     "planLimit": {
       "title": "Limite mensal de IA atingido",
-      "lead": "Você utilizou todas as gerações de IA incluídas no seu plano atual neste período de faturação.",
-      "resetHint": "A sua quota será renovada no início do próximo período de faturação.",
-      "upgradeHint": "Faça upgrade do seu plano para obter mais gerações de IA e desbloquear funcionalidades adicionais.",
+      "lead": "Utilizaste todas as gerações de IA incluídas no teu plano atual neste período de faturação.",
+      "resetHint": "A tua quota será renovada no início do próximo período de faturação.",
+      "upgradeHint": "Faz upgrade do teu plano para obter mais gerações de IA e desbloquear funcionalidades adicionais.",
       "upgradeCta": "Ver planos"
     },
     "subscriptionFeature": {
-      "title": "Funcionalidade não disponível no seu plano",
-      "lead": "Esta funcionalidade não está incluída no seu plano de subscrição atual.",
-      "upgradeHint": "Faça upgrade do seu plano para desbloquear esta e outras funcionalidades premium.",
+      "title": "Funcionalidade não disponível no teu plano",
+      "lead": "Esta funcionalidade não está incluída no teu plano de subscrição atual.",
+      "upgradeHint": "Faz upgrade do teu plano para desbloquear esta e outras funcionalidades premium.",
       "upgradeCta": "Ver planos"
     },
     "rateLimit": {
@@ -1653,33 +1655,33 @@
     }
   },
   "aiUsageBar": {
-    "loading": "Carregando uso de IA...",
-    "error": "Não foi possível carregar seu uso de IA",
+    "loading": "A carregar uso de IA...",
+    "error": "Não foi possível carregar o teu uso de IA",
     "unlimited": "Uso de IA ilimitado",
-    "noPlan": "Seu plano atual não inclui uso de IA",
-    "label": "Você usou {used} de {limit} usos de IA neste mês",
-    "ariaLabel": "Uso de IA: {used} de {limit} requisições usadas neste mês",
-    "depleted": "Você atingiu o limite mensal de uso de IA",
-    "almostFull": "Restam apenas {remaining} uso(s) de IA neste mês"
+    "noPlan": "O teu plano atual não inclui uso de IA",
+    "label": "Usaste {used} de {limit} usos de IA neste mês",
+    "ariaLabel": "Uso de IA: {used} de {limit} pedidos usados neste mês",
+    "depleted": "Atingiste o limite mensal de uso de IA",
+    "almostFull": "Restam-te apenas {remaining} uso(s) de IA neste mês"
   },
   "paymentConfirmation": {
-    "title": "Assinatura Confirmada",
-    "message": "Sua compra foi efetuada com sucesso na plataforma",
-    "description": "Sua assinatura foi processada com sucesso e sua conta agora está ativa",
+    "title": "Subscrição Confirmada",
+    "message": "A tua compra foi efetuada com sucesso na plataforma",
+    "description": "A tua subscrição foi processada com sucesso e a tua conta está agora ativa",
     "goToDashboard": "Ir para Dashboard"
   },
   "profileAiUsage": {
     "title": "Planos e Gastos",
-    "subtitle": "Seu uso de IA no período atual",
+    "subtitle": "O teu uso de IA no período atual",
     "planLabel": "Plano",
     "periodLabel": "Período",
     "usedLabel": "Utilizados",
     "remainingLabel": "Restantes",
     "limitLabel": "Limite",
-    "loading": "Carregando dados de uso…",
+    "loading": "A carregar dados de uso…",
     "error": "Não foi possível carregar os dados de uso",
-    "unlimited": "Você tem requisições de IA ilimitadas no seu plano atual",
-    "noPlan": "Seu plano atual não inclui recursos de IA"
+    "unlimited": "Tens pedidos de IA ilimitados no teu plano atual",
+    "noPlan": "O teu plano atual não inclui recursos de IA"
   },
   "navigation": {
     "sectionBack": "Voltar"
@@ -1691,7 +1693,7 @@
   },
   "ingredientManagement": {
     "title": "Ingredientes",
-    "subtitle": "Gira todos os teus ingredientes",
+    "subtitle": "Gere todos os teus ingredientes",
     "searchPlaceholder": "Pesquisar ingredientes...",
     "addButton": "Adicionar",
     "editButton": "Editar",
@@ -1753,7 +1755,7 @@
       "priceInfo": "Preço estimado pela IA",
       "error": "Erro ao obter sugestão da IA",
       "nameRequired": "Escreve o nome do ingrediente antes de usar a IA",
-      "settingsNotice": "A IA está a usar o idioma, moeda e país por defeito (inglês, USD, EUA). Para sugestões personalizadas, define o idioma, a moeda e a nacionalidade na tua configuração de perfil."
+      "settingsNotice": "A IA está a usar o idioma, moeda e país por defeito (inglês, USD, EUA). Para sugestões personalizadas, define o idioma, a moeda e a nacionalidade nas tuas definições de perfil."
     }
   },
   "supplierManagement": {
@@ -1930,7 +1932,7 @@
       "observedAtCol": "Data",
       "packLabelCol": "Embalagem",
       "noSupplier": "Sem fornecedor",
-      "noPack": "—"
+      "noPack": "n/d"
     }
   },
   "salesRecordManagement": {
@@ -1973,11 +1975,11 @@
   },
   "AiToolsPage": {
     "metadata": {
-      "title": "Ferramentas de IA culinária — ficha técnica, food cost e engenharia de cardápio | Tech Cuisine",
+      "title": "Ferramentas de IA culinária: ficha técnica, food cost e engenharia de cardápio | Tech Cuisine",
       "description": "Conheça as quatro ferramentas de IA do Tech Cuisine: ficha técnica instantânea, preço de venda sugerido, verificador de food cost % e análise da matriz de cardápio."
     },
     "h1": "Ferramentas de IA para cozinhas profissionais",
-    "lead": "Quatro ferramentas focadas que transformam os seus dados de receitas em clareza financeira — da primeira ficha técnica à estratégia completa de cardápio.",
+    "lead": "Quatro ferramentas focadas que transformam os seus dados de receitas em clareza financeira: da primeira ficha técnica à estratégia completa de cardápio.",
     "cta": "Experimentar o Tech Cuisine grátis",
     "tools": {
       "recipe-cost-breakdown": {
@@ -1996,7 +1998,7 @@
       "selling-price-calculator": {
         "title": "Preço de venda sugerido",
         "description": "Defina a sua percentagem de food cost desejada e obtenha um preço de venda sugerido por IA para cada prato, ancorado em dados de custo reais.",
-        "longDescription": "Cada prato tem um número que o torna viável. Introduza a sua % de food cost alvo e o Tech Cuisine calcula o preço de venda mínimo que mantém a margem intacta — e permite simular cenários alternativos quando os custos mudam.",
+        "longDescription": "Cada prato tem um número que o torna viável. Introduz a tua % de food cost alvo e o Tech Cuisine calcula o preço de venda mínimo que mantém a margem intacta, e permite simular cenários alternativos quando os custos mudam.",
         "benefits": [
           "Input de % de food cost alvo",
           "Preços de venda mínimo e recomendado",
@@ -2009,7 +2011,7 @@
       "food-cost-checker": {
         "title": "Verificador de food cost %",
         "description": "Veja instantaneamente como o custo da sua receita se compara à sua margem-alvo: onde está, o que cortar e como pequenas mudanças no rendimento ou fornecimento alteram os números.",
-        "longDescription": "Perceba exatamente onde está o seu food cost antes de um prato entrar no cardápio. O verificador de food cost compara o custo real com a percentagem-alvo, destaca os ingredientes que o estão a puxar para cima e simula o impacto de mudanças no fornecimento ou rendimento.",
+        "longDescription": "Percebe exatamente onde está o teu food cost antes de um prato entrar no cardápio. O verificador de food cost compara o custo real com a percentagem-alvo, destaca os ingredientes que o estão a puxar para cima e simula o impacto de mudanças no fornecimento ou rendimento.",
         "benefits": [
           "Food cost % real vs alvo em tempo real",
           "Decomposição de custo por ingrediente",
@@ -2021,8 +2023,8 @@
       },
       "menu-matrix-analysis": {
         "title": "Análise da matriz de cardápio",
-        "description": "Perceba quais pratos impulsionam o lucro e quais o arrastam — dados concretos sobre popularidade vs margem para que cada decisão de cardápio seja sustentada por números.",
-        "longDescription": "A matriz de cardápio posiciona cada prato em dois eixos: quanto contribui para o lucro vs com que frequência é vendido. Estrelas, cavalos de trabalho, incógnitas e cães — o Tech Cuisine categoriza os seus pratos automaticamente e recomenda se deve promover, reajustar preço, reformular ou remover cada um.",
+        "description": "Percebe quais pratos impulsionam o lucro e quais o arrastam: dados concretos sobre popularidade vs margem para que cada decisão de cardápio seja sustentada por números.",
+        "longDescription": "A matriz de cardápio posiciona cada prato em dois eixos: quanto contribui para o lucro vs com que frequência é vendido. Estrelas, cavalos de trabalho, incógnitas e cães: o Tech Cuisine categoriza os seus pratos automaticamente e recomenda se deve promover, reajustar preço, reformular ou remover cada um.",
         "benefits": [
           "Categorização automática de pratos (Estrelas, Cavalos, Incógnitas, Cães)",
           "Gráfico popularidade vs margem de contribuição",
@@ -2032,6 +2034,119 @@
         "cta": "Analisar o seu cardápio",
         "schemaDescription": "Ferramenta de IA de engenharia de cardápio que categoriza pratos por rentabilidade e popularidade para otimizar a estratégia de cardápio de restaurantes."
       }
+    }
+  },
+  "BlogRecipeCostPage": {
+    "metadata": {
+      "title": "Controlo de custos da receita: lucro real ao escalar 100 porções | Tech Cuisine",
+      "description": "100 bolos a 10 € não são 1.000 € de lucro. Aprenda controlo de custos da receita, escala de batch e food cost %; calcule a sua margem real com o Tech Cuisine."
+    },
+    "h1": "Controlo de custos da receita: o que 100 porções a 10 € rendem realmente",
+    "lead": "O número \"1.000 €\" tem um aspeto ótimo no papel. Mas percorra o custo da farinha, manteiga, ovos e embalagem num batch de 100 bolos, e a história muda. O lucro real começa numa ficha técnica real.",
+    "exampleBox": {
+      "title": "O cálculo que parece óbvio",
+      "subtitle": "100 bolos de chocolate a 10 € cada: um exemplo trabalhado",
+      "lines": [
+        { "label": "Receita bruta (100 × 10 €)", "value": "1.000,00 €", "type": "revenue" },
+        { "label": "Farinha — 20 kg", "value": "−22,00 €", "type": "cost" },
+        { "label": "Ovos — 200 unidades", "value": "−40,00 €", "type": "cost" },
+        { "label": "Manteiga — 10 kg", "value": "−85,00 €", "type": "cost" },
+        { "label": "Açúcar — 10 kg", "value": "−16,00 €", "type": "cost" },
+        { "label": "Chocolate — 5 kg", "value": "−45,00 €", "type": "cost" },
+        { "label": "Embalagem × 100", "value": "−80,00 €", "type": "cost" },
+        { "label": "Custo total de ingredientes", "value": "288,00 €", "type": "subtotal" },
+        { "label": "Food cost %", "value": "28,8 %", "type": "metric" },
+        { "label": "Margem bruta (antes de custos fixos)", "value": "712,00 €", "type": "profit" }
+      ],
+      "note": "Os preços são ilustrativos para uma cozinha profissional europeia. Os seus custos reais dependem dos seus fornecedores: precisamente por isso precisa de uma ficha técnica com os seus próprios números, não de uma estimativa.",
+      "callout": "712 € parece ótimo. Até adicionar mão-de-obra, energia e custos fixos, e descobrir que a receita foi cotada 15 % abaixo do break-even porque os preços do fornecedor mudaram no mês passado."
+    },
+    "sections": [
+      {
+        "title": "Por que o custo por porção muda quando escala",
+        "paragraphs": [
+          "Duplicar uma receita não duplica a precisão. Ao escalar de 10 para 100 porções, os fatores de rendimento multiplicam-se: a percentagem aproveitável de um ingrediente após limpeza ou redução não muda, mas o desperdício em euros aumenta proporcionalmente. Uma perda de rendimento de 10 % que custa €0,50 num pequeno batch custa €5 num batch de cem porções.",
+          "Uma ficha técnica associa cada ingrediente ao seu rendimento líquido, para que o custo por porção que vê seja o custo que realmente paga (não o custo antes de descascar, aparar ou reduzir). Esta é a base de uma análise real de margem de lucro por receita."
+        ]
+      },
+      {
+        "title": "Preços de ingredientes que mudam sem aviso",
+        "paragraphs": [
+          "Manteiga. Chocolate. Ovos. Se trabalha numa cozinha profissional na Europa, sabe que estes preços oscilam com regularidade. Uma receita cotada em janeiro pode estar a perder dinheiro em março, sem qualquer alteração no cardápio.",
+          "O histórico de preços de ingredientes regista o que pagou por unidade em cada compra. Quando um preço sobe, o impacto em cada prato que usa esse ingrediente atualiza automaticamente, antes de o ver no balanço mensal. É a diferença entre reagir a um problema e preveni-lo."
+        ]
+      },
+      {
+        "title": "Food cost % e o preço de venda que fecha a equação",
+        "paragraphs": [
+          "A percentagem de food cost (FCP) é o custo dos ingredientes dividido pelo preço de venda, expresso em percentagem. A maioria das cozinhas profissionais visa entre 25 % e 35 % de FCP, dependendo do tipo de operação. Uma pastelaria e um restaurante fine dining vivem de números diferentes, mas ambos precisam de conhecer os seus.",
+          "Definir um preço de venda por intuição é uma das formas mais comuns de uma cozinha perder dinheiro silenciosamente. A abordagem correta: conhecer o custo real dos ingredientes, aplicar o FCP alvo e deixar os dados guiar o preço. Ajuste para posicionamento de mercado e concorrência, mas comece sempre pelo custo real."
+        ]
+      },
+      {
+        "title": "A ficha técnica: o documento financeiro que a sua cozinha precisa",
+        "paragraphs": [
+          "Uma ficha técnica não é apenas uma receita. É um documento financeiro: cada ingrediente com a quantidade bruta, fator de rendimento, quantidade líquida, preço unitário e custo por linha; total no final, custo por porção à margem.",
+          "Sem ela, gere a cozinha por intuição. Com ela, cada decisão (o que cobrar, quando reformular, quais pratos manter no cardápio) é sustentada por números reais. A engenharia de cardápio começa aqui: identificar as estrelas e os pesos mortos exige que estes dados existam."
+        ]
+      }
+    ],
+    "triggers": [
+      {
+        "title": "Breakdown de custo de receita",
+        "description": "Crie uma ficha técnica completa com quantidades de ingredientes corrigidas por rendimento, preços reais de fornecedores e custo por porção instantâneo. Sem macros de folha de cálculo.",
+        "href": "/ai-tools/recipe-cost-breakdown"
+      },
+      {
+        "title": "Escala de batch",
+        "description": "Escale qualquer receita de 10 para 1.000 porções e veja as quantidades de ingredientes e o custo total recalcular em tempo real, ajustes de rendimento incluídos.",
+        "href": ""
+      },
+      {
+        "title": "Histórico de preços de ingredientes",
+        "description": "Registe cada compra ao fornecedor e acompanhe a variação de preços ao longo do tempo. Saiba quando uma subida de preço afeta as margens das suas receitas antes de chegar ao balanço.",
+        "href": ""
+      },
+      {
+        "title": "Verificador de food cost",
+        "description": "Insira a sua percentagem alvo de food cost e veja quais pratos estão dentro do intervalo, quais estão acima, e o que uma pequena mudança no rendimento ou sourcing faria aos números.",
+        "href": "/ai-tools/food-cost-checker"
+      }
+    ],
+    "faq": {
+      "title": "Perguntas frequentes sobre controlo de custos da receita",
+      "items": [
+        {
+          "question": "Como calculo o lucro real ao vender 100 unidades?",
+          "answer": "Comece pela receita bruta (unidades × preço de venda). Subtraia todos os custos diretos de ingredientes usando uma ficha técnica com quantidades corrigidas por rendimento e os seus preços reais de fornecedor. O resultado é a sua margem bruta de ingredientes. Para chegar ao lucro líquido, deduza também mão-de-obra, energia, embalagem e custos fixos. Muitas cozinhas saltam o detalhe ao nível dos ingredientes e ficam surpreendidas com o número final."
+        },
+        {
+          "question": "O que é a percentagem de food cost e por que importa?",
+          "answer": "A percentagem de food cost (FCP) é o custo dos seus ingredientes dividido pelo preço de venda. Um prato que custa 2,50 € em ingredientes e se vende por 10,00 € tem um FCP de 25 %. A maioria das cozinhas profissionais visa 25–35 %, dependendo do tipo de operação. Acompanhar o FCP por prato permite identificar quais são rentáveis e quais estão a ser subsidiados pelo resto do cardápio."
+        },
+        {
+          "question": "O que é o fator de rendimento numa receita?",
+          "answer": "O fator de rendimento é a percentagem de um ingrediente que é aproveitável após aparar, descascar, cozinhar ou porcionar. 1 kg de couve-flor pode render apenas 600 g de floretes, um fator de rendimento de 60 %. Se a sua ficha técnica ignorar o rendimento, o custo por porção está subestimado, por vezes 20–40 %. À escala de batch, essa diferença representa dinheiro real."
+        },
+        {
+          "question": "Como é que as mudanças de preço dos ingredientes afetam as margens do cardápio?",
+          "answer": "Cada ingrediente é um custo variável. Quando a manteiga sobe 15 %, todos os pratos que a contêm ficam mais caros de imediato. Sem um sistema de acompanhamento de preços ligado às suas receitas, pode não notar a erosão da margem até ao final do mês. Com o histórico de preços associado a cada ficha técnica, o impacto de qualquer alteração de preço de fornecedor é visível no momento em que regista o novo valor."
+        },
+        {
+          "question": "O Tech Cuisine funciona para pastelarias e padarias?",
+          "answer": "Sim. O Tech Cuisine foi construído com o feedback direto de uma pasteleira de renome em Portugal. Os fatores de rendimento, a escala de batch e a lógica de custo por porção foram desenhados para operações onde a precisão importa, e onde o preço do chocolate, da manteiga e dos ovos muda toda a semana. Quer esteja a calcular uma tarte individual ou um batch de 500 unidades, a ficha técnica reflete o que realmente gasta."
+        }
+      ]
+    },
+    "cta": {
+      "text": "Calcular a sua margem real, grátis",
+      "href": "/auth/register",
+      "note": "7 utilizações de IA gratuitas. Sem cartão de crédito."
+    },
+    "blogPosting": {
+      "headline": "Controlo de custos da receita: o que 100 porções a 10 € rendem realmente",
+      "description": "100 bolos a 10 € não são 1.000 € de lucro. Aprenda controlo de custos da receita, escala de batch e food cost %; calcule a sua margem real com o Tech Cuisine.",
+      "datePublished": "2026-05-29"
     }
   }
 }

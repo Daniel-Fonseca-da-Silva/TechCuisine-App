@@ -402,7 +402,9 @@
       "copyright": "Tech Cuisine. All rights reserved.",
       "location": "Lisbon, Portugal",
       "legal": "Legal",
-      "cookies": "Cookies"
+      "cookies": "Cookies",
+      "news": "News",
+      "blogRecipeCost": "Recipe cost & profit"
     },
     "compareTeaser": {
       "heading": "How does Tech Cuisine compare?",
@@ -434,8 +436,8 @@
   },
   "ComparePage": {
     "metadata": {
-      "title": "Tech Cuisine vs recipe apps, spreadsheets and ERPs — real recipe costing and menu engineering for Portugal",
-      "description": "Compare Tech Cuisine with recipe apps, spreadsheets and generic management suites. See how real-cost recipe sheets, supplier price tracking and AI-powered menu engineering make the difference for professional kitchens in Portugal."
+      "title": "Tech Cuisine vs recipe apps, spreadsheets and ERPs — real recipe costing and menu engineering for Europe",
+      "description": "Compare Tech Cuisine with recipe apps, spreadsheets and generic management suites. See how real-cost recipe sheets, supplier price tracking and AI-powered menu engineering make the difference for professional kitchens in Europe."
     },
     "h1": "Tech Cuisine and other kitchen tools — what's actually different?",
     "lead": "There are recipe apps. There is Excel. There are systems built for other markets. Tech Cuisine was built from the ground up for the professional Portuguese kitchen: shaped by the feedback of a renowned pastry chef and the demands of people who live behind the stove.",
@@ -460,7 +462,7 @@
     "genericStack": {
       "title": "ERPs and global management suites",
       "context": "There are robust management systems built for large-scale operations with multiple warehouses, franchises, and diversified markets. Serious tools for serious scale.",
-      "focus": "They were built for a different reality. Tech Cuisine was designed specifically for the suppliers, prices, and market dynamics of Portugal: seasonal, local, with raw materials that shift in price every week. No adapters, no forty-hour setup, no support team that does not know what a quenelle is."
+      "focus": "They were built for a different reality. Tech Cuisine was designed specifically for the suppliers, prices, and market dynamics of Europe: seasonal, local, with raw materials that shift in price every week. No adapters, no forty-hour setup, no support team that does not know what a quenelle is."
     },
     "cta": {
       "text": "Try Tech Cuisine",
@@ -478,12 +480,12 @@
           "answer": "Excel does what you tell it to — but it does not know that 1 kg of cauliflower yields 600 g of florets. It does not update when a supplier changes their price list. It does not automatically calculate the FCP for each dish or warn you when margins are at risk. Tech Cuisine does not replace your logic; it replaces the repetitive manual work that takes time away from the kitchen."
         },
         {
-          "question": "Supplier prices in Portugal change constantly. How does Tech Cuisine handle that?",
+          "question": "Supplier prices in Europe change constantly. How does Tech Cuisine handle that?",
           "answer": "That is exactly what it was designed for. The price history per ingredient lets you track variation over time, anticipate increases, and make decisions before margins are compromised. When the cost of an ingredient rises, the impact on each dish and on the menu is calculated automatically."
         },
         {
           "question": "What type of kitchen is Tech Cuisine for?",
-          "answer": "For professional kitchens in Portugal that need real control: restaurants, pastry shops, catering operations, dark kitchens. Any operation where ingredient prices matter, recipes need to scale precisely, and the menu must be profitable — not just well-presented."
+          "answer": "For professional kitchens in Europe that need real control: restaurants, pastry shops, catering operations, dark kitchens. Any operation where ingredient prices matter, recipes need to scale precisely, and the menu must be profitable — not just well-presented."
         }
       ]
     }
@@ -507,7 +509,7 @@
         "title": "The wrong tools are not on your level",
         "paragraphs": [
           "There are recipe apps. There are generic spreadsheets. There are systems designed for markets with different scales and different currencies.",
-          "What is missing in Portugal — and in many markets — is something that speaks the real language of the kitchen: correction factors, cost per portion, supplier price history, one-click scalability. Not tricks. Not pretty dashboards that do not understand what a duck stock or a scallop yield actually means."
+          "What is missing in Europe — and in many markets — is something that speaks the real language of the kitchen: correction factors, cost per portion, supplier price history, one-click scalability. Not tricks. Not pretty dashboards that do not understand what a duck stock or a scallop yield actually means."
         ]
       },
       {
@@ -2043,6 +2045,119 @@
         "cta": "Analyse your menu",
         "schemaDescription": "AI menu engineering tool that categorises dishes by profitability and popularity to optimise restaurant menu strategy."
       }
+    }
+  },
+  "BlogRecipeCostPage": {
+    "metadata": {
+      "title": "Recipe cost control: real profit when you scale to 100 portions | Tech Cuisine",
+      "description": "100 cakes at €10 is not €1,000 profit. Learn recipe cost control, ingredient scaling, and food cost % — then calculate your real margin with Tech Cuisine."
+    },
+    "h1": "Recipe cost control: what 100 portions at €10 really earn",
+    "lead": "The number \"€1,000\" looks great on paper. But walk through the cost of flour, butter, eggs, and packaging on a batch of 100 cakes — and the story changes. Real profit starts with a real recipe sheet.",
+    "exampleBox": {
+      "title": "The calculation that seems obvious",
+      "subtitle": "100 chocolate cakes at €10 each: a worked example",
+      "lines": [
+        { "label": "Gross revenue (100 × €10)", "value": "€1,000.00", "type": "revenue" },
+        { "label": "Flour — 20 kg", "value": "−€22.00", "type": "cost" },
+        { "label": "Eggs — 200 units", "value": "−€40.00", "type": "cost" },
+        { "label": "Butter — 10 kg", "value": "−€85.00", "type": "cost" },
+        { "label": "Sugar — 10 kg", "value": "−€16.00", "type": "cost" },
+        { "label": "Chocolate — 5 kg", "value": "−€45.00", "type": "cost" },
+        { "label": "Packaging × 100", "value": "−€80.00", "type": "cost" },
+        { "label": "Total ingredient cost", "value": "€288.00", "type": "subtotal" },
+        { "label": "Food cost %", "value": "28.8 %", "type": "metric" },
+        { "label": "Gross margin (before overhead)", "value": "€712.00", "type": "profit" }
+      ],
+      "note": "These are illustrative prices for a European professional kitchen. Your actual costs depend on your suppliers — which is exactly why you need a cost sheet with your own numbers, not a rough estimate.",
+      "callout": "€712 looks great. Until you add labour, energy, and overhead — and discover the recipe was priced 15 % below break-even because supplier prices changed last month."
+    },
+    "sections": [
+      {
+        "title": "Why your cost per serving changes when you scale",
+        "paragraphs": [
+          "Doubling a recipe does not double precision. When you scale from 10 to 100 portions, yield factors compound: the percentage of an ingredient that is usable after trimming or reduction does not change, but the total waste in euros multiplies. A 10 % yield loss that costs €0.50 on a small batch costs €5 on a hundred-portion run.",
+          "A technical sheet ties every ingredient to its net yield, so the cost per serving you see is the cost you actually pay — not the cost before peeling, trimming, or reduction. This is the foundation of real recipe profit margin analysis."
+        ]
+      },
+      {
+        "title": "Ingredient prices that change without warning",
+        "paragraphs": [
+          "Butter. Chocolate. Eggs. If you work in a professional kitchen, you know these prices shift regularly. A recipe priced in January may be losing money by March — without a single change to the menu.",
+          "Ingredient price tracking gives you a log of what you paid per unit at each purchase. When a price increases, the impact on every dish using that ingredient updates automatically — before you see it in your monthly P&L. That is the difference between reacting to a problem and preventing one."
+        ]
+      },
+      {
+        "title": "Food cost percentage and the selling price that works",
+        "paragraphs": [
+          "Food cost percentage (FCP) is your ingredient cost divided by your selling price, expressed as a percentage. Most professional kitchens target between 25 % and 35 % FCP depending on the type of operation. A pastry shop and a fine-dining restaurant live by different numbers — but both need to know theirs.",
+          "Setting a selling price from gut feeling is one of the most common ways a kitchen quietly loses money. The right approach: know your ingredient cost, apply your target FCP, and let the data guide the price. Adjust for market positioning and competition, but always start from the real cost."
+        ]
+      },
+      {
+        "title": "The technical sheet: the financial document your kitchen needs",
+        "paragraphs": [
+          "A technical sheet (ficha técnica) is not just a recipe card. It is a financial document: every ingredient with its gross quantity, yield factor, net quantity, unit price, and line cost — total at the bottom, cost per serving on the side.",
+          "Without it, you are running a kitchen on instinct. With it, every decision — what to charge, when to reformulate, which dishes belong on the menu — is backed by actual numbers. Menu engineering starts here: identifying your stars and your underperformers requires this data to exist in the first place."
+        ]
+      }
+    ],
+    "triggers": [
+      {
+        "title": "Recipe cost breakdown",
+        "description": "Build a complete technical sheet with yield-corrected ingredient quantities, real supplier prices, and an instant cost per serving. No spreadsheet macros required.",
+        "href": "/ai-tools/recipe-cost-breakdown"
+      },
+      {
+        "title": "Batch scaling",
+        "description": "Scale any recipe from 10 to 1,000 portions and watch ingredient quantities and total cost recalculate in real time — yield adjustments included.",
+        "href": ""
+      },
+      {
+        "title": "Ingredient price tracking",
+        "description": "Log every supplier purchase and track price variation over time. Know when a price spike changes your recipe margins before it hits your bottom line.",
+        "href": ""
+      },
+      {
+        "title": "Food cost checker",
+        "description": "Enter your target food cost percentage and see which dishes are within range, which are over, and what a small change in yield or sourcing would do to the numbers.",
+        "href": "/ai-tools/food-cost-checker"
+      }
+    ],
+    "faq": {
+      "title": "Frequently asked questions about recipe cost control",
+      "items": [
+        {
+          "question": "How do I calculate the real profit from selling 100 units?",
+          "answer": "Start with your gross revenue (units × selling price). Subtract all direct ingredient costs using a technical sheet with yield-corrected quantities and your actual supplier prices. The result is your gross ingredient margin. To reach net profit, also deduct labour, energy, packaging, and overhead. Many kitchens skip the ingredient-level detail and are surprised by the final number."
+        },
+        {
+          "question": "What is food cost percentage and why does it matter?",
+          "answer": "Food cost percentage (FCP) is your ingredient cost divided by your selling price. A dish that costs €2.50 in ingredients and sells for €10.00 has a 25 % FCP. Most professional kitchens target 25–35 %, depending on the type of operation. Tracking FCP per dish lets you identify which items are profitable and which are quietly subsidised by the rest of your menu."
+        },
+        {
+          "question": "What is yield factor in a recipe?",
+          "answer": "Yield factor is the percentage of an ingredient that is usable after trimming, peeling, cooking, or portioning. 1 kg of cauliflower may yield only 600 g of florets — a yield factor of 60 %. If your technical sheet ignores yield, your cost per serving is underestimated, sometimes by 20–40 %. At batch scale, that gap becomes significant money."
+        },
+        {
+          "question": "How do ingredient price changes affect my menu margins?",
+          "answer": "Every ingredient is a variable cost. When butter rises 15 %, every dish containing butter becomes more expensive — immediately. Without price tracking linked to your recipes, you may not notice the margin erosion until month-end. With price history tied to each technical sheet, the impact of any supplier price change is visible the moment you log the new price."
+        },
+        {
+          "question": "Does Tech Cuisine work for pastry shops and bakeries?",
+          "answer": "Yes. Tech Cuisine was built with direct input from a renowned pastry chef in Portugal. The yield factors, batch scaling, and cost-per-portion logic were designed for operations where precision matters — and where the price of chocolate, butter, and eggs changes every week. Whether you are calculating a single tart or a batch of 500 units, the cost sheet reflects what you actually spend."
+        }
+      ]
+    },
+    "cta": {
+      "text": "Calculate your real margin — free",
+      "href": "/auth/register",
+      "note": "7 free AI uses. No credit card required."
+    },
+    "blogPosting": {
+      "headline": "Recipe cost control: what 100 portions at €10 really earn",
+      "description": "100 cakes at €10 is not €1,000 profit. Learn recipe cost control, ingredient scaling, and food cost % — then calculate your real margin with Tech Cuisine.",
+      "datePublished": "2026-05-29"
     }
   }
 }
