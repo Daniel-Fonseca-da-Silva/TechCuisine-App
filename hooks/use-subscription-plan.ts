@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 
-type SubscriptionPlan = 'free' | 'simple' | 'medium' | 'ultra' | 'business'
+type SubscriptionPlan = 'free' | 'tech_cuisine'
 
 export function useSubscriptionPlan() {
-  const [activePlan, setActivePlan] = useState<SubscriptionPlan>('free')
+  const [plan, setPlan] = useState<SubscriptionPlan>('free')
+  const [isPremiumActive, setIsPremiumActive] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -13,18 +14,23 @@ export function useSubscriptionPlan() {
         const payload = await response.json().catch(() => ({}))
 
         if (!response.ok || !payload?.success) {
-          setActivePlan('free')
+          setPlan('free')
+          setIsPremiumActive(false)
           return
         }
 
-        const plan = payload.data?.plan
-        if (plan === 'simple' || plan === 'medium' || plan === 'ultra' || plan === 'business' || plan === 'free') {
-          setActivePlan(plan)
-        } else {
-          setActivePlan('free')
-        }
+        const data = payload.data
+        const rawPlan = data?.plan
+        setPlan(rawPlan === 'tech_cuisine' ? 'tech_cuisine' : 'free')
+
+        const active =
+          data?.is_premium_active === true ||
+          data?.status === 'active' ||
+          data?.status === 'trialing'
+        setIsPremiumActive(active)
       } catch {
-        setActivePlan('free')
+        setPlan('free')
+        setIsPremiumActive(false)
       } finally {
         setIsLoading(false)
       }
@@ -33,7 +39,5 @@ export function useSubscriptionPlan() {
     fetchPlan()
   }, [])
 
-  const isPaid = activePlan !== 'free'
-
-  return { activePlan, isLoading, isPaid }
+  return { plan, isPremiumActive, isLoading }
 }

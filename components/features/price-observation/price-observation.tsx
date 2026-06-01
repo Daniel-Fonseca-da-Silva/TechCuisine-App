@@ -16,6 +16,8 @@ import {
   PriceHistoryFilters,
 } from "@/types/price-observation.types"
 import type { TenantReportData } from "@/lib/reports/generate-summary-report-pdf"
+import { isSubscriptionBlockedMessage } from "@/lib/subscription-errors"
+import { useSubscription } from "@/components/features/shared/subscription-context"
 import { Search, Plus, Tag, TrendingDown, FileDown, Info } from "lucide-react"
 import {
   Dialog,
@@ -62,6 +64,7 @@ function formatDate(iso: string): string {
 
 export function PriceObservationSection({ onSectionChange }: PriceObservationSectionProps) {
   const t = useTranslations('priceObservationManagement')
+  const { isPremiumActive } = useSubscription()
 
   const { bestPrices, history, loading, mutationLoading, error, loadBest, loadHistory, create } =
     usePriceObservations()
@@ -169,7 +172,16 @@ export function PriceObservationSection({ onSectionChange }: PriceObservationSec
     }
 
     const { error: err } = await create(selectedIngredientId, payload)
-    if (err) { setFormError(err); return }
+    if (err) {
+      if (isSubscriptionBlockedMessage(err)) {
+        setFormOpen(false)
+        setGlobalError(err)
+        setErrorDialogOpen(true)
+      } else {
+        setFormError(err)
+      }
+      return
+    }
 
     setFormOpen(false)
     await loadBest(selectedIngredientId)
@@ -177,6 +189,11 @@ export function PriceObservationSection({ onSectionChange }: PriceObservationSec
 
   const handleExportPdf = async () => {
     if (!selectedIngredient) return
+    if (!isPremiumActive) {
+      setGlobalError('not available for your subscription plan')
+      setErrorDialogOpen(true)
+      return
+    }
     setPdfBusy(true)
     try {
       const { generatePriceHistoryPdf } = await import('@/lib/reports/generate-price-history-pdf')

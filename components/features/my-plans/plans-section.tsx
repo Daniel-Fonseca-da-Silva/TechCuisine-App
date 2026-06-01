@@ -1,29 +1,29 @@
 "use client"
 
-// Set to true to re-enable the full subscription experience.
-const PLANS_SECTION_ENABLED = false
+const PLANS_SECTION_ENABLED = true
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { PlansSkeleton } from "./plans-skeleton"
-import { FiCreditCard, FiCheck, FiAward, FiArrowRight, FiZap, FiClock, FiAlertCircle } from "react-icons/fi"
+import { FiCreditCard, FiCheck, FiAward, FiArrowRight, FiZap, FiClock, FiAlertCircle, FiInfo } from "react-icons/fi"
 import { SectionBackButton } from "@/components/features/shared/section-back-button"
-import { AiUsageProfileCard } from "@/components/features/profile/profile-ai-usage-card"
 import { ErrorNoticeDialog } from "@/components/features/shared/error-notice-dialog"
 
 interface PlansSectionProps {
   onSectionChange?: (section: string) => void
 }
 
-type SubscriptionPlan = 'free' | 'simple' | 'medium' | 'ultra' | 'business'
+type SubscriptionPlan = 'free' | 'tech_cuisine'
 
 interface SubscriptionResponse {
   plan: SubscriptionPlan | string
   status: string
+  is_premium_active?: boolean
   current_period_start?: string | null
   current_period_end?: string | null
+  trial_ends_at?: string | null
   cancel_at_period_end?: boolean
 }
 
@@ -101,38 +101,6 @@ function PlansSectionActive({ onSectionChange }: PlansSectionProps) {
   }, [])
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    if (params.get('stripe') === 'success') {
-      const sessionId = params.get('session_id')
-
-      // Clean up URL immediately to prevent re-triggering on refresh.
-      const cleanUrl = new URL(window.location.href)
-      cleanUrl.searchParams.delete('stripe')
-      cleanUrl.searchParams.delete('session_id')
-      window.history.replaceState({}, '', cleanUrl.toString())
-
-      if (sessionId) {
-        const doSync = async () => {
-          try {
-            await fetch('/api/subscriptions/sync', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ session_id: sessionId }),
-            })
-          } catch {
-            // Sync failure is non-critical; fetchSubscription loads current state.
-          }
-          await fetchSubscription().catch((e) => {
-            console.error('Failed to fetch subscription after sync:', e)
-            setError(tRef.current('loadSubscriptionError'))
-            setIsLoading(false)
-          })
-        }
-        doSync()
-        return
-      }
-    }
-
     fetchSubscription().catch((e) => {
       console.error('Failed to fetch subscription:', e)
       setError(tRef.current('loadSubscriptionError'))
@@ -182,11 +150,14 @@ function PlansSectionActive({ onSectionChange }: PlansSectionProps) {
 
   const activePlan = useMemo<SubscriptionPlan>(() => {
     const plan = subscription?.plan
-    if (plan === 'simple' || plan === 'medium' || plan === 'ultra' || plan === 'business' || plan === 'free') return plan
+    if (plan === 'tech_cuisine') return 'tech_cuisine'
     return 'free'
   }, [subscription?.plan])
 
-  const isPaid = activePlan !== 'free'
+  const isPaid =
+    subscription?.is_premium_active === true ||
+    subscription?.status === 'active' ||
+    subscription?.status === 'trialing'
 
   const paidPlanDef = useMemo(() => ({
     name: t('plans.techCuisine.name'),
@@ -205,7 +176,9 @@ function PlansSectionActive({ onSectionChange }: PlansSectionProps) {
     }
 
     const periodStart = formatDate(subscription?.current_period_start)
-    const periodEnd = formatDate(subscription?.current_period_end)
+    const periodEnd = formatDate(
+      subscription?.current_period_end ?? subscription?.trial_ends_at
+    )
 
     if (!isPaid) {
       return {
@@ -278,7 +251,7 @@ function PlansSectionActive({ onSectionChange }: PlansSectionProps) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          plan: 'simple',
+          plan: 'tech_cuisine',
           success_url: successUrl,
           cancel_url: cancelUrl,
         }),
@@ -373,6 +346,21 @@ function PlansSectionActive({ onSectionChange }: PlansSectionProps) {
         </div>
       )}
 
+      {/* Trial Active Notice */}
+      {subscription?.status === 'trialing' && (
+        <div className="flex items-start space-x-3 rounded-xl bg-blue-400/10 border border-blue-400/30 px-4 py-3">
+          <FiZap className="w-5 h-5 text-blue-300 mt-0.5 shrink-0" />
+          <div className="text-blue-200 text-sm leading-relaxed">
+            <p>{t('trialActiveNotice')}</p>
+            {subscription.trial_ends_at && (
+              <p className="mt-1 font-medium">
+                {t('trialEndsOn')}: {new Date(subscription.trial_ends_at).toLocaleDateString()}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Expired Subscription Alert */}
       {subscription !== null && activePlan === 'free' && subscription.status !== 'none' && subscription.status !== 'incomplete' && (
         <div className="flex items-start space-x-3 rounded-xl bg-red-400/10 border border-red-400/30 px-4 py-3">
@@ -380,9 +368,6 @@ function PlansSectionActive({ onSectionChange }: PlansSectionProps) {
           <p className="text-red-200 text-sm leading-relaxed">{t('subscriptionExpiredNotice')}</p>
         </div>
       )}
-
-      {/* AI Usage & Plans */}
-      <AiUsageProfileCard />
 
       {/* Plano Atual */}
       <Card className="backdrop-blur-xl bg-white/10 border-white/20 shadow-2xl">
@@ -396,42 +381,62 @@ function PlansSectionActive({ onSectionChange }: PlansSectionProps) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h3 className="text-2xl font-bold text-white">{currentPlan.name}</h3>
-              {isPaid && (
-                <>
-                  <p className="text-white/70">{t('currentPlan.periodStart')}: {currentPlan.periodStart}</p>
-                  <p className="text-white/70">{t('currentPlan.periodEnd')}: {currentPlan.periodEnd}</p>
-                </>
-              )}
-            </div>
-            <div className="text-right">
-              <div className="text-3xl font-bold text-white">{currentPlan.price}</div>
-              <div className="text-white/70">/{currentPlan.period}</div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            {currentPlan.features.map((feature, index) => (
-              <div key={index} className="flex items-center space-x-2">
-                <FiCheck className="w-4 h-4 text-green-400" />
-                <span className="text-white/90">{feature}</span>
+          {subscription?.status === 'none' ? (
+            <div className="space-y-4">
+              <div className="flex items-start gap-3 rounded-xl bg-blue-400/10 border border-blue-400/30 px-4 py-3">
+                <FiInfo className="w-5 h-5 text-blue-300 mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-white font-semibold">{t('currentPlan.noPlan.title')}</p>
+                  <p className="text-white/70 text-sm mt-0.5">{t('currentPlan.noPlan.description')}</p>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ) : (
+            <>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-2xl font-bold text-white">{currentPlan.name}</h3>
+                    {subscription?.status === 'trialing' && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-400/20 text-blue-300 border border-blue-400/30">
+                        {t('trialBadge')}
+                      </span>
+                    )}
+                  </div>
+                  {isPaid && (
+                    <>
+                      <p className="text-white/70">{t('currentPlan.periodStart')}: {currentPlan.periodStart}</p>
+                      <p className="text-white/70">{t('currentPlan.periodEnd')}: {currentPlan.periodEnd}</p>
+                    </>
+                  )}
+                </div>
+                <div className="text-right">
+                  <div className="text-3xl font-bold text-white">{currentPlan.price}</div>
+                  <div className="text-white/70">/{currentPlan.period}</div>
+                </div>
+              </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:space-x-3 sm:space-y-0 space-y-3">
-            <Button
-              className="bg-gradient-to-r from-green-400 to-emerald-400 hover:from-green-500 hover:to-emerald-500 text-white"
-              onClick={handleManageSubscription}
-              disabled={isProcessing || !isPaid}
-            >
-              <FiZap className="w-4 h-4 mr-2" />
-              {t('currentPlan.manageSubscription')}
-            </Button>
-          </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                {currentPlan.features.map((feature, index) => (
+                  <div key={index} className="flex items-center space-x-2">
+                    <FiCheck className="w-4 h-4 text-green-400" />
+                    <span className="text-white/90">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 sm:space-x-3 sm:space-y-0 space-y-3">
+                <Button
+                  className="bg-gradient-to-r from-green-400 to-emerald-400 hover:from-green-500 hover:to-emerald-500 text-white"
+                  onClick={handleManageSubscription}
+                  disabled={isProcessing || !isPaid}
+                >
+                  <FiZap className="w-4 h-4 mr-2" />
+                  {t('currentPlan.manageSubscription')}
+                </Button>
+              </div>
+            </>
+          )}
         </CardContent>
       </Card>
 

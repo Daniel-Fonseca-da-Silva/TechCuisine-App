@@ -6,6 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FiDownload, FiPackage, FiGrid, FiList, FiTruck, FiDollarSign, FiTrendingUp } from "react-icons/fi"
 import type { TenantReportData } from "@/lib/reports/generate-summary-report-pdf"
+import { useSubscription } from "@/components/features/shared/subscription-context"
+import { ErrorNoticeDialog } from "@/components/features/shared/error-notice-dialog"
 
 interface ReportsSectionProps {
   onSectionChange: (section: string) => void
@@ -24,11 +26,13 @@ const KPI_ICONS = {
 export function ReportsSection({ onSectionChange: _onSectionChange }: ReportsSectionProps) {
   const t = useTranslations("dashboard.reports")
   const locale = useLocale()
+  const { isPremiumActive } = useSubscription()
 
   const [data, setData] = useState<TenantReportData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [pdfLoading, setPdfLoading] = useState(false)
+  const [pdfBlockedOpen, setPdfBlockedOpen] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -51,6 +55,10 @@ export function ReportsSection({ onSectionChange: _onSectionChange }: ReportsSec
 
   const handleDownloadPdf = async () => {
     if (!data) return
+    if (!isPremiumActive) {
+      setPdfBlockedOpen(true)
+      return
+    }
     setPdfLoading(true)
     try {
       const { generateSummaryReportPdf } = await import("@/lib/reports/generate-summary-report-pdf")
@@ -124,6 +132,12 @@ export function ReportsSection({ onSectionChange: _onSectionChange }: ReportsSec
   }
 
   return (
+    <>
+    <ErrorNoticeDialog
+      open={pdfBlockedOpen}
+      onOpenChange={setPdfBlockedOpen}
+      description="not available for your subscription plan"
+    />
     <div className="space-y-6 p-4 lg:p-6 pb-8">
       {/* Header */}
       <div className="flex items-center justify-between">
@@ -202,5 +216,6 @@ export function ReportsSection({ onSectionChange: _onSectionChange }: ReportsSec
         </div>
       </div>
     </div>
+    </>
   )
 }

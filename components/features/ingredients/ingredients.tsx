@@ -12,6 +12,8 @@ import { useSuppliers } from "@/hooks/use-suppliers"
 import { usePreferencesLocale } from "@/hooks/use-preferences-locale"
 import { formatDecimalForPreference } from "@/lib/format-decimal"
 import { Ingredient, IngredientAiMarketResponse, IngredientCreatePayload, IngredientSectionProps, SuggestedPriceInfo } from "@/types/ingredient.types"
+import { useSubscription } from "@/components/features/shared/subscription-context"
+import { isSubscriptionBlockedMessage } from "@/lib/subscription-errors"
 import { Search, Plus, Pencil, Trash2, Leaf, Sparkles, ChevronUp, ChevronDown, X } from "lucide-react"
 import {
   Dialog,
@@ -96,6 +98,7 @@ function parseTags(raw: string): string[] {
 
 export function IngredientsSection({ onSectionChange }: IngredientSectionProps) {
   const t = useTranslations('ingredientManagement')
+  const { isPremiumActive } = useSubscription()
   const { currency: appCurrency, decimalSeparator, language } = usePreferencesLocale()
   const { ingredients, loading, mutationLoading, error, loadAll, getFilteredIngredients, create, update, remove } =
     useIngredients()
@@ -150,6 +153,11 @@ export function IngredientsSection({ onSectionChange }: IngredientSectionProps) 
   }
 
   const handleAiSuggest = async () => {
+    if (!isPremiumActive) {
+      setGlobalError(t('aiSuggest.subscriptionRequired'))
+      setErrorDialogOpen(true)
+      return
+    }
     if (!form.name.trim()) {
       setAiError(t('aiSuggest.nameRequired'))
       return
@@ -231,13 +239,25 @@ export function IngredientsSection({ onSectionChange }: IngredientSectionProps) 
     if (editingIngredient) {
       const { error: mutError } = await update(editingIngredient.id, payload)
       if (mutError) {
-        setFormError(mutError)
+        if (isSubscriptionBlockedMessage(mutError)) {
+          setFormOpen(false)
+          setGlobalError(mutError)
+          setErrorDialogOpen(true)
+        } else {
+          setFormError(mutError)
+        }
         return
       }
     } else {
       const { error: mutError } = await create(payload)
       if (mutError) {
-        setFormError(mutError)
+        if (isSubscriptionBlockedMessage(mutError)) {
+          setFormOpen(false)
+          setGlobalError(mutError)
+          setErrorDialogOpen(true)
+        } else {
+          setFormError(mutError)
+        }
         return
       }
     }

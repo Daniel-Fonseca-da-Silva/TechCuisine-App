@@ -9,6 +9,7 @@ import { ErrorNoticeDialog } from "@/components/features/shared/error-notice-dia
 import { SupplierListSkeleton } from "./supplier-list-skeleton"
 import { useSuppliers } from "@/hooks/use-suppliers"
 import { Supplier, SupplierCreatePayload, SupplierSectionProps, SupplierType } from "@/types/supplier.types"
+import { isSubscriptionBlockedMessage } from "@/lib/subscription-errors"
 import { Search, Plus, Pencil, Trash2, Truck, Phone, Mail, MapPin } from "lucide-react"
 import {
   Dialog,
@@ -118,13 +119,25 @@ export function SuppliersSection({ onSectionChange }: SupplierSectionProps) {
     if (editingSupplier) {
       const { error: mutError } = await update(editingSupplier.id, payload)
       if (mutError) {
-        setFormError(mutError)
+        if (isSubscriptionBlockedMessage(mutError)) {
+          setFormOpen(false)
+          setGlobalError(mutError)
+          setErrorDialogOpen(true)
+        } else {
+          setFormError(mutError)
+        }
         return
       }
     } else {
       const { error: mutError } = await create(payload)
       if (mutError) {
-        setFormError(mutError)
+        if (isSubscriptionBlockedMessage(mutError)) {
+          setFormOpen(false)
+          setGlobalError(mutError)
+          setErrorDialogOpen(true)
+        } else {
+          setFormError(mutError)
+        }
         return
       }
     }

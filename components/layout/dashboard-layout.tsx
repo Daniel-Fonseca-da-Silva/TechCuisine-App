@@ -8,6 +8,7 @@ import { FiMenu, FiUser } from "react-icons/fi"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import AlertDialogCustom from "../ui/alert-dialog-custom"
+import { TrialSubscriptionBanner } from "@/components/features/shared/trial-subscription-banner"
 
 interface UserData {
   name: string
@@ -219,6 +220,11 @@ export function DashboardLayout({
 
           {/* Content Area */}
           <div className="flex-1 overflow-auto">
+            {!['settings', 'profile', 'plans', 'admin'].includes(activeSection) && (
+              <div className="px-4 lg:px-6 pt-4">
+                <TrialSubscriptionBanner />
+              </div>
+            )}
             {children}
           </div>
         </div>

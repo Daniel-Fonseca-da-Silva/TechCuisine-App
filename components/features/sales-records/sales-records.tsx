@@ -10,6 +10,7 @@ import { SalesRecordListSkeleton } from "./sales-record-list-skeleton"
 import { useSalesRecords } from "@/hooks/use-sales-records"
 import { usePlates } from "@/hooks/use-plates"
 import { SalesRecordCreatePayload, SalesRecordSectionProps } from "@/types/sales-record.types"
+import { isSubscriptionBlockedMessage } from "@/lib/subscription-errors"
 import { Search, Plus, Receipt, Calendar, Hash, Banknote, Tag } from "lucide-react"
 import {
   Dialog,
@@ -66,6 +67,7 @@ export function SalesRecordsSection({ onSectionChange }: SalesRecordSectionProps
   const [form, setForm] = useState<SaleFormState>(EMPTY_FORM)
   const [formError, setFormError] = useState<string | null>(null)
   const [errorDialogOpen, setErrorDialogOpen] = useState(false)
+  const [globalError, setGlobalError] = useState<string | null>(null)
 
   useEffect(() => {
     loadAll()
@@ -126,7 +128,13 @@ export function SalesRecordsSection({ onSectionChange }: SalesRecordSectionProps
 
     const { error: mutError } = await create(payload)
     if (mutError) {
-      setFormError(mutError)
+      if (isSubscriptionBlockedMessage(mutError)) {
+        setFormOpen(false)
+        setGlobalError(mutError)
+        setErrorDialogOpen(true)
+      } else {
+        setFormError(mutError)
+      }
       return
     }
 
@@ -143,7 +151,7 @@ export function SalesRecordsSection({ onSectionChange }: SalesRecordSectionProps
       <ErrorNoticeDialog
         open={errorDialogOpen}
         onOpenChange={setErrorDialogOpen}
-        description={error ?? ''}
+        description={globalError ?? error ?? ''}
         onRetry={error ? handleRetry : undefined}
       />
 

@@ -3,7 +3,7 @@ import { getSession } from '@/lib/get-session'
 
 const BACKEND_API_URL = process.env.BACKEND_API_URL
 
-const allowedPlans = new Set(['simple'])
+const allowedPlans = new Set(['tech_cuisine'])
 
 function isValidUrl(value: unknown): value is string {
   if (typeof value !== 'string') return false
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
 
     if (typeof plan !== 'string' || !allowedPlans.has(plan)) {
       return NextResponse.json(
-        { success: false, error: 'Invalid plan. Expected: simple' },
+        { success: false, error: 'Invalid plan. Expected: tech_cuisine' },
         { status: 400 }
       )
     }

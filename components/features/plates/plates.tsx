@@ -9,6 +9,7 @@ import { ErrorNoticeDialog } from "@/components/features/shared/error-notice-dia
 import { PlateListSkeleton } from "./plate-list-skeleton"
 import { usePlates } from "@/hooks/use-plates"
 import { Plate, PlateCreatePayload, PlateSectionProps } from "@/types/plate.types"
+import { isSubscriptionBlockedMessage } from "@/lib/subscription-errors"
 import { Search, Plus, Pencil, Trash2, UtensilsCrossed } from "lucide-react"
 import {
   Dialog,
@@ -121,13 +122,25 @@ export function PlatesSection({ onSectionChange }: PlateSectionProps) {
     if (editingPlate) {
       const { error: mutError } = await update(editingPlate.id, payload)
       if (mutError) {
-        setFormError(mutError)
+        if (isSubscriptionBlockedMessage(mutError)) {
+          setFormOpen(false)
+          setGlobalError(mutError)
+          setErrorDialogOpen(true)
+        } else {
+          setFormError(mutError)
+        }
         return
       }
     } else {
       const { error: mutError } = await create(payload)
       if (mutError) {
-        setFormError(mutError)
+        if (isSubscriptionBlockedMessage(mutError)) {
+          setFormOpen(false)
+          setGlobalError(mutError)
+          setErrorDialogOpen(true)
+        } else {
+          setFormError(mutError)
+        }
         return
       }
     }
