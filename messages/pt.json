@@ -13,6 +13,8 @@
       "dontHaveAccount": "Não tens uma conta?",
       "register": "Registar",
       "errorInvalidCredentials": "Nome de utilizador ou palavra-passe inválidos.",
+      "errorAuthFailed": "Falha na autenticação. Tenta novamente.",
+      "errorMissingCredentials": "Nome de utilizador e palavra-passe são obrigatórios.",
       "errorUnexpected": "Erro inesperado. Tenta novamente.",
       "sessionExpired": {
         "title": "Sessão Expirada",

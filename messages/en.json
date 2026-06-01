@@ -13,6 +13,8 @@
       "dontHaveAccount": "Don't have an account?",
       "register": "Register",
       "errorInvalidCredentials": "Invalid username or password.",
+      "errorAuthFailed": "Authentication failed. Please try again.",
+      "errorMissingCredentials": "Username and password are required.",
       "errorUnexpected": "Something went wrong. Please try again.",
       "sessionExpired": {
         "title": "Session Expired",

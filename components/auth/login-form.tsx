@@ -66,7 +66,14 @@ export function LoginForm({ className }: LoginFormProps) {
       if (result.success) {
         router.push('/dashboard')
       } else {
-        setErrors({ general: result.error || t('errorInvalidCredentials') })
+        const errorKeyByCode: Record<string, string> = {
+          INVALID_CREDENTIALS: 'errorInvalidCredentials',
+          AUTH_FAILED: 'errorAuthFailed',
+          MISSING_CREDENTIALS: 'errorMissingCredentials',
+          INTERNAL_ERROR: 'errorUnexpected',
+        }
+        const translationKey = errorKeyByCode[result.code] ?? 'errorUnexpected'
+        setErrors({ general: t(translationKey) })
       }
     } catch (error) {
       if (error instanceof ZodError) {

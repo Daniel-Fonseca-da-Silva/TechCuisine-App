@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
     const { username, password } = await request.json()
 
     if (!username || !password) {
-      return NextResponse.json({ error: 'Username and password are required' }, { status: 400 })
+      return NextResponse.json({ success: false, code: 'MISSING_CREDENTIALS' }, { status: 400 })
     }
 
     const form = new URLSearchParams()
@@ -22,9 +22,9 @@ export async function POST(request: NextRequest) {
     if (!apiResponse.ok) {
       const status = apiResponse.status
       if (status === 401 || status === 403) {
-        return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 })
+        return NextResponse.json({ success: false, code: 'INVALID_CREDENTIALS' }, { status: 401 })
       }
-      return NextResponse.json({ error: 'Falha na autenticação' }, { status: status })
+      return NextResponse.json({ success: false, code: 'AUTH_FAILED' }, { status: status })
     }
 
     const { access_token, refresh_token } = await apiResponse.json()
@@ -49,6 +49,6 @@ export async function POST(request: NextRequest) {
     return response
   } catch (error) {
     console.error('Login error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json({ success: false, code: 'INTERNAL_ERROR' }, { status: 500 })
   }
 }
