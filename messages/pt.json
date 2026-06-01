@@ -778,7 +778,11 @@
       "status": "Status",
       "active": "Ativo",
       "purchase": "Comprar plano",
-      "manageSubscription": "Gerir Subscrição"
+      "manageSubscription": "Gerir Subscrição",
+      "noPlan": {
+        "title": "Sem plano atual",
+        "description": "Subscreve para iniciar o teu período de trial de 7 dias e desbloquear todas as funcionalidades."
+      }
     },
     "availablePlans": {
       "title": "Assinatura",
@@ -789,6 +793,9 @@
     "checkoutError": "Não foi possível iniciar o checkout. Tente novamente.",
     "portalError": "Não foi possível abrir o portal de faturação. Tente novamente.",
     "loadSubscriptionError": "Falha ao carregar a subscrição.",
+    "trialBadge": "Trial",
+    "trialActiveNotice": "Está em período de trial gratuito. A subscrição inicia automaticamente quando o trial terminar.",
+    "trialEndsOn": "Trial termina em",
     "processingPaymentNotice": "Estamos a processar o teu pagamento. Muito em breve o teu novo plano será atualizado.",
     "subscriptionExpiredNotice": "A sua subscrição expirou. Renove o seu plano para continuar a ter acesso às funcionalidades premium.",
     "comingSoon": "Os planos de subscrição serão implementados numa atualização futura.",
@@ -1634,6 +1641,12 @@
       "description": "Fale com a equipa Tech Cuisine para suporte técnico, questões de faturação, pedidos de funcionalidades ou dúvidas gerais. Respondemos em 24 horas."
     }
   },
+  "subscription": {
+    "trialBanner": {
+      "message": "Regista o teu cartão e usufrui de 7 dias do sistema gratuitamente.",
+      "cta": "Começar trial"
+    }
+  },
   "errorDialog": {
     "title": "Ocorreu um erro",
     "ok": "OK",
@@ -1647,43 +1660,20 @@
       "upgradeCta": "Ver planos"
     },
     "subscriptionFeature": {
-      "title": "Funcionalidade não disponível no teu plano",
-      "lead": "Esta funcionalidade não está incluída no teu plano de subscrição atual.",
-      "upgradeHint": "Faz upgrade do teu plano para desbloquear esta e outras funcionalidades premium.",
-      "upgradeCta": "Ver planos"
+      "title": "Funcionalidade requer subscrição",
+      "lead": "Regista o teu cartão para iniciar o teu trial de 7 dias e desbloquear esta funcionalidade.",
+      "upgradeHint": "Sem cobranças durante o período de trial.",
+      "upgradeCta": "Começar trial"
     },
     "rateLimit": {
       "title": "Demasiados pedidos"
     }
-  },
-  "aiUsageBar": {
-    "loading": "A carregar uso de IA...",
-    "error": "Não foi possível carregar o teu uso de IA",
-    "unlimited": "Uso de IA ilimitado",
-    "noPlan": "O teu plano atual não inclui uso de IA",
-    "label": "Usaste {used} de {limit} usos de IA neste mês",
-    "ariaLabel": "Uso de IA: {used} de {limit} pedidos usados neste mês",
-    "depleted": "Atingiste o limite mensal de uso de IA",
-    "almostFull": "Restam-te apenas {remaining} uso(s) de IA neste mês"
   },
   "paymentConfirmation": {
     "title": "Subscrição Confirmada",
     "message": "A tua compra foi efetuada com sucesso na plataforma",
     "description": "A tua subscrição foi processada com sucesso e a tua conta está agora ativa",
     "goToDashboard": "Ir para Dashboard"
-  },
-  "profileAiUsage": {
-    "title": "Planos e Gastos",
-    "subtitle": "O teu uso de IA no período atual",
-    "planLabel": "Plano",
-    "periodLabel": "Período",
-    "usedLabel": "Utilizados",
-    "remainingLabel": "Restantes",
-    "limitLabel": "Limite",
-    "loading": "A carregar dados de uso…",
-    "error": "Não foi possível carregar os dados de uso",
-    "unlimited": "Tens pedidos de IA ilimitados no teu plano atual",
-    "noPlan": "O teu plano atual não inclui recursos de IA"
   },
   "navigation": {
     "sectionBack": "Voltar"
@@ -1757,6 +1747,7 @@
       "priceInfo": "Preço estimado pela IA",
       "error": "Erro ao obter sugestão da IA",
       "nameRequired": "Escreve o nome do ingrediente antes de usar a IA",
+      "subscriptionRequired": "not available for your subscription plan",
       "settingsNotice": "A IA está a usar o idioma, moeda e país por defeito (inglês, USD, EUA). Para sugestões personalizadas, define o idioma, a moeda e a nacionalidade nas tuas definições de perfil."
     }
   },

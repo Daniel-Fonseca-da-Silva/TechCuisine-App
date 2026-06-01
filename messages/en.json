@@ -789,7 +789,11 @@
       "status": "Status",
       "active": "Active",
       "purchase": "Purchase Plan",
-      "manageSubscription": "Manage Subscription"
+      "manageSubscription": "Manage Subscription",
+      "noPlan": {
+        "title": "No current plan",
+        "description": "Subscribe to start your 7-day free trial and unlock all features."
+      }
     },
     "availablePlans": {
       "title": "Subscription",
@@ -800,6 +804,9 @@
     "checkoutError": "Unable to start checkout. Please try again.",
     "portalError": "Unable to open billing portal. Please try again.",
     "loadSubscriptionError": "Failed to load subscription.",
+    "trialBadge": "Trial",
+    "trialActiveNotice": "You are on a free trial. Your subscription starts automatically when the trial ends.",
+    "trialEndsOn": "Trial ends on",
     "processingPaymentNotice": "We are processing your payment. Your new plan will be updated very soon.",
     "subscriptionExpiredNotice": "Your subscription has expired. Renew your plan to continue accessing premium features.",
     "comingSoon": "Subscription plans will be available in a future update.",
@@ -1645,6 +1652,12 @@
       "description": "Get in touch with the Tech Cuisine team for technical support, billing questions, feature requests or general inquiries. We reply within 24 hours."
     }
   },
+  "subscription": {
+    "trialBanner": {
+      "message": "Register your card and enjoy 7 days of the platform for free.",
+      "cta": "Start trial"
+    }
+  },
   "errorDialog": {
     "title": "An error occurred",
     "ok": "OK",
@@ -1658,43 +1671,20 @@
       "upgradeCta": "View plans"
     },
     "subscriptionFeature": {
-      "title": "Feature not available on your plan",
-      "lead": "This feature is not included in your current subscription plan.",
-      "upgradeHint": "Upgrade your plan to unlock this and other premium features.",
-      "upgradeCta": "View plans"
+      "title": "Feature requires a subscription",
+      "lead": "Register your card to start your 7-day free trial and unlock this feature.",
+      "upgradeHint": "No charges during the trial period.",
+      "upgradeCta": "Start trial"
     },
     "rateLimit": {
       "title": "Too many requests"
     }
-  },
-  "aiUsageBar": {
-    "loading": "Loading AI usage...",
-    "error": "Unable to load AI usage",
-    "unlimited": "Unlimited AI usage",
-    "noPlan": "Your current plan does not include AI usage",
-    "label": "You used {used} of {limit} AI requests this month",
-    "ariaLabel": "AI usage: {used} of {limit} requests used this month",
-    "depleted": "You have reached your monthly AI limit",
-    "almostFull": "Only {remaining} AI request(s) remaining this month"
   },
   "paymentConfirmation": {
     "title": "Subscription Confirmed",
     "message": "Your purchase was successfully completed on the platform",
     "description": "Your subscription has been successfully processed and your account is now active",
     "goToDashboard": "Go to Dashboard"
-  },
-  "profileAiUsage": {
-    "title": "Plans & Usage",
-    "subtitle": "Your AI request usage for the current period",
-    "planLabel": "Plan",
-    "periodLabel": "Period",
-    "usedLabel": "Used",
-    "remainingLabel": "Remaining",
-    "limitLabel": "Limit",
-    "loading": "Loading usage data…",
-    "error": "Could not load usage data",
-    "unlimited": "You have unlimited AI requests on your current plan",
-    "noPlan": "Your current plan does not include AI features"
   },
   "navigation": {
     "sectionBack": "Back"
@@ -1768,6 +1758,7 @@
       "priceInfo": "AI-estimated price",
       "error": "Error fetching AI suggestion",
       "nameRequired": "Enter the ingredient name before using AI",
+      "subscriptionRequired": "not available for your subscription plan",
       "settingsNotice": "AI is using default locale (English, USD, United States). For personalized suggestions, set your language, currency, and nationality in your profile configuration."
     }
   },
