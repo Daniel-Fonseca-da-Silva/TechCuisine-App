@@ -44,7 +44,7 @@ describe('POST /api/subscriptions/checkout', () => {
   })
 
   const validBody = {
-    plan: 'simple',
+    plan: 'tech_cuisine',
     success_url: 'https://app.example.com/plans?stripe=success',
     cancel_url: 'https://app.example.com/plans',
   }
@@ -72,9 +72,9 @@ describe('POST /api/subscriptions/checkout', () => {
     expect(String(data.error)).toContain('Invalid plan')
   })
 
-  it('returns 400 for legacy plans (medium, ultra, business)', async () => {
+  it('returns 400 for legacy plan names', async () => {
     ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
-    for (const plan of ['medium', 'ultra', 'business']) {
+    for (const plan of ['simple', 'medium', 'ultra', 'business']) {
       const request = createPostRequest({ ...validBody, plan })
       const response = await POST(request)
       expect(response.status).toBe(400)
@@ -83,7 +83,7 @@ describe('POST /api/subscriptions/checkout', () => {
     }
   })
 
-  it('proxies simple plan to backend', async () => {
+  it('proxies tech_cuisine plan to backend', async () => {
     ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
@@ -107,7 +107,7 @@ describe('POST /api/subscriptions/checkout', () => {
           'Content-Type': 'application/json',
         }),
         body: JSON.stringify({
-          plan: 'simple',
+          plan: 'tech_cuisine',
           success_url: validBody.success_url,
           cancel_url: validBody.cancel_url,
         }),
