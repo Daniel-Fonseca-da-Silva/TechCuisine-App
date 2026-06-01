@@ -5,8 +5,10 @@ import { DashboardLayout } from "@/components/layout/dashboard-layout"
 import { DashboardContent } from "@/components/features/dashboard-content"
 import { useUserData } from "@/hooks/use-user-data"
 import { DashboardNavContext } from "@/components/features/shared/dashboard-nav-context"
+import { SubscriptionProvider } from "@/components/features/shared/subscription-context"
 import { useLocale } from "@/hooks/use-locale"
 import { primaryLocaleFromPreferences } from "@/lib/shared/user-locale"
+import { useStripeCheckoutReturn } from "@/hooks/use-stripe-checkout-return"
 
 export default function DashboardPage() {
   const [activeSection, setActiveSection] = useState("dashboard")
@@ -36,6 +38,10 @@ export default function DashboardPage() {
     setActiveSection(section)
   }
 
+  useStripeCheckoutReturn({
+    onSyncComplete: () => handleSectionChange('plans'),
+  })
+
   if (isInitialLoading || !localeReady) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -54,6 +60,7 @@ export default function DashboardPage() {
 
   return (
     <DashboardNavContext.Provider value={{ navigateToSection: handleSectionChange }}>
+      <SubscriptionProvider>
       <DashboardLayout
         userData={userData}
         activeSection={activeSection}
@@ -67,6 +74,7 @@ export default function DashboardPage() {
           onUserDataRefetch={refetch}
         />
       </DashboardLayout>
+      </SubscriptionProvider>
     </DashboardNavContext.Provider>
   )
 }
