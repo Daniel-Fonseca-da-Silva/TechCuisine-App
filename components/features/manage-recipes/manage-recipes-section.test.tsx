@@ -3,17 +3,27 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { ManageRecipesSection } from './manage-recipes-section'
 
 jest.mock('next-intl', () => ({
-  useTranslations: () => (key: string) => key,
+  useTranslations: () => (key: string, _params?: Record<string, unknown>) => key,
 }))
 
-const mockFetchRecipes = jest.fn()
+const mockLoadAll = jest.fn()
+const mockCreate = jest.fn()
+const mockUpdate = jest.fn()
+const mockRemove = jest.fn()
+const mockScale = jest.fn()
 const mockGetFilteredRecipes = jest.fn(() => [])
+
 const mockUseRecipes = jest.fn(() => ({
   loading: false,
+  mutationLoading: false,
   error: null,
-  nextCursor: null,
-  fetchRecipes: mockFetchRecipes,
+  loadAll: mockLoadAll,
   getFilteredRecipes: mockGetFilteredRecipes,
+  create: mockCreate,
+  update: mockUpdate,
+  remove: mockRemove,
+  scale: mockScale,
+  reload: mockLoadAll,
   recipes: [],
 }))
 
@@ -21,12 +31,35 @@ jest.mock('@/hooks/use-recipes', () => ({
   useRecipes: () => mockUseRecipes(),
 }))
 
+jest.mock('@/hooks/use-ingredients', () => ({
+  useIngredients: () => ({
+    ingredients: [],
+    loadAll: jest.fn(),
+  }),
+}))
+
+jest.mock('@/lib/subscription-errors', () => ({
+  isSubscriptionBlockedMessage: (msg: string) => msg.includes('subscription'),
+}))
+
 jest.mock('./recipe-card', () => ({
-  RecipeCard: ({ recipe, onView }: { recipe: { id: string; name: string }; onView: (id: string) => void }) => (
+  RecipeCard: ({
+    recipe,
+    onView,
+    onEdit,
+    onDelete,
+  }: {
+    recipe: { id: string; name: string }
+    onView: (id: string) => void
+    onEdit: (r: unknown) => void
+    onDelete: (r: unknown) => void
+  }) => (
     <div data-testid="recipe-card">
       <button data-testid={`view-${recipe.id}`} onClick={() => onView(recipe.id)}>
         {recipe.name}
       </button>
+      <button data-testid={`edit-${recipe.id}`} onClick={() => onEdit(recipe)}>Edit</button>
+      <button data-testid={`delete-${recipe.id}`} onClick={() => onDelete(recipe)}>Delete</button>
     </div>
   ),
 }))
@@ -37,6 +70,40 @@ jest.mock('./recipe-filters', () => ({
 
 jest.mock('./manage-recipes-skeleton', () => ({
   RecipeSkeleton: () => <div data-testid="recipe-skeleton">Skeleton</div>,
+}))
+
+jest.mock('./recipe-form-dialog', () => ({
+  RecipeFormDialog: ({
+    open,
+    onSave,
+    mutationLoading: _ml,
+    formError,
+  }: {
+    open: boolean
+    onOpenChange: (o: boolean) => void
+    editingRecipe: unknown
+    onSave: (p: unknown) => void
+    mutationLoading: boolean
+    formError: string | null
+  }) =>
+    open ? (
+      <div data-testid="recipe-form-dialog">
+        {formError && <p data-testid="form-error">{formError}</p>}
+        <button data-testid="form-save" onClick={() => onSave({ name: 'New Recipe', reference_portions: 4 })}>
+          Save
+        </button>
+      </div>
+    ) : null,
+}))
+
+jest.mock('./recipe-scale-dialog', () => ({
+  RecipeScaleDialog: ({ open }: { open: boolean }) =>
+    open ? <div data-testid="scale-dialog">Scale Dialog</div> : null,
+}))
+
+jest.mock('@/components/features/shared/error-notice-dialog', () => ({
+  ErrorNoticeDialog: ({ open }: { open: boolean }) =>
+    open ? <div data-testid="error-notice-dialog">Error</div> : null,
 }))
 
 const sampleRecipe = {
@@ -52,18 +119,27 @@ const sampleRecipe = {
   total_ingredient_cost: null,
   total_preparation_cost: null,
   selling_price_per_portion: null,
+  ingredient_lines: [],
+  preparation_costs: [],
 }
 
 describe('ManageRecipesSection', () => {
   beforeEach(() => {
     jest.clearAllMocks()
+    mockCreate.mockResolvedValue({ recipe: sampleRecipe, error: null })
+    mockUpdate.mockResolvedValue({ recipe: sampleRecipe, error: null })
+    mockRemove.mockResolvedValue({ success: true, error: null })
   })
 
-  it('renders title, subtitle and back button', () => {
+  it('renders title and back button', () => {
     render(<ManageRecipesSection />)
     expect(screen.getByText('title')).toBeInTheDocument()
-    expect(screen.getByText('subtitle')).toBeInTheDocument()
     expect(screen.getByTestId('section-back-button')).toBeInTheDocument()
+  })
+
+  it('renders add button', () => {
+    render(<ManageRecipesSection />)
+    expect(screen.getAllByRole('button', { name: /addButton/i }).length).toBeGreaterThan(0)
   })
 
   it('calls onSectionChange with dashboard when Back is clicked', () => {
@@ -78,28 +154,32 @@ describe('ManageRecipesSection', () => {
     expect(screen.getByTestId('recipe-filters')).toBeInTheDocument()
   })
 
-  it('calls fetchRecipes on mount', () => {
+  it('calls loadAll on mount', () => {
     render(<ManageRecipesSection />)
-    expect(mockFetchRecipes).toHaveBeenCalledWith()
+    expect(mockLoadAll).toHaveBeenCalled()
   })
 
   it('shows skeletons when loading', () => {
     mockUseRecipes.mockReturnValueOnce({
       loading: true,
+      mutationLoading: false,
       error: null,
-      nextCursor: null,
-      fetchRecipes: mockFetchRecipes,
+      loadAll: mockLoadAll,
       getFilteredRecipes: mockGetFilteredRecipes,
+      create: mockCreate,
+      update: mockUpdate,
+      remove: mockRemove,
+      scale: mockScale,
+      reload: mockLoadAll,
       recipes: [],
     })
     render(<ManageRecipesSection />)
     expect(screen.getAllByTestId('recipe-skeleton').length).toBeGreaterThan(0)
   })
 
-  it('shows empty state when no recipes', () => {
+  it('shows empty state with add CTA when no recipes', () => {
     render(<ManageRecipesSection />)
     expect(screen.getByText('emptyState.title')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /emptyState\.action/i })).toBeInTheDocument()
   })
 
   it('renders recipe cards when recipes exist', () => {
@@ -128,10 +208,15 @@ describe('ManageRecipesSection', () => {
   it('shows error state and retry button on error', () => {
     mockUseRecipes.mockReturnValueOnce({
       loading: false,
+      mutationLoading: false,
       error: 'Failed to load recipes',
-      nextCursor: null,
-      fetchRecipes: mockFetchRecipes,
+      loadAll: mockLoadAll,
       getFilteredRecipes: mockGetFilteredRecipes,
+      create: mockCreate,
+      update: mockUpdate,
+      remove: mockRemove,
+      scale: mockScale,
+      reload: mockLoadAll,
       recipes: [],
     })
     render(<ManageRecipesSection />)
@@ -139,31 +224,40 @@ describe('ManageRecipesSection', () => {
     expect(screen.getByRole('button', { name: /errorState\.retry/i })).toBeInTheDocument()
   })
 
-  it('calls fetchRecipes again when retry is clicked', () => {
-    mockUseRecipes.mockReturnValueOnce({
-      loading: false,
-      error: 'Failed',
-      nextCursor: null,
-      fetchRecipes: mockFetchRecipes,
-      getFilteredRecipes: mockGetFilteredRecipes,
-      recipes: [],
-    })
+  it('opens create form when add button is clicked', () => {
     render(<ManageRecipesSection />)
-    fireEvent.click(screen.getByRole('button', { name: /errorState\.retry/i }))
-    expect(mockFetchRecipes).toHaveBeenCalledTimes(2)
+    fireEvent.click(screen.getAllByRole('button', { name: /addButton/i })[0])
+    expect(screen.getByTestId('recipe-form-dialog')).toBeInTheDocument()
   })
 
-  it('shows load more button when nextCursor exists', () => {
-    mockUseRecipes.mockReturnValueOnce({
-      loading: false,
-      error: null,
-      nextCursor: 'cursor-abc',
-      fetchRecipes: mockFetchRecipes,
-      getFilteredRecipes: mockGetFilteredRecipes,
-      recipes: [],
-    })
+  it('calls create when form is saved in create mode', async () => {
+    render(<ManageRecipesSection />)
+    fireEvent.click(screen.getAllByRole('button', { name: /addButton/i })[0])
+    fireEvent.click(screen.getByTestId('form-save'))
+    await waitFor(() => expect(mockCreate).toHaveBeenCalledWith(expect.objectContaining({ name: 'New Recipe' })))
+  })
+
+  it('shows delete confirmation dialog', () => {
     mockGetFilteredRecipes.mockReturnValue([sampleRecipe])
     render(<ManageRecipesSection />)
-    expect(screen.getByRole('button', { name: /loadMore/i })).toBeInTheDocument()
+    fireEvent.click(screen.getByTestId('delete-r1'))
+    expect(screen.getByRole('alertdialog')).toBeInTheDocument()
+    expect(screen.getByText('deleteDialog.title')).toBeInTheDocument()
+  })
+
+  it('calls remove when delete is confirmed', async () => {
+    mockGetFilteredRecipes.mockReturnValue([sampleRecipe])
+    render(<ManageRecipesSection />)
+    fireEvent.click(screen.getByTestId('delete-r1'))
+    fireEvent.click(screen.getByRole('button', { name: /deleteDialog\.confirm/i }))
+    await waitFor(() => expect(mockRemove).toHaveBeenCalledWith('r1'))
+  })
+
+  it('shows error notice on subscription-blocked mutation error', async () => {
+    mockCreate.mockResolvedValueOnce({ recipe: null, error: 'not available for your subscription plan' })
+    render(<ManageRecipesSection />)
+    fireEvent.click(screen.getAllByRole('button', { name: /addButton/i })[0])
+    fireEvent.click(screen.getByTestId('form-save'))
+    await waitFor(() => expect(screen.getByTestId('error-notice-dialog')).toBeInTheDocument())
   })
 })

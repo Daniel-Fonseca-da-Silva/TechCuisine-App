@@ -3,6 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FiEye } from "react-icons/fi"
+import { Pencil, Trash2 } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { RecipeCardProps } from "@/types/recipe.types"
 
@@ -12,7 +13,7 @@ const STATUS_STYLES: Record<string, string> = {
   canceled: 'bg-red-400/20 text-red-300 border border-red-400/30',
 }
 
-export function RecipeCard({ recipe, onView }: RecipeCardProps) {
+export function RecipeCard({ recipe, onView, onEdit, onDelete }: RecipeCardProps) {
   const t = useTranslations('recipeManagement')
 
   return (
@@ -39,15 +40,35 @@ export function RecipeCard({ recipe, onView }: RecipeCardProps) {
         </div>
       </CardHeader>
       <CardContent className="p-4 pt-0">
-        <Button
-          onClick={() => onView(recipe.id)}
-          variant="outline"
-          size="sm"
-          className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30 text-xs"
-        >
-          <FiEye className="w-3 h-3 mr-1" />
-          {t('actions.view')}
-        </Button>
+        <div className="flex gap-1">
+          <Button
+            onClick={() => onView(recipe.id)}
+            variant="outline"
+            size="sm"
+            className="flex-1 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30 text-xs"
+          >
+            <FiEye className="w-3 h-3 mr-1" />
+            {t('actions.view')}
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => onEdit(recipe)}
+            className="text-white/70 hover:text-white hover:bg-white/10 h-8 w-8 p-0"
+            aria-label={t('actions.edit')}
+          >
+            <Pencil className="w-3.5 h-3.5" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => onDelete(recipe)}
+            className="text-white/70 hover:text-red-400 hover:bg-red-500/10 h-8 w-8 p-0"
+            aria-label={t('actions.delete')}
+          >
+            <Trash2 className="w-3.5 h-3.5" />
+          </Button>
+        </div>
       </CardContent>
     </Card>
   )

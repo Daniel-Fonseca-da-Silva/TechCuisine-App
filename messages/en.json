@@ -1036,6 +1036,7 @@
     "title": "My Recipes",
     "subtitle": "View and manage all your culinary recipes",
     "backToDashboard": "Back to Dashboard",
+    "addButton": "Add recipe",
     "filters": {
       "all": "All",
       "pending": "Pending",
@@ -1048,25 +1049,83 @@
       "canceled": "Canceled"
     },
     "actions": {
-      "view": "View Details"
+      "view": "View Details",
+      "edit": "Edit",
+      "delete": "Delete"
     },
     "portions": "{count} portions",
     "costPerPortion": "{cost} / portion",
     "emptyState": {
-      "title": "No recipes found",
-      "action": "View all recipes"
+      "title": "No recipes yet. Add your first recipe.",
+      "action": "Add recipe"
     },
     "errorState": {
       "title": "Error loading recipes",
       "retry": "Try again"
     },
-    "loadMore": "Load more",
+    "createDialog": {
+      "title": "New recipe"
+    },
+    "editDialog": {
+      "title": "Edit recipe"
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "e.g. Chocolate cake",
+      "nameRequired": "Name is required",
+      "portionsRequired": "Reference portions must be greater than 0",
+      "description": "Description",
+      "referencePortions": "Reference portions",
+      "status": "Status",
+      "sellingPricePerPortion": "Selling price per portion",
+      "chefNotes": "Chef notes",
+      "ingredientLines": "Ingredient lines",
+      "addIngredientLine": "Add ingredient",
+      "selectIngredient": "Select ingredient...",
+      "grossQuantity": "Qty",
+      "unit": "Unit",
+      "yieldFactor": "Yield factor",
+      "noPriceWarning": "No price set",
+      "preparationCosts": "Preparation costs",
+      "addPrepCost": "Add cost",
+      "prepCostLabel": "Label",
+      "prepCostMinutes": "Minutes",
+      "prepCostHourlyRate": "Hourly rate",
+      "prepCostFixed": "Fixed cost",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving..."
+    },
+    "deleteDialog": {
+      "title": "Delete recipe",
+      "description": "Are you sure you want to delete \"{name}\"? This action cannot be undone.",
+      "confirm": "Delete",
+      "cancel": "Cancel",
+      "deleting": "Deleting..."
+    },
     "detail": {
       "status": "Status",
       "portions": "Reference portions",
       "costPerPortion": "Cost per portion",
       "totalCost": "Total cost",
       "chefNotes": "Chef notes",
+      "ingredientLines": "Ingredient lines",
+      "preparationCosts": "Preparation costs",
+      "scaleButton": "Scale",
+      "editButton": "Edit",
+      "close": "Close"
+    },
+    "scaleDialog": {
+      "title": "Scale recipe",
+      "portionsPlaceholder": "Number of portions",
+      "calculate": "Calculate",
+      "invalidPortions": "Enter a positive integer number of portions",
+      "factor": "Scale factor",
+      "desiredPortions": "Desired portions",
+      "totalCost": "Total cost",
+      "costPerPortion": "Cost per portion",
+      "totalSellingPrice": "Total selling price",
+      "ingredientLines": "Scaled ingredients",
       "close": "Close"
     }
   },

@@ -30,73 +30,25 @@ async function fetchJson(response: Response, label: string): Promise<{ data: unk
   return { data, ok: response.ok }
 }
 
-export async function POST(request: NextRequest) {
-  try {
-    const BACKEND_API_URL = process.env.BACKEND_API_URL
-    if (!BACKEND_API_URL) {
-      console.error('Recipes POST - BACKEND_API_URL is not configured')
-      return NextResponse.json({ success: false, error: 'BACKEND_API_URL is not configured' }, { status: 500 })
-    }
-
-    const session = await getSession(request)
-    if (!session.authenticated || !session.sessionToken) {
-      return NextResponse.json({ success: false, error: 'Not authenticated' }, { status: 401 })
-    }
-
-    const body = await request.json()
-
-    const response = await fetch(`${BACKEND_API_URL}/recipes/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${session.sessionToken}`,
-      },
-      body: JSON.stringify(body),
-      cache: 'no-store',
-    })
-
-    const { data, ok } = await fetchJson(response, 'Recipes POST')
-
-    if (!ok) {
-      return NextResponse.json(
-        { success: false, error: errorMessage(data, 'Failed to create recipe') },
-        { status: response.status }
-      )
-    }
-
-    return NextResponse.json({ success: true, data }, { status: 201 })
-  } catch (error) {
-    console.error('Recipes POST API error:', error)
-    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 })
-  }
+interface RouteContext {
+  params: Promise<{ id: string }>
 }
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest, { params }: RouteContext) {
   try {
     const BACKEND_API_URL = process.env.BACKEND_API_URL
     if (!BACKEND_API_URL) {
-      console.error('Recipes GET - BACKEND_API_URL is not configured')
       return NextResponse.json({ success: false, error: 'BACKEND_API_URL is not configured' }, { status: 500 })
     }
 
     const session = await getSession(request)
-
     if (!session.authenticated || !session.sessionToken) {
       return NextResponse.json({ success: false, error: 'Not authenticated' }, { status: 401 })
     }
 
-    const { searchParams } = new URL(request.url)
-    const cursor = searchParams.get('cursor')
-    const limit = searchParams.get('limit')
+    const { id } = await params
 
-    const backendParams = new URLSearchParams()
-    if (cursor) backendParams.set('cursor', cursor)
-    if (limit) backendParams.set('limit', limit)
-
-    const qs = backendParams.toString()
-    const url = `${BACKEND_API_URL}/recipes/${qs ? `?${qs}` : ''}`
-
-    const response = await fetch(url, {
+    const response = await fetch(`${BACKEND_API_URL}/recipes/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -105,18 +57,104 @@ export async function GET(request: NextRequest) {
       cache: 'no-store',
     })
 
-    const { data, ok } = await fetchJson(response, 'Recipes GET')
+    const { data, ok } = await fetchJson(response, 'Recipe GET by id')
 
     if (!ok) {
       return NextResponse.json(
-        { success: false, error: errorMessage(data, 'Failed to fetch recipes') },
+        { success: false, error: errorMessage(data, 'Failed to fetch recipe') },
         { status: response.status }
       )
     }
 
     return NextResponse.json({ success: true, data })
   } catch (error) {
-    console.error('Recipes GET API error:', error)
+    console.error('Recipe GET by id API error:', error)
+    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 })
+  }
+}
+
+export async function PATCH(request: NextRequest, { params }: RouteContext) {
+  try {
+    const BACKEND_API_URL = process.env.BACKEND_API_URL
+    if (!BACKEND_API_URL) {
+      return NextResponse.json({ success: false, error: 'BACKEND_API_URL is not configured' }, { status: 500 })
+    }
+
+    const session = await getSession(request)
+    if (!session.authenticated || !session.sessionToken) {
+      return NextResponse.json({ success: false, error: 'Not authenticated' }, { status: 401 })
+    }
+
+    const { id } = await params
+    const body = await request.json()
+
+    const response = await fetch(`${BACKEND_API_URL}/recipes/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${session.sessionToken}`,
+      },
+      body: JSON.stringify(body),
+      cache: 'no-store',
+    })
+
+    const { data, ok } = await fetchJson(response, 'Recipe PATCH')
+
+    if (!ok) {
+      return NextResponse.json(
+        { success: false, error: errorMessage(data, 'Failed to update recipe') },
+        { status: response.status }
+      )
+    }
+
+    return NextResponse.json({ success: true, data })
+  } catch (error) {
+    console.error('Recipe PATCH API error:', error)
+    return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 })
+  }
+}
+
+export async function DELETE(request: NextRequest, { params }: RouteContext) {
+  try {
+    const BACKEND_API_URL = process.env.BACKEND_API_URL
+    if (!BACKEND_API_URL) {
+      return NextResponse.json({ success: false, error: 'BACKEND_API_URL is not configured' }, { status: 500 })
+    }
+
+    const session = await getSession(request)
+    if (!session.authenticated || !session.sessionToken) {
+      return NextResponse.json({ success: false, error: 'Not authenticated' }, { status: 401 })
+    }
+
+    const { id } = await params
+
+    const response = await fetch(`${BACKEND_API_URL}/recipes/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${session.sessionToken}`,
+      },
+      cache: 'no-store',
+    })
+
+    if (response.status === 204) {
+      return NextResponse.json({ success: true })
+    }
+
+    if (!response.ok) {
+      const ct = response.headers.get('content-type') || ''
+      let data: unknown = null
+      if (ct.includes('application/json')) {
+        data = await response.json().catch(() => null)
+      }
+      return NextResponse.json(
+        { success: false, error: errorMessage(data, 'Failed to delete recipe') },
+        { status: response.status }
+      )
+    }
+
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error('Recipe DELETE API error:', error)
     return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 })
   }
 }

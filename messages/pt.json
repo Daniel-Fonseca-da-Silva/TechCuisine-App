@@ -1025,6 +1025,7 @@
     "title": "As Minhas Receitas",
     "subtitle": "Vê e gere todas as tuas receitas culinárias",
     "backToDashboard": "Voltar ao Dashboard",
+    "addButton": "Adicionar receita",
     "filters": {
       "all": "Todas",
       "pending": "Pendente",
@@ -1037,25 +1038,83 @@
       "canceled": "Cancelada"
     },
     "actions": {
-      "view": "Ver Detalhes"
+      "view": "Ver Detalhes",
+      "edit": "Editar",
+      "delete": "Eliminar"
     },
     "portions": "{count} porções",
     "costPerPortion": "{cost} / porção",
     "emptyState": {
-      "title": "Nenhuma receita encontrada",
-      "action": "Ver todas as receitas"
+      "title": "Ainda não tens receitas. Adiciona a tua primeira receita.",
+      "action": "Adicionar receita"
     },
     "errorState": {
       "title": "Erro ao carregar receitas",
       "retry": "Tentar novamente"
     },
-    "loadMore": "Carregar mais",
+    "createDialog": {
+      "title": "Nova receita"
+    },
+    "editDialog": {
+      "title": "Editar receita"
+    },
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "ex.: Bolo de chocolate",
+      "nameRequired": "O nome é obrigatório",
+      "portionsRequired": "As porções de referência devem ser superiores a 0",
+      "description": "Descrição",
+      "referencePortions": "Porções de referência",
+      "status": "Estado",
+      "sellingPricePerPortion": "Preço de venda por porção",
+      "chefNotes": "Notas do chef",
+      "ingredientLines": "Linhas de ingrediente",
+      "addIngredientLine": "Adicionar ingrediente",
+      "selectIngredient": "Selecionar ingrediente...",
+      "grossQuantity": "Qtd",
+      "unit": "Unidade",
+      "yieldFactor": "Fator de rendimento",
+      "noPriceWarning": "Sem preço definido",
+      "preparationCosts": "Custos de preparação",
+      "addPrepCost": "Adicionar custo",
+      "prepCostLabel": "Descrição",
+      "prepCostMinutes": "Minutos",
+      "prepCostHourlyRate": "Taxa horária",
+      "prepCostFixed": "Custo fixo",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "saving": "A guardar..."
+    },
+    "deleteDialog": {
+      "title": "Eliminar receita",
+      "description": "Tens a certeza que queres eliminar \"{name}\"? Esta ação não pode ser revertida.",
+      "confirm": "Eliminar",
+      "cancel": "Cancelar",
+      "deleting": "A eliminar..."
+    },
     "detail": {
       "status": "Estado",
       "portions": "Porções de referência",
       "costPerPortion": "Custo por porção",
       "totalCost": "Custo total",
       "chefNotes": "Notas do chef",
+      "ingredientLines": "Linhas de ingrediente",
+      "preparationCosts": "Custos de preparação",
+      "scaleButton": "Escalar",
+      "editButton": "Editar",
+      "close": "Fechar"
+    },
+    "scaleDialog": {
+      "title": "Escalar receita",
+      "portionsPlaceholder": "Número de porções",
+      "calculate": "Calcular",
+      "invalidPortions": "Introduz um número inteiro positivo de porções",
+      "factor": "Fator de escala",
+      "desiredPortions": "Porções desejadas",
+      "totalCost": "Custo total",
+      "costPerPortion": "Custo por porção",
+      "totalSellingPrice": "Preço de venda total",
+      "ingredientLines": "Ingredientes escalados",
       "close": "Fechar"
     }
   },

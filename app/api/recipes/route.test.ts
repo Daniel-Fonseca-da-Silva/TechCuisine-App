@@ -27,7 +27,7 @@ function createRequest(queryParams: Record<string, string> = {}) {
 }
 
 import { getSession } from '@/lib/get-session'
-import { GET } from './route'
+import { GET, POST } from './route'
 import { NextRequest } from 'next/server'
 
 const authenticatedSession = {
@@ -153,5 +153,90 @@ describe('GET /api/recipes', () => {
     expect(response.status).toBe(500)
     const data = await response.json()
     expect(data.error).toBe('Internal server error')
+  })
+})
+
+function createPostRequest(body: unknown = {}) {
+  return {
+    url: 'https://app.example.com/api/recipes',
+    nextUrl: { origin: 'https://app.example.com' },
+    headers: { get: () => null },
+    cookies: { get: () => undefined },
+    json: () => Promise.resolve(body),
+  } as unknown as NextRequest
+}
+
+describe('POST /api/recipes', () => {
+  beforeEach(() => {
+    process.env = { ...originalEnv, BACKEND_API_URL: 'https://api.example.com' }
+    jest.clearAllMocks()
+  })
+  afterEach(() => {
+    process.env = originalEnv
+    global.fetch = originalFetch
+  })
+
+  it('returns 500 when BACKEND_API_URL is not set', async () => {
+    delete process.env.BACKEND_API_URL
+    ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
+    const response = await POST(createPostRequest())
+    expect(response.status).toBe(500)
+  })
+
+  it('returns 401 when not authenticated', async () => {
+    ;(getSession as jest.Mock).mockResolvedValue(unauthSession)
+    const response = await POST(createPostRequest())
+    expect(response.status).toBe(401)
+    const data = await response.json()
+    expect(data.error).toBe('Not authenticated')
+  })
+
+  it('creates recipe and returns 201', async () => {
+    ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
+    const created = { id: 'r1', name: 'Bolo', status: 'pending', reference_portions: 4 }
+    global.fetch = jest.fn().mockResolvedValueOnce({
+      ok: true,
+      status: 201,
+      headers: { get: () => 'application/json' },
+      json: () => Promise.resolve(created),
+    })
+    const response = await POST(createPostRequest({ name: 'Bolo', reference_portions: 4 }))
+    expect(response.status).toBe(201)
+    const data = await response.json()
+    expect(data.success).toBe(true)
+    expect(data.data.name).toBe('Bolo')
+  })
+
+  it('returns backend error on failure', async () => {
+    ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
+    global.fetch = jest.fn().mockResolvedValueOnce({
+      ok: false,
+      status: 403,
+      headers: { get: () => 'application/json' },
+      json: () => Promise.resolve({ detail: 'not available for your subscription plan' }),
+    })
+    const response = await POST(createPostRequest({ name: 'Bolo', reference_portions: 4 }))
+    expect(response.status).toBe(403)
+    const data = await response.json()
+    expect(data.success).toBe(false)
+    expect(data.error).toContain('not available for your subscription plan')
+  })
+
+  it('proxies body to backend with Authorization header', async () => {
+    ;(getSession as jest.Mock).mockResolvedValue(authenticatedSession)
+    global.fetch = jest.fn().mockResolvedValueOnce({
+      ok: true,
+      status: 201,
+      headers: { get: () => 'application/json' },
+      json: () => Promise.resolve({ id: 'r1', name: 'Bolo' }),
+    })
+    await POST(createPostRequest({ name: 'Bolo', reference_portions: 4 }))
+    expect(global.fetch).toHaveBeenCalledWith(
+      'https://api.example.com/recipes/',
+      expect.objectContaining({
+        method: 'POST',
+        headers: expect.objectContaining({ Authorization: 'Bearer session-token' }),
+      })
+    )
   })
 })
