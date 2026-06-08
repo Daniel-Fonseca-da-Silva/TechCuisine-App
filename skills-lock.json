@@ -1,11 +1,23 @@
 {
   "version": 1,
   "skills": {
+    "next-best-practices": {
+      "source": "vercel-labs/next-skills",
+      "sourceType": "github",
+      "skillPath": "skills/next-best-practices/SKILL.md",
+      "computedHash": "f4678aef4ffc10a5ea64a91e57abe5a5081af813b06d58d565caf3e8ef56e26c"
+    },
     "seo-content-writer": {
       "source": "aaron-he-zhu/seo-geo-claude-skills",
       "sourceType": "github",
       "skillPath": "build/seo-content-writer/SKILL.md",
       "computedHash": "e27ba76a7223fdec000ec811dce801ad9aec395ad7fbefbc3ce558474f8a6eff"
+    },
+    "stripe-best-practices": {
+      "source": "stripe/ai",
+      "sourceType": "github",
+      "skillPath": "skills/stripe-best-practices/SKILL.md",
+      "computedHash": "966d0ce005fb82e1a63ead1ec8c5546a9088c0d8f103f88c382c4cda810857cc"
     }
   }
 }

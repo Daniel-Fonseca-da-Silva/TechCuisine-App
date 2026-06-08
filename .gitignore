@@ -39,9 +39,8 @@ help.txt
 .vercel
 
 #cursor
-.agents
-.cursor
 prompt
+.agents
 
 # typescript
 *.tsbuildinfo
