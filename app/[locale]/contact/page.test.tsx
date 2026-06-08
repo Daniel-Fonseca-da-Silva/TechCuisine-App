@@ -2,6 +2,16 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import ContactPage from './page'
 
+jest.mock('next-intl/server', () => ({
+  getTranslations: jest.fn(async () => (key: string) => key),
+  getLocale: jest.fn(async () => 'en'),
+}))
+
+jest.mock('@/lib/seo', () => ({
+  buildAlternates: () => ({ canonical: 'https://example.com', languages: {} }),
+  buildOgImage: () => [{ url: 'https://example.com/og.png', width: 1200, height: 630 }],
+}))
+
 jest.mock('@/components/layout/header', () => ({
   Header: () => <header data-testid="header">Header</header>,
 }))

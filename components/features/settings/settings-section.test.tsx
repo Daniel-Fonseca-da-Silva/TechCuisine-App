@@ -6,6 +6,11 @@ jest.mock('next-intl', () => ({
   useTranslations: () => (key: string) => key,
 }))
 
+const mockPush = jest.fn()
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({ push: mockPush }),
+}))
+
 const mockChangeLocale = jest.fn()
 jest.mock('@/hooks/use-locale', () => ({
   useLocale: () => ({ locale: 'en', changeLocale: mockChangeLocale }),
@@ -23,6 +28,15 @@ jest.mock('@/lib/shared/language-flag', () => ({
   getLanguageOption: (code: string) =>
     code === 'en' ? { code: 'en', name: 'English', flag: () => null } : { code: 'pt', name: 'Português', flag: () => null },
 }))
+
+const defaultPreferences = {
+  language: ['en'],
+  email_notifications: false,
+  temperature_unit: 'celsius',
+  currency: 'EUR',
+  date_format: 'DD/MM/YYYY',
+  decimal_separator: ',',
+}
 
 describe('SettingsSection', () => {
   beforeEach(() => {
@@ -54,7 +68,7 @@ describe('SettingsSection', () => {
       ok: true,
       json: () => Promise.resolve({
         success: true,
-        data: { language: 'en', newsletter: false },
+        data: defaultPreferences,
       }),
     })
     render(<SettingsSection />)
@@ -68,7 +82,7 @@ describe('SettingsSection', () => {
   it('calls onSectionChange when Back is clicked', async () => {
     ;(global.fetch as jest.Mock).mockResolvedValue({
       ok: true,
-      json: () => Promise.resolve({ success: true, data: { language: 'en', newsletter: false } }),
+      json: () => Promise.resolve({ success: true, data: defaultPreferences }),
     })
     const onSectionChange = jest.fn()
     render(<SettingsSection onSectionChange={onSectionChange} />)
@@ -82,7 +96,7 @@ describe('SettingsSection', () => {
   it('does not render Back button when onSectionChange is not provided', async () => {
     ;(global.fetch as jest.Mock).mockResolvedValue({
       ok: true,
-      json: () => Promise.resolve({ success: true, data: { language: 'en', newsletter: false } }),
+      json: () => Promise.resolve({ success: true, data: defaultPreferences }),
     })
     render(<SettingsSection />)
     await waitFor(() => {
@@ -91,11 +105,11 @@ describe('SettingsSection', () => {
     expect(screen.queryByTestId('section-back-button')).not.toBeInTheDocument()
   })
 
-  it('calls fetch with PATCH when Save is clicked and succeeds', async () => {
+  it('calls fetch with PATCH to /api/preferences when Save is clicked', async () => {
     ;(global.fetch as jest.Mock)
       .mockResolvedValueOnce({
         ok: true,
-        json: () => Promise.resolve({ success: true, data: { language: 'en', newsletter: false } }),
+        json: () => Promise.resolve({ success: true, data: defaultPreferences }),
       })
       .mockResolvedValueOnce({
         ok: true,
@@ -108,11 +122,18 @@ describe('SettingsSection', () => {
     fireEvent.click(screen.getByText('appearance.saveButton'))
     await waitFor(() => {
       expect(global.fetch).toHaveBeenCalledWith(
-        '/api/configuration',
+        '/api/preferences',
         expect.objectContaining({
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ language: 'en', newsletter: false }),
+          body: JSON.stringify({
+            language: ['en'],
+            email_notifications: false,
+            temperature_unit: 'celsius',
+            currency: 'EUR',
+            date_format: 'DD/MM/YYYY',
+            decimal_separator: ',',
+          }),
         })
       )
     })

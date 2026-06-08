@@ -50,7 +50,7 @@ describe('POST /api/auth/forgot-password', () => {
     expect(response.status).toBe(200)
     const data = await response.json()
     expect(data.success).toBe(true)
-    expect(data.message).toMatch(/success/i)
+    expect(data.message).toBe('Password reset instructions sent')
     expect(global.fetch).toHaveBeenCalledWith(
       expect.stringContaining('auth/forgot-password'),
       expect.objectContaining({

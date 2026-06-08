@@ -67,7 +67,7 @@ describe('ForgotPasswordPage', () => {
       expect(screen.getByText('codeSent.title')).toBeInTheDocument()
       expect(screen.getByText('codeSent.message')).toBeInTheDocument()
     })
-    expect(global.fetch).toHaveBeenCalledWith('/api/auth/magic-link', expect.objectContaining({
+    expect(global.fetch).toHaveBeenCalledWith('/api/auth/forgot-password', expect.objectContaining({
       method: 'POST',
       body: JSON.stringify({ email: 'valid@example.com' }),
     }))

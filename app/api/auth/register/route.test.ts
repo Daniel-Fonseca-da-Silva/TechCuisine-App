@@ -21,7 +21,7 @@ import { POST } from './route'
 const validBody = {
   username: 'janedoe',
   email: 'jane@example.com',
-  password: 'secret123',
+  password: 'Secret123!',
 }
 
 describe('POST /api/auth/register', () => {

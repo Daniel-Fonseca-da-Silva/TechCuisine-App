@@ -8,7 +8,9 @@ jest.mock('next-intl', () => ({
   useTranslations: () => (key: string) => key,
 }))
 
+const mockPush = jest.fn()
 jest.mock('next/navigation', () => ({
+  useRouter: () => ({ push: mockPush }),
   useSearchParams: jest.fn(),
 }))
 
@@ -23,6 +25,7 @@ const mockUseSearchParams = useSearchParams as jest.Mock
 
 describe('LoginForm', () => {
   beforeEach(() => {
+    jest.clearAllMocks()
     mockUseSearchParams.mockReturnValue({
       get: jest.fn().mockReturnValue(null),
     })
@@ -34,9 +37,10 @@ describe('LoginForm', () => {
     expect(screen.getByText('subtitle')).toBeInTheDocument()
   })
 
-  it('renders email input and submit button', () => {
+  it('renders username input, password input and submit button', () => {
     render(<LoginForm />)
-    expect(screen.getByRole('textbox', { name: /email/i })).toBeInTheDocument()
+    expect(screen.getByRole('textbox', { name: /username/i })).toBeInTheDocument()
+    expect(screen.getByLabelText('password')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /action/i })).toBeInTheDocument()
   })
 
@@ -60,60 +64,56 @@ describe('LoginForm', () => {
     expect(card).toBeInTheDocument()
   })
 
-  it('shows validation error when submitting with invalid email', async () => {
+  it('shows validation error when submitting with too-short username', async () => {
     const user = userEvent.setup()
     render(<LoginForm />)
-    const input = screen.getByRole('textbox', { name: /email/i })
-    await user.type(input, 'invalid-email')
-    const button = screen.getByRole('button', { name: /action/i })
-    fireEvent.click(button)
+    await user.type(screen.getByRole('textbox', { name: /username/i }), 'ab')
+    await user.type(screen.getByLabelText('password'), 'short')
+    fireEvent.click(screen.getByRole('button', { name: /action/i }))
 
     await waitFor(() => {
-      expect(screen.getByText(/invalid|email/i)).toBeInTheDocument()
+      const errorParagraphs = document.querySelectorAll('p.text-red-300')
+      expect(errorParagraphs.length).toBeGreaterThan(0)
     })
   })
 
-  it('calls magic-link API and shows success when response is success', async () => {
+  it('calls login API and redirects to dashboard on success', async () => {
     const user = userEvent.setup()
     global.fetch = jest.fn().mockResolvedValue({
       json: () => Promise.resolve({ success: true }),
     })
 
     render(<LoginForm />)
-    await user.type(
-      screen.getByRole('textbox', { name: /email/i }),
-      'user@example.com'
-    )
+    await user.type(screen.getByRole('textbox', { name: /username/i }), 'testuser')
+    await user.type(screen.getByLabelText('password'), 'Secret123!')
     fireEvent.click(screen.getByRole('button', { name: /action/i }))
 
     await waitFor(() => {
-      expect(fetch).toHaveBeenCalledWith('/api/auth/magic-link', {
+      expect(fetch).toHaveBeenCalledWith('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: 'user@example.com' }),
+        body: JSON.stringify({ username: 'testuser', password: 'Secret123!' }),
       })
     })
 
     await waitFor(() => {
-      expect(screen.getByText('emailSent.title')).toBeInTheDocument()
+      expect(mockPush).toHaveBeenCalledWith('/dashboard')
     })
   })
 
   it('shows general error when API returns success false', async () => {
     const user = userEvent.setup()
     global.fetch = jest.fn().mockResolvedValue({
-      json: () => Promise.resolve({ success: false, error: 'Rate limit exceeded' }),
+      json: () => Promise.resolve({ success: false, code: 'INVALID_CREDENTIALS' }),
     })
 
     render(<LoginForm />)
-    await user.type(
-      screen.getByRole('textbox', { name: /email/i }),
-      'user@example.com'
-    )
+    await user.type(screen.getByRole('textbox', { name: /username/i }), 'testuser')
+    await user.type(screen.getByLabelText('password'), 'Secret123!')
     fireEvent.click(screen.getByRole('button', { name: /action/i }))
 
     await waitFor(() => {
-      expect(screen.getByText('Rate limit exceeded')).toBeInTheDocument()
+      expect(screen.getByText('errorInvalidCredentials')).toBeInTheDocument()
     })
   })
 
@@ -144,10 +144,8 @@ describe('LoginForm', () => {
     )
 
     render(<LoginForm />)
-    await user.type(
-      screen.getByRole('textbox', { name: /email/i }),
-      'user@example.com'
-    )
+    await user.type(screen.getByRole('textbox', { name: /username/i }), 'testuser')
+    await user.type(screen.getByLabelText('password'), 'Secret123!')
     const button = screen.getByRole('button', { name: /action/i })
     fireEvent.click(button)
 

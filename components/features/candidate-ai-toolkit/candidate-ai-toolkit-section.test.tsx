@@ -15,17 +15,17 @@ describe('CandidateAiToolkitSection', () => {
 
   it('renders all four feature cards', () => {
     render(<CandidateAiToolkitSection />);
-    expect(screen.getByText('items.generateReplies.title')).toBeInTheDocument();
-    expect(screen.getByText('items.coverLetter.title')).toBeInTheDocument();
-    expect(screen.getByText('items.cvJobMatch.title')).toBeInTheDocument();
-    expect(screen.getByText('items.jobAnalysisWithCv.title')).toBeInTheDocument();
+    expect(screen.getByText('items.recipeBreakdown.title')).toBeInTheDocument();
+    expect(screen.getByText('items.sellingPrice.title')).toBeInTheDocument();
+    expect(screen.getByText('items.foodCostCheck.title')).toBeInTheDocument();
+    expect(screen.getByText('items.menuMatrix.title')).toBeInTheDocument();
   });
 
   it('renders all four feature descriptions', () => {
     render(<CandidateAiToolkitSection />);
-    expect(screen.getByText('items.generateReplies.description')).toBeInTheDocument();
-    expect(screen.getByText('items.coverLetter.description')).toBeInTheDocument();
-    expect(screen.getByText('items.cvJobMatch.description')).toBeInTheDocument();
-    expect(screen.getByText('items.jobAnalysisWithCv.description')).toBeInTheDocument();
+    expect(screen.getByText('items.recipeBreakdown.description')).toBeInTheDocument();
+    expect(screen.getByText('items.sellingPrice.description')).toBeInTheDocument();
+    expect(screen.getByText('items.foodCostCheck.description')).toBeInTheDocument();
+    expect(screen.getByText('items.menuMatrix.description')).toBeInTheDocument();
   });
 });

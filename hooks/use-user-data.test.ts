@@ -27,6 +27,11 @@ const mockCfgBody = {
   },
 }
 
+const mockPrefBody = {
+  success: true,
+  data: { language: ['en'], email_notifications: true },
+}
+
 function mockFetchSequence(...responses: { ok: boolean; status?: number; body: unknown }[]) {
   let call = 0
   global.fetch = jest.fn().mockImplementation(() => {
@@ -49,13 +54,21 @@ describe('useUserData', () => {
   })
 
   it('starts with isLoading true', () => {
-    mockFetchSequence({ ok: true, body: mockUserBody }, { ok: true, body: mockCfgBody })
+    mockFetchSequence(
+      { ok: true, body: mockUserBody },
+      { ok: true, body: mockCfgBody },
+      { ok: true, body: mockPrefBody }
+    )
     const { result } = renderHook(() => useUserData())
     expect(result.current.isLoading).toBe(true)
   })
 
   it('loads user and configuration on mount', async () => {
-    mockFetchSequence({ ok: true, body: mockUserBody }, { ok: true, body: mockCfgBody })
+    mockFetchSequence(
+      { ok: true, body: mockUserBody },
+      { ok: true, body: mockCfgBody },
+      { ok: true, body: mockPrefBody }
+    )
     const { result } = renderHook(() => useUserData())
 
     await waitFor(() => expect(result.current.isLoading).toBe(false))
@@ -68,7 +81,11 @@ describe('useUserData', () => {
   })
 
   it('derives userData.name from configuration.full_name', async () => {
-    mockFetchSequence({ ok: true, body: mockUserBody }, { ok: true, body: mockCfgBody })
+    mockFetchSequence(
+      { ok: true, body: mockUserBody },
+      { ok: true, body: mockCfgBody },
+      { ok: true, body: mockPrefBody }
+    )
     const { result } = renderHook(() => useUserData())
 
     await waitFor(() => expect(result.current.isLoading).toBe(false))
@@ -80,7 +97,8 @@ describe('useUserData', () => {
   it('falls back userData.name to username when configuration is null', async () => {
     mockFetchSequence(
       { ok: true, body: mockUserBody },
-      { ok: true, body: { success: true, data: null } }
+      { ok: true, body: { success: true, data: null } },
+      { ok: true, body: mockPrefBody }
     )
     const { result } = renderHook(() => useUserData())
 
@@ -94,7 +112,8 @@ describe('useUserData', () => {
   it('sets configuration null on 404 without setting error', async () => {
     mockFetchSequence(
       { ok: true, body: mockUserBody },
-      { ok: false, status: 404, body: { success: false, error: 'Not found' } }
+      { ok: false, status: 404, body: { success: false, error: 'Not found' } },
+      { ok: true, body: mockPrefBody }
     )
     const { result } = renderHook(() => useUserData())
 
@@ -107,7 +126,8 @@ describe('useUserData', () => {
   it('sets error when user fetch fails', async () => {
     mockFetchSequence(
       { ok: false, body: { success: false, error: 'Unauthorized' } },
-      { ok: true, body: mockCfgBody }
+      { ok: true, body: mockCfgBody },
+      { ok: true, body: mockPrefBody }
     )
     const { result } = renderHook(() => useUserData())
 
@@ -117,7 +137,11 @@ describe('useUserData', () => {
   })
 
   it('updateUser sends PATCH to /api/user/me', async () => {
-    mockFetchSequence({ ok: true, body: mockUserBody }, { ok: true, body: mockCfgBody })
+    mockFetchSequence(
+      { ok: true, body: mockUserBody },
+      { ok: true, body: mockCfgBody },
+      { ok: true, body: mockPrefBody }
+    )
     const { result } = renderHook(() => useUserData())
 
     await waitFor(() => expect(result.current.isLoading).toBe(false))
@@ -141,7 +165,8 @@ describe('useUserData', () => {
   it('upsertConfiguration POSTs when configuration is null', async () => {
     mockFetchSequence(
       { ok: true, body: mockUserBody },
-      { ok: true, body: { success: true, data: null } }
+      { ok: true, body: { success: true, data: null } },
+      { ok: true, body: mockPrefBody }
     )
     const { result } = renderHook(() => useUserData())
 
@@ -166,7 +191,11 @@ describe('useUserData', () => {
   })
 
   it('upsertConfiguration PATCHes when configuration exists', async () => {
-    mockFetchSequence({ ok: true, body: mockUserBody }, { ok: true, body: mockCfgBody })
+    mockFetchSequence(
+      { ok: true, body: mockUserBody },
+      { ok: true, body: mockCfgBody },
+      { ok: true, body: mockPrefBody }
+    )
     const { result } = renderHook(() => useUserData())
 
     await waitFor(() => expect(result.current.isLoading).toBe(false))
@@ -188,24 +217,29 @@ describe('useUserData', () => {
     expect(result.current.configuration?.full_name).toBe('Updated Name')
   })
 
-  it('refetch reloads both user and configuration', async () => {
-    mockFetchSequence({ ok: true, body: mockUserBody }, { ok: true, body: mockCfgBody })
+  it('refetch reloads user, configuration and preferences', async () => {
+    mockFetchSequence(
+      { ok: true, body: mockUserBody },
+      { ok: true, body: mockCfgBody },
+      { ok: true, body: mockPrefBody }
+    )
     const { result } = renderHook(() => useUserData())
 
     await waitFor(() => expect(result.current.isLoading).toBe(false))
 
-    const fetchMock = jest
-      .fn()
+    const fetchMock = jest.fn()
       .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(mockUserBody) })
       .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(mockCfgBody) })
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(mockPrefBody) })
     global.fetch = fetchMock
 
     await act(async () => {
       await result.current.refetch()
     })
 
-    expect(fetchMock).toHaveBeenCalledTimes(2)
+    expect(fetchMock).toHaveBeenCalledTimes(3)
     expect(fetchMock).toHaveBeenCalledWith('/api/user/me', expect.any(Object))
     expect(fetchMock).toHaveBeenCalledWith('/api/configuration', expect.any(Object))
+    expect(fetchMock).toHaveBeenCalledWith('/api/preferences', expect.any(Object))
   })
 })

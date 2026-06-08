@@ -100,35 +100,11 @@ describe('useAuth', () => {
     })
   })
 
-  it('login returns success when magic-link API returns success', async () => {
-    global.fetch = jest.fn().mockResolvedValue({
-      json: () => Promise.resolve({ success: true, message: 'Check your email' }),
-    })
-
-    const { result } = renderHook(() => useAuth())
-
-    await waitFor(() => {
-      expect(result.current.loading).toBe(false)
-    })
-
-    let loginResult: { success: boolean; message?: string; error?: string }
-    await act(async () => {
-      loginResult = await result.current.login('user@example.com')
-    })
-
-    expect(loginResult!.success).toBe(true)
-    expect(loginResult!.message).toBe('Check your email')
-    expect(global.fetch).toHaveBeenCalledWith('/api/auth/magic-link', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: 'user@example.com' }),
-    })
-  })
-
-  it('login returns failure when magic-link API returns success false', async () => {
-    global.fetch = jest.fn().mockResolvedValue({
-      json: () => Promise.resolve({ success: false, error: 'Invalid email' }),
-    })
+  it('login returns success when login API returns success', async () => {
+    global.fetch = jest.fn()
+      .mockResolvedValueOnce({ json: () => Promise.resolve({ authenticated: false }) })
+      .mockResolvedValueOnce({ json: () => Promise.resolve({ success: true }) })
+      .mockResolvedValueOnce({ json: () => Promise.resolve({ authenticated: false }) })
 
     const { result } = renderHook(() => useAuth())
 
@@ -138,11 +114,35 @@ describe('useAuth', () => {
 
     let loginResult: { success: boolean; error?: string }
     await act(async () => {
-      loginResult = await result.current.login('bad@email.com')
+      loginResult = await result.current.login('testuser', 'Secret123!')
+    })
+
+    expect(loginResult!.success).toBe(true)
+    expect(global.fetch).toHaveBeenCalledWith('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: 'testuser', password: 'Secret123!' }),
+    })
+  })
+
+  it('login returns failure when login API returns success false', async () => {
+    global.fetch = jest.fn()
+      .mockResolvedValueOnce({ json: () => Promise.resolve({ authenticated: false }) })
+      .mockResolvedValueOnce({ json: () => Promise.resolve({ success: false, error: 'Invalid credentials' }) })
+
+    const { result } = renderHook(() => useAuth())
+
+    await waitFor(() => {
+      expect(result.current.loading).toBe(false)
+    })
+
+    let loginResult: { success: boolean; error?: string }
+    await act(async () => {
+      loginResult = await result.current.login('baduser', 'wrongpass')
     })
 
     expect(loginResult!.success).toBe(false)
-    expect(loginResult!.error).toBe('Invalid email')
+    expect(loginResult!.error).toBe('Invalid credentials')
   })
 
   it('logout clears state and redirects to login', async () => {
